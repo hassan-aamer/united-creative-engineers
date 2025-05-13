@@ -13,8 +13,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            <a class="btn btn-success"
-                                href="{{ route('admin.productFeatures.create') }}">{{ __('attributes.create') }}</a>
+                            @can('create productFeatures')
+                                <a class="btn btn-success"
+                                    href="{{ route('admin.productFeatures.create') }}">{{ __('attributes.create') }}</a>
+                            @endcan
                         </div>
                     </div>
                 </div>
@@ -45,37 +47,41 @@
                                                     <td><img src="{{ App\Helpers\Image::getMediaUrl($productFeatures, 'productFeatures') }}"
                                                             alt="productFeatures" width="100"></td>
                                                     <td>{{ $productFeatures->position ?? '' }}</td>
-                                                    <td>{{ shortenText($productFeatures->title ?? '',10) }}</td>
+                                                    <td>{{ shortenText($productFeatures->title ?? '', 10) }}</td>
                                                     <td>
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" name="status"
-                                                                id="active-{{ $productFeatures->id }}"
-                                                                @if ($productFeatures->active == 1) checked @endif
-                                                                data-id="{{ $productFeatures->id }}">
-                                                            <label class="form-check-label"
-                                                                for="active-{{ $productFeatures->id }}"></label>
-                                                        </div>
+                                                        @can('active productFeatures')
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" name="status"
+                                                                    id="active-{{ $productFeatures->id }}"
+                                                                    @if ($productFeatures->active == 1) checked @endif
+                                                                    data-id="{{ $productFeatures->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="active-{{ $productFeatures->id }}"></label>
+                                                            </div>
+                                                        @endcan
                                                     </td>
                                                     <td>
-
-                                                        <a
-                                                            href="{{ route('admin.productFeatures.edit', $productFeatures->id) }}">
-                                                            <button type="button" class="btn btn-warning btn-block "><i
-                                                                    class="fa uil-edit"></i> </button>
-                                                        </a>
-
-                                                        <button type="button" class="btn btn-danger btn-block btn-delete"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#delete{{ $productFeatures->id }}">
-                                                            <i class="fa uil-trash"></i>
-                                                        </button>
+                                                        @can('edit productFeatures')
+                                                            <a
+                                                                href="{{ route('admin.productFeatures.edit', $productFeatures->id) }}">
+                                                                <button type="button" class="btn btn-warning btn-block "><i
+                                                                        class="fa uil-edit"></i> </button>
+                                                            </a>
+                                                        @endcan
+                                                        @can('delete productFeatures')
+                                                            <button type="button" class="btn btn-danger btn-block btn-delete"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#delete{{ $productFeatures->id }}">
+                                                                <i class="fa uil-trash"></i>
+                                                            </button>
+                                                        @endcan
 
                                                     </td>
                                                 </tr>
 
                                                 <!-- Delete Modal -->
-                                                <div class="modal fade" id="delete{{ $productFeatures->id }}" tabindex="-1"
-                                                    role="dialog" aria-hidden="true">
+                                                <div class="modal fade" id="delete{{ $productFeatures->id }}"
+                                                    tabindex="-1" role="dialog" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered">
                                                         <div class="modal-content">
                                                             <div class="modal-header">

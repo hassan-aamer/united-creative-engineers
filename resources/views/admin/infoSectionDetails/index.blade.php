@@ -13,8 +13,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            <a class="btn btn-success"
-                                href="{{ route('admin.infoSectionDetails.create') }}">{{ __('attributes.create') }}</a>
+                            @can('create infoSectionsDetails')
+                                <a class="btn btn-success"
+                                    href="{{ route('admin.infoSectionDetails.create') }}">{{ __('attributes.create') }}</a>
+                            @endcan
                         </div>
                     </div>
                 </div>
@@ -45,40 +47,45 @@
                                                 <tr id="row-{{ $infoSectionDetails->id ?? '' }}">
                                                     <td>{{ $loop->iteration ?? '' }}</td>
                                                     <td>{{ $infoSectionDetails->position ?? '' }}</td>
-                                                    <td>{{ shortenText($infoSectionDetails->services->title ?? '',10) }}</td>
-                                                    <td>{{ shortenText($infoSectionDetails->title ?? '',10) }}</td>
-                                                    <td>{{ shortenText($infoSectionDetails->description ?? '',10) }}</td>
-                                                    <td>{{ shortenText($infoSectionDetails->content ?? '',10) }}</td>
+                                                    <td>{{ shortenText($infoSectionDetails->services->title ?? '', 10) }}
+                                                    </td>
+                                                    <td>{{ shortenText($infoSectionDetails->title ?? '', 10) }}</td>
+                                                    <td>{{ shortenText($infoSectionDetails->description ?? '', 10) }}</td>
+                                                    <td>{{ shortenText($infoSectionDetails->content ?? '', 10) }}</td>
                                                     <td>
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" name="status"
-                                                                id="active-{{ $infoSectionDetails->id }}"
-                                                                @if ($infoSectionDetails->active == 1) checked @endif
-                                                                data-id="{{ $infoSectionDetails->id }}">
-                                                            <label class="form-check-label"
-                                                                for="active-{{ $infoSectionDetails->id }}"></label>
-                                                        </div>
+                                                        @can('active infoSectionsDetails')
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" name="status"
+                                                                    id="active-{{ $infoSectionDetails->id }}"
+                                                                    @if ($infoSectionDetails->active == 1) checked @endif
+                                                                    data-id="{{ $infoSectionDetails->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="active-{{ $infoSectionDetails->id }}"></label>
+                                                            </div>
+                                                        @endcan
                                                     </td>
                                                     <td>
-
-                                                        <a
-                                                            href="{{ route('admin.infoSectionDetails.edit', $infoSectionDetails->id) }}">
-                                                            <button type="button" class="btn btn-warning btn-block "><i
-                                                                    class="fa uil-edit"></i> </button>
-                                                        </a>
-
-                                                        <button type="button" class="btn btn-danger btn-block btn-delete"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#delete{{ $infoSectionDetails->id }}">
-                                                            <i class="fa uil-trash"></i>
-                                                        </button>
+                                                        @can('edit infoSectionsDetails')
+                                                            <a
+                                                                href="{{ route('admin.infoSectionDetails.edit', $infoSectionDetails->id) }}">
+                                                                <button type="button" class="btn btn-warning btn-block "><i
+                                                                        class="fa uil-edit"></i> </button>
+                                                            </a>
+                                                        @endcan
+                                                        @can('delete infoSectionsDetails')
+                                                            <button type="button" class="btn btn-danger btn-block btn-delete"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#delete{{ $infoSectionDetails->id }}">
+                                                                <i class="fa uil-trash"></i>
+                                                            </button>
+                                                        @endcan
 
                                                     </td>
                                                 </tr>
 
                                                 <!-- Delete Modal -->
-                                                <div class="modal fade" id="delete{{ $infoSectionDetails->id }}" tabindex="-1"
-                                                    role="dialog" aria-hidden="true">
+                                                <div class="modal fade" id="delete{{ $infoSectionDetails->id }}"
+                                                    tabindex="-1" role="dialog" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered">
                                                         <div class="modal-content">
                                                             <div class="modal-header">

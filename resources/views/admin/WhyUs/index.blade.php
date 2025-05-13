@@ -13,8 +13,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
+                            @can('create whyUs')
                             <a class="btn btn-success"
                                 href="{{ route('admin.WhyUs.create') }}">{{ __('attributes.create') }}</a>
+                            @endcan
                         </div>
                     </div>
                 </div>
@@ -46,9 +48,10 @@
                                                     <td><img src="{{ App\Helpers\Image::getMediaUrl($WhyUs, 'WhyUs') }}"
                                                             alt="WhyUs" width="100"></td>
                                                     <td>{{ $WhyUs->position ?? '' }}</td>
-                                                    <td>{{ shortenText($WhyUs->title ?? '',10) }}</td>
-                                                    <td>{{ shortenText($WhyUs->description ?? '',10) }}</td>
+                                                    <td>{{ shortenText($WhyUs->title ?? '', 10) }}</td>
+                                                    <td>{{ shortenText($WhyUs->description ?? '', 10) }}</td>
                                                     <td>
+                                                        @can('active whyUs')
                                                         <div class="form-check form-switch">
                                                             <input class="form-check-input" type="checkbox" name="status"
                                                                 id="active-{{ $WhyUs->id }}"
@@ -57,19 +60,22 @@
                                                             <label class="form-check-label"
                                                                 for="active-{{ $WhyUs->id }}"></label>
                                                         </div>
+                                                        @endcan
                                                     </td>
                                                     <td>
-
+                                                        @can('edit whyUs')
                                                         <a href="{{ route('admin.WhyUs.edit', $WhyUs->id) }}">
                                                             <button type="button" class="btn btn-warning btn-block "><i
                                                                     class="fa uil-edit"></i> </button>
                                                         </a>
-
+                                                        @endcan
+                                                        @can('delete whyUs')
                                                         <button type="button" class="btn btn-danger btn-block btn-delete"
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#delete{{ $WhyUs->id }}">
                                                             <i class="fa uil-trash"></i>
                                                         </button>
+                                                        @endcan
 
                                                     </td>
                                                 </tr>

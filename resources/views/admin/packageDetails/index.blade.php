@@ -13,8 +13,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
+                            @can('create packageDetails')
                             <a class="btn btn-success"
                                 href="{{ route('admin.PackageDetails.create') }}">{{ __('attributes.create') }}</a>
+                            @endcan
                         </div>
                     </div>
                 </div>
@@ -42,8 +44,9 @@
                                                 <tr id="row-{{ $PackageDetails->id ?? '' }}">
                                                     <td>{{ $loop->iteration ?? '' }}</td>
                                                     <td>{{ $PackageDetails->position ?? '' }}</td>
-                                                    <td>{{ shortenText($PackageDetails->title ?? '',10) }}</td>
+                                                    <td>{{ shortenText($PackageDetails->title ?? '', 10) }}</td>
                                                     <td>
+                                                        @can('active packageDetails')
                                                         <div class="form-check form-switch">
                                                             <input class="form-check-input" type="checkbox" name="status"
                                                                 id="active-{{ $PackageDetails->id }}"
@@ -52,20 +55,23 @@
                                                             <label class="form-check-label"
                                                                 for="active-{{ $PackageDetails->id }}"></label>
                                                         </div>
+                                                        @endcan
                                                     </td>
                                                     <td>
-
+                                                        @can('edit packageDetails')
                                                         <a
                                                             href="{{ route('admin.PackageDetails.edit', $PackageDetails->id) }}">
                                                             <button type="button" class="btn btn-warning btn-block "><i
                                                                     class="fa uil-edit"></i> </button>
                                                         </a>
-
+                                                        @endcan
+                                                        @can('delete packageDetails')
                                                         <button type="button" class="btn btn-danger btn-block btn-delete"
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#delete{{ $PackageDetails->id }}">
                                                             <i class="fa uil-trash"></i>
                                                         </button>
+                                                        @endcan
 
                                                     </td>
                                                 </tr>

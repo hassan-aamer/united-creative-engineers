@@ -13,8 +13,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            <a class="btn btn-success"
-                                href="{{ route('admin.infoSections.create') }}">{{ __('attributes.create') }}</a>
+                            @can('create infoSections')
+                                <a class="btn btn-success"
+                                    href="{{ route('admin.infoSections.create') }}">{{ __('attributes.create') }}</a>
+                            @endcan
                         </div>
                     </div>
                 </div>
@@ -45,30 +47,34 @@
                                                     <td><img src="{{ App\Helpers\Image::getMediaUrl($infoSections, 'infoSections') }}"
                                                             alt="infoSections" width="100"></td>
                                                     <td>{{ $infoSections->position ?? '' }}</td>
-                                                    <td>{{ shortenText($infoSections->title ?? '',10) }}</td>
+                                                    <td>{{ shortenText($infoSections->title ?? '', 10) }}</td>
                                                     <td>
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" name="status"
-                                                                id="active-{{ $infoSections->id }}"
-                                                                @if ($infoSections->active == 1) checked @endif
-                                                                data-id="{{ $infoSections->id }}">
-                                                            <label class="form-check-label"
-                                                                for="active-{{ $infoSections->id }}"></label>
-                                                        </div>
+                                                        @can('active infoSections')
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" name="status"
+                                                                    id="active-{{ $infoSections->id }}"
+                                                                    @if ($infoSections->active == 1) checked @endif
+                                                                    data-id="{{ $infoSections->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="active-{{ $infoSections->id }}"></label>
+                                                            </div>
+                                                        @endcan
                                                     </td>
                                                     <td>
-
-                                                        <a
-                                                            href="{{ route('admin.infoSections.edit', $infoSections->id) }}">
-                                                            <button type="button" class="btn btn-warning btn-block "><i
-                                                                    class="fa uil-edit"></i> </button>
-                                                        </a>
-
-                                                        <button type="button" class="btn btn-danger btn-block btn-delete"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#delete{{ $infoSections->id }}">
-                                                            <i class="fa uil-trash"></i>
-                                                        </button>
+                                                        @can('edit infoSections')
+                                                            <a
+                                                                href="{{ route('admin.infoSections.edit', $infoSections->id) }}">
+                                                                <button type="button" class="btn btn-warning btn-block "><i
+                                                                        class="fa uil-edit"></i> </button>
+                                                            </a>
+                                                        @endcan
+                                                        @can('delete infoSections')
+                                                            <button type="button" class="btn btn-danger btn-block btn-delete"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#delete{{ $infoSections->id }}">
+                                                                <i class="fa uil-trash"></i>
+                                                            </button>
+                                                        @endcan
 
                                                     </td>
                                                 </tr>

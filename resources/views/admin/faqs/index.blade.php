@@ -13,8 +13,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            <a class="btn btn-success"
-                                href="{{ route('admin.faqs.create') }}">{{ __('attributes.create') }}</a>
+                            @can('create faqs')
+                                <a class="btn btn-success"
+                                    href="{{ route('admin.faqs.create') }}">{{ __('attributes.create') }}</a>
+                            @endcan
                         </div>
                     </div>
                 </div>
@@ -43,31 +45,34 @@
                                                 <tr id="row-{{ $faqs->id ?? '' }}">
                                                     <td>{{ $loop->iteration ?? '' }}</td>
                                                     <td>{{ $faqs->position ?? '' }}</td>
-                                                    <td>{{ shortenText($faqs->question ?? '',10) }}</td>
-                                                    <td>{{ shortenText($faqs->answer ?? '',10) }}</td>
+                                                    <td>{{ shortenText($faqs->question ?? '', 10) }}</td>
+                                                    <td>{{ shortenText($faqs->answer ?? '', 10) }}</td>
                                                     <td>
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" name="status"
-                                                                id="active-{{ $faqs->id }}"
-                                                                @if ($faqs->active == 1) checked @endif
-                                                                data-id="{{ $faqs->id }}">
-                                                            <label class="form-check-label"
-                                                                for="active-{{ $faqs->id }}"></label>
-                                                        </div>
+                                                        @can('active faqs')
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" name="status"
+                                                                    id="active-{{ $faqs->id }}"
+                                                                    @if ($faqs->active == 1) checked @endif
+                                                                    data-id="{{ $faqs->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="active-{{ $faqs->id }}"></label>
+                                                            </div>
+                                                        @endcan
                                                     </td>
                                                     <td>
-
-                                                        <a
-                                                            href="{{ route('admin.faqs.edit', $faqs->id) }}">
-                                                            <button type="button" class="btn btn-warning btn-block "><i
-                                                                    class="fa uil-edit"></i> </button>
-                                                        </a>
-
-                                                        <button type="button" class="btn btn-danger btn-block btn-delete"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#delete{{ $faqs->id }}">
-                                                            <i class="fa uil-trash"></i>
-                                                        </button>
+                                                        @can('edit faqs')
+                                                            <a href="{{ route('admin.faqs.edit', $faqs->id) }}">
+                                                                <button type="button" class="btn btn-warning btn-block "><i
+                                                                        class="fa uil-edit"></i> </button>
+                                                            </a>
+                                                        @endcan
+                                                        @can('delete faqs')
+                                                            <button type="button" class="btn btn-danger btn-block btn-delete"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#delete{{ $faqs->id }}">
+                                                                <i class="fa uil-trash"></i>
+                                                            </button>
+                                                        @endcan
 
                                                     </td>
                                                 </tr>

@@ -13,8 +13,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            <a class="btn btn-success"
-                                href="{{ route('admin.sliders.create') }}">{{ __('attributes.create') }}</a>
+                            @can('create sliders')
+                                <a class="btn btn-success"
+                                    href="{{ route('admin.sliders.create') }}">{{ __('attributes.create') }}</a>
+                            @endcan
                         </div>
                     </div>
                 </div>
@@ -45,29 +47,33 @@
                                                     <td><img src="{{ App\Helpers\Image::getMediaUrl($sliders, 'sliders') }}"
                                                             alt="sliders" width="100"></td>
                                                     <td>{{ $sliders->position ?? '' }}</td>
-                                                    <td>{{ shortenText($sliders->title ?? '',10) }}</td>
+                                                    <td>{{ shortenText($sliders->title ?? '', 10) }}</td>
                                                     <td>
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" name="status"
-                                                                id="active-{{ $sliders->id }}"
-                                                                @if ($sliders->active == 1) checked @endif
-                                                                data-id="{{ $sliders->id }}">
-                                                            <label class="form-check-label"
-                                                                for="active-{{ $sliders->id }}"></label>
-                                                        </div>
+                                                        @can('active sliders')
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" name="status"
+                                                                    id="active-{{ $sliders->id }}"
+                                                                    @if ($sliders->active == 1) checked @endif
+                                                                    data-id="{{ $sliders->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="active-{{ $sliders->id }}"></label>
+                                                            </div>
+                                                        @endcan
                                                     </td>
                                                     <td>
-
-                                                        <a href="{{ route('admin.sliders.edit', $sliders->id) }}">
-                                                            <button type="button" class="btn btn-warning btn-block "><i
-                                                                    class="fa uil-edit"></i> </button>
-                                                        </a>
-
-                                                        <button type="button" class="btn btn-danger btn-block btn-delete"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#delete{{ $sliders->id }}">
-                                                            <i class="fa uil-trash"></i>
-                                                        </button>
+                                                        @can('edit sliders')
+                                                            <a href="{{ route('admin.sliders.edit', $sliders->id) }}">
+                                                                <button type="button" class="btn btn-warning btn-block "><i
+                                                                        class="fa uil-edit"></i> </button>
+                                                            </a>
+                                                        @endcan
+                                                        @can('delete sliders')
+                                                            <button type="button" class="btn btn-danger btn-block btn-delete"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#delete{{ $sliders->id }}">
+                                                                <i class="fa uil-trash"></i>
+                                                            </button>
+                                                        @endcan
 
                                                     </td>
                                                 </tr>

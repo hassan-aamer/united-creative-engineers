@@ -13,8 +13,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            <a class="btn btn-success"
-                                href="{{ route('admin.users.create') }}">{{ __('attributes.create') }}</a>
+                            @can('create users')
+                                <a class="btn btn-success"
+                                    href="{{ route('admin.users.create') }}">{{ __('attributes.create') }}</a>
+                            @endcan
                         </div>
                     </div>
                 </div>
@@ -44,31 +46,34 @@
                                                     <td>{{ $loop->iteration ?? '' }}</td>
                                                     <td><img src="{{ App\Helpers\Image::getMediaUrl($users, 'users') }}"
                                                             alt="users" width="100"></td>
-                                                            <td>{{ shortenText($users->name ?? '',10) }}</td>
-                                                            <td>{{ $users->email ?? '' }}</td>
+                                                    <td>{{ shortenText($users->name ?? '', 10) }}</td>
+                                                    <td>{{ $users->email ?? '' }}</td>
                                                     <td>
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" name="status"
-                                                                id="active-{{ $users->id }}"
-                                                                @if ($users->active == 1) checked @endif
-                                                                data-id="{{ $users->id }}">
-                                                            <label class="form-check-label"
-                                                                for="active-{{ $users->id }}"></label>
-                                                        </div>
+                                                        @can('active users')
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" name="status"
+                                                                    id="active-{{ $users->id }}"
+                                                                    @if ($users->active == 1) checked @endif
+                                                                    data-id="{{ $users->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="active-{{ $users->id }}"></label>
+                                                            </div>
+                                                        @endcan
                                                     </td>
                                                     <td>
-
-                                                        <a
-                                                            href="{{ route('admin.users.edit', $users->id) }}">
-                                                            <button type="button" class="btn btn-warning btn-block "><i
-                                                                    class="fa uil-edit"></i> </button>
-                                                        </a>
-
-                                                        <button type="button" class="btn btn-danger btn-block btn-delete"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#delete{{ $users->id }}">
-                                                            <i class="fa uil-trash"></i>
-                                                        </button>
+                                                        @can('edit users')
+                                                            <a href="{{ route('admin.users.edit', $users->id) }}">
+                                                                <button type="button" class="btn btn-warning btn-block "><i
+                                                                        class="fa uil-edit"></i> </button>
+                                                            </a>
+                                                        @endcan
+                                                        @can('delete users')
+                                                            <button type="button" class="btn btn-danger btn-block btn-delete"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#delete{{ $users->id }}">
+                                                                <i class="fa uil-trash"></i>
+                                                            </button>
+                                                        @endcan
 
                                                     </td>
                                                 </tr>

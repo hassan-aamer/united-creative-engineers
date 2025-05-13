@@ -13,8 +13,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            <a class="btn btn-success"
-                                href="{{ route('admin.features.create') }}">{{ __('attributes.create') }}</a>
+                            @can('create features')
+                                <a class="btn btn-success"
+                                    href="{{ route('admin.features.create') }}">{{ __('attributes.create') }}</a>
+                            @endcan
                         </div>
                     </div>
                 </div>
@@ -46,31 +48,34 @@
                                                     <td><img src="{{ App\Helpers\Image::getMediaUrl($features, 'features') }}"
                                                             alt="features" width="100"></td>
                                                     <td>{{ $features->position ?? '' }}</td>
-                                                    <td>{{ shortenText($features->title ?? '',10) }}</td>
-                                                    <td>{{ shortenText($features->description ?? '',10) }}</td>
+                                                    <td>{{ shortenText($features->title ?? '', 10) }}</td>
+                                                    <td>{{ shortenText($features->description ?? '', 10) }}</td>
                                                     <td>
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" name="status"
-                                                                id="active-{{ $features->id }}"
-                                                                @if ($features->active == 1) checked @endif
-                                                                data-id="{{ $features->id }}">
-                                                            <label class="form-check-label"
-                                                                for="active-{{ $features->id }}"></label>
-                                                        </div>
+                                                        @can('active features')
+                                                            <div class="form-check form-switch">
+                                                                <input class="form-check-input" type="checkbox" name="status"
+                                                                    id="active-{{ $features->id }}"
+                                                                    @if ($features->active == 1) checked @endif
+                                                                    data-id="{{ $features->id }}">
+                                                                <label class="form-check-label"
+                                                                    for="active-{{ $features->id }}"></label>
+                                                            </div>
+                                                        @endcan
                                                     </td>
                                                     <td>
-
-                                                        <a
-                                                            href="{{ route('admin.features.edit', $features->id) }}">
-                                                            <button type="button" class="btn btn-warning btn-block "><i
-                                                                    class="fa uil-edit"></i> </button>
-                                                        </a>
-
-                                                        <button type="button" class="btn btn-danger btn-block btn-delete"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#delete{{ $features->id }}">
-                                                            <i class="fa uil-trash"></i>
-                                                        </button>
+                                                        @can('edit features')
+                                                            <a href="{{ route('admin.features.edit', $features->id) }}">
+                                                                <button type="button" class="btn btn-warning btn-block "><i
+                                                                        class="fa uil-edit"></i> </button>
+                                                            </a>
+                                                        @endcan
+                                                        @can('delete features')
+                                                            <button type="button" class="btn btn-danger btn-block btn-delete"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#delete{{ $features->id }}">
+                                                                <i class="fa uil-trash"></i>
+                                                            </button>
+                                                        @endcan
 
                                                     </td>
                                                 </tr>

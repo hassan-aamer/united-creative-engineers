@@ -13,8 +13,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
+                            @can('create infoOptions')
                             <a class="btn btn-success"
                                 href="{{ route('admin.infoOption.create') }}">{{ __('attributes.create') }}</a>
+                            @endcan
                         </div>
                     </div>
                 </div>
@@ -45,8 +47,9 @@
                                                     <td><img src="{{ App\Helpers\Image::getMediaUrl($infoOption, 'infoOptions') }}"
                                                             alt="infoOption" width="100"></td>
                                                     <td>{{ $infoOption->position ?? '' }}</td>
-                                                    <td>{{ shortenText($infoOption->title ?? '',10) }}</td>
+                                                    <td>{{ shortenText($infoOption->title ?? '', 10) }}</td>
                                                     <td>
+                                                        @can('active infoOptions')
                                                         <div class="form-check form-switch">
                                                             <input class="form-check-input" type="checkbox" name="status"
                                                                 id="active-{{ $infoOption->id }}"
@@ -55,20 +58,22 @@
                                                             <label class="form-check-label"
                                                                 for="active-{{ $infoOption->id }}"></label>
                                                         </div>
+                                                        @endcan
                                                     </td>
                                                     <td>
-
-                                                        <a
-                                                            href="{{ route('admin.infoOption.edit', $infoOption->id) }}">
+                                                        @can('edit infoOptions')
+                                                        <a href="{{ route('admin.infoOption.edit', $infoOption->id) }}">
                                                             <button type="button" class="btn btn-warning btn-block "><i
                                                                     class="fa uil-edit"></i> </button>
                                                         </a>
-
+                                                        @endcan
+                                                        @can('delete infoOptions')
                                                         <button type="button" class="btn btn-danger btn-block btn-delete"
                                                             data-bs-toggle="modal"
                                                             data-bs-target="#delete{{ $infoOption->id }}">
                                                             <i class="fa uil-trash"></i>
                                                         </button>
+                                                        @endcan
 
                                                     </td>
                                                 </tr>
