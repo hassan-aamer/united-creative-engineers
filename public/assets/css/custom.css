@@ -1,0 +1,175 @@
+        /* Optional: Improve the default Bootstrap switch style */
+        .form-switch .form-check-input {
+            width: 2.5rem;
+            height: 1.5rem;
+            background-color: #e5e5e5;
+            border-radius: 1rem;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-switch .form-check-input:checked {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .form-switch .form-check-input:focus {
+            box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+        }
+
+        .form-switch .form-check-input::before {
+            content: '';
+            position: absolute;
+            width: 1.25rem;
+            height: 1.25rem;
+            background: white;
+            border-radius: 50%;
+            top: 0.125rem;
+            left: 0.125rem;
+            transition: transform 0.3s;
+        }
+
+        .form-switch .form-check-input:checked::before {
+            transform: translateX(1rem);
+        }
+
+        #image-preview {
+            height: 400px;
+            width: 200px;
+        }
+
+        .custom-img-upload__container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .custom-img-upload__dropzone {
+            border: 2px dashed #d0d5dd;
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background-color: #f9fafb;
+            position: relative;
+        }
+
+        .custom-img-upload__dropzone:hover {
+            border-color: #6172f3;
+            background-color: #f5f7ff;
+        }
+
+        .custom-img-upload__icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 12px;
+            color: #6172f3;
+        }
+
+        .custom-img-upload__text {
+            color: #4b5563;
+            font-size: 14px;
+            margin-bottom: 4px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .custom-img-upload__hint {
+            color: #9ca3af;
+            font-size: 12px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .custom-img-upload__input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .custom-img-upload__preview {
+            margin-top: 16px;
+            display: none;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 16/9;
+        }
+
+        .custom-img-upload__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .custom-img-upload__overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0);
+            transition: background-color 0.2s ease;
+        }
+
+        .custom-img-upload__preview:hover .custom-img-upload__overlay {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-img-upload__delete {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 28px;
+            height: 28px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-img-upload__preview:hover .custom-img-upload__delete {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .custom-img-upload__filename {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            font-size: 12px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            opacity: 0;
+            transform: translateY(5px);
+            transition: all 0.2s ease;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .custom-img-upload__preview:hover .custom-img-upload__filename {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }

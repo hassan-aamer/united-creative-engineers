@@ -1,0 +1,37 @@
+<?php
+
+return [
+
+
+    'dashboard' => "لوحة التحكم",
+    'otpSendSuccessfully' => "تم ارسال كود التحقق",
+    'RegisterSuccessfully' => "تم السجيل بنجاح",
+    'LoginSuccessfully' => "تم تسجيل الدخول بنجاح",
+    'EmailAndPasswordDoNotMatchOurRecords' => "البريد الإلكتروني او كلمة المرور لا تتطابق سجلاتنا",
+    'LogoutSuccessfully' => "تم تسجيل الخروج بنجاح",
+    'details' => "تفاصيل",
+    'canNotFetch' => "لا يمكن جلب البيانات",
+    'userNotFound' => "المستخدم غير موجود",
+    'updatedSuccessfully' => "تم التحديث بنجاح",
+    'deletedSuccessfully' => "تم الحذف بنجاح",
+    'successfullySentCode' => "تم ارسال كود التحقق بنجاح",
+    'PasswordResetSuccessfully' => "تمت إعادة تعيين كلمة المرور بنجاح",
+    'verificationCodeSuccessfully' => "كود التحقق ناجح",
+    'unauthorized' => "غير مصرح لك",
+    'InvalidEmailAddressPleaseTryAgain' => "عنوان بريد إلكتروني غير صالح يرجى المحاولة مرة أخرى",
+    'createdSuccessfully' => "تم الإنشاء بنجاح",
+    'TheVerificationCodeIsNotVerified' => "لم يتم التحقق من البريد",
+    'FileUploadedSuccessfully' => "تم تحميل الصورة بنجاح",
+    'favorites' => "المفضلات",
+    'shoppingCart' => "عربة التسوق",
+    'UserAddress' => "عناوين المستخدم",
+    'order' => "الطلب",
+    'orderProduct' => "منتج الطلب",
+    'coupon' => "كوبون",
+    'product' => "منتج",
+    'category' => "الفئة",
+    'orders' => "الطلابات",
+    'communities' => "المجتمعات",
+    'comments' => "التعليقات",
+    'likes' => "الإعجابات",
+];

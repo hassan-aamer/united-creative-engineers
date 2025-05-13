@@ -1,0 +1,46 @@
+@extends('admin.layouts.master')
+@section('title', __('attributes.products'))
+@section('content')
+    <div class="content-page">
+        <div class="content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title">{{ __('attributes.products') }}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form method="POST"
+                                action="{{ isset($result) && $result->id ? route('admin.products.update', $result->id) : route('admin.products.store') }}"
+                                class="parsley-examples" enctype="multipart/form-data">
+                                @csrf
+                                @if (isset($result) && $result->id)
+                                    @method('PUT')
+                                @endif
+                                <div class="row">
+                                    @include('admin.components.title')
+                                    @include('admin.components.description')
+                                    @include('admin.components.content')
+                                    @include('admin.components.select_features')
+                                    @include('admin.components.select_services')
+                                    @include('admin.components.select_additional_services')
+                                    @include('admin.components.position')
+                                    @include('admin.components.ImageUpload', [
+                                        'result' => $result ?? null,
+                                        'collection' => 'products',
+                                    ])
+                                    @include('admin.components.active')
+                                    @include('admin.components.submit')
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

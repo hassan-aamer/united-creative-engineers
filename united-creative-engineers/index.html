@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinishCo - شركة تشطيبات</title>
+    <meta name="description" content="شركة FinishCo المتخصصة في التشطيبات والديكورات الداخلية" />
+    <meta name="author" content="FinishCo" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="FinishCo - شركة تشطيبات" />
+    <meta property="og:description" content="شركة FinishCo المتخصصة في التشطيبات والديكورات الداخلية" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@finishco" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top transition" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#">FinishCo</a>
+        <div class="d-flex align-items-center order-lg-last">
+          <button id="languageSwitcher" class="btn btn-outline-light me-2">English</button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#services" data-i18n="services">الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#products" data-i18n="products">المنتجات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about" data-i18n="about">من نحن</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact" data-i18n="contact">تواصل معنا</a>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link btn btn-primary text-white px-3" href="#contact" data-i18n="callUs">اتصل بنا</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section d-flex align-items-center">
+      <div class="overlay"></div>
+      <div class="container position-relative z-index-1">
+        <div class="row">
+          <div class="col-lg-7 ms-auto text-end">
+            <h1 class="display-4 fw-bold text-white mb-4">
+              <span data-i18n="bestFinishingServices">أفضل خدمات التشطيبات</span>
+              <span class="d-block text-teal" data-i18n="forHomeOrBusiness">لمنزلك أو شركتك</span>
+            </h1>
+            <p class="text-white opacity-90 mb-5 lead" data-i18n="qualityDescription">
+              نقدم خدمات تشطيب متكاملة بأعلى جودة وأفضل الأسعار لتحويل رؤيتك إلى واقع
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-end">
+              <a href="#contact" class="btn btn-teal px-4 py-2 d-inline-flex align-items-center justify-content-center gap-2">
+                <span data-i18n="contactUs">تواصل معنا</span>
+                <i data-lucide="arrow-right" class="rtl-flip"></i>
+              </a>
+              <a href="#services" class="btn btn-outline-light px-4 py-2" data-i18n="exploreServices">استكشف خدماتنا</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-down-arrow">
+        <a href="#services">
+          <i data-lucide="chevron-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-white">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-3" data-i18n="servicesTitle">خدماتنا</h2>
+          <div class="separator mx-auto"></div>
+          <p class="mt-4 text-muted mx-auto" style="max-width: 700px;" data-i18n="servicesDescription">
+            نقدم مجموعة متكاملة من خدمات التشطيب عالية الجودة لتلبية احتياجاتك المختلفة
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Service 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 service-card text-center p-4 border">
+              <div class="icon-wrapper mx-auto mb-4">
+                <i data-lucide="home"></i>
+              </div>
+              <h3 class="h4 mb-3" data-i18n="homeFinishing">تشطيبات المنازل</h3>
+              <p class="text-muted" data-i18n="homeFinishingDesc">
+                نقدم خدمات تشطيب متكاملة للمنازل والشقق بأعلى جودة، من البداية حتى التسليم
+              </p>
+              <div class="mt-4">
+                <a href="#contact" class="text-teal text-decoration-none" data-i18n="requestService">اطلب الخدمة</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 service-card text-center p-4 border">
+              <div class="icon-wrapper mx-auto mb-4">
+                <i data-lucide="building"></i>
+              </div>
+              <h3 class="h4 mb-3" data-i18n="commercialFinishing">تشطيبات تجارية</h3>
+              <p class="text-muted" data-i18n="commercialFinishingDesc">
+                خدمات تشطيب احترافية للمكاتب والمتاجر والمساحات التجارية بتصميمات عصرية
+              </p>
+              <div class="mt-4">
+                <a href="#contact" class="text-teal text-decoration-none" data-i18n="requestService">اطلب الخدمة</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 service-card text-center p-4 border">
+              <div class="icon-wrapper mx-auto mb-4">
+                <i data-lucide="wrench"></i>
+              </div>
+              <h3 class="h4 mb-3" data-i18n="maintenanceServices">خدمات الصيانة</h3>
+              <p class="text-muted" data-i18n="maintenanceServicesDesc">
+                صيانة دورية وطارئة لجميع أعمال التشطيبات مع ضمان الجودة والسرعة في التنفيذ
+              </p>
+              <div class="mt-4">
+                <a href="#contact" class="text-teal text-decoration-none" data-i18n="requestService">اطلب الخدمة</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="#contact" class="btn btn-teal btn-lg" data-i18n="getFreeQuote">احصل على عرض سعر مجاني</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5 bg-light">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-3" data-i18n="productsTitle">منتجاتنا</h2>
+          <div class="separator mx-auto"></div>
+          <p class="mt-4 text-muted mx-auto" style="max-width: 700px;" data-i18n="productsDescription">
+            نقدم مجموعة متنوعة من المنتجات عالية الجودة لتشطيب منزلك أو شركتك
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Product 1 -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 product-card border">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1609762751666-c45e2268ae2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29vZGVuJTIwZmxvb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Wooden Floors" class="card-img-top">
+                <span class="badge bg-teal position-absolute top-0 end-0 m-3" data-i18n="floors">أرضيات</span>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="h5 mb-3" data-i18n="woodenFloors">أرضيات خشبية</h3>
+                <a href="#contact" class="text-teal text-decoration-none" data-i18n="inquireAboutProduct">استفسر عن المنتج</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 product-card border">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFpbnQlMjB3YWxsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Modern Paints" class="card-img-top">
+                <span class="badge bg-teal position-absolute top-0 end-0 m-3" data-i18n="paints">دهانات</span>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="h5 mb-3" data-i18n="modernPaints">دهانات حديثة</h3>
+                <a href="#contact" class="text-teal text-decoration-none" data-i18n="inquireAboutProduct">استفسر عن المنتج</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 product-card border">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1531835551805-16d864c8d311?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2VpbGluZyUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Gypsum Decors" class="card-img-top">
+                <span class="badge bg-teal position-absolute top-0 end-0 m-3" data-i18n="decors">ديكورات</span>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="h5 mb-3" data-i18n="gypsumDecors">ديكورات جبسية</h3>
+                <a href="#contact" class="text-teal text-decoration-none" data-i18n="inquireAboutProduct">استفسر عن المنتج</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="col-sm-6 col-lg-3">
+            <div class="card h-100 product-card border">
+              <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1508025690966-2a9a1957da31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29vZGVuJTIwZG9vcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Wooden Doors" class="card-img-top">
+                <span class="badge bg-teal position-absolute top-0 end-0 m-3" data-i18n="doors">أبواب</span>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="h5 mb-3" data-i18n="woodenDoors">أبواب خشبية</h3>
+                <a href="#contact" class="text-teal text-decoration-none" data-i18n="inquireAboutProduct">استفسر عن المنتج</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="#contact" class="btn btn-outline-teal btn-lg" data-i18n="viewAllProducts">استعرض جميع المنتجات</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-white">
+      <div class="container py-5">
+        <div class="row gy-5">
+          <div class="col-lg-6 order-lg-2">
+            <h2 class="fw-bold mb-3 text-lg-end" data-i18n="aboutTitle">من نحن</h2>
+            <div class="separator ms-auto mb-4"></div>
+            
+            <p class="text-lg-end text-muted mb-4" data-i18n="aboutDesc1">
+              شركة متخصصة في مجال التشطيبات والديكورات الداخلية منذ أكثر من 10 سنوات. نعمل على تقديم أفضل الحلول المتكاملة للتصميم والتنفيذ لمشاريع المنازل والشركات.
+            </p>
+            
+            <p class="text-lg-end text-muted mb-4" data-i18n="aboutDesc2">
+              نعتمد على فريق متكامل من المهندسين والفنيين ذوي الخبرة العالية، ونستخدم أحدث التقنيات والمواد في تنفيذ مشاريعنا لضمان الجودة والدقة في العمل.
+            </p>
+            
+            <div class="d-flex flex-column gap-3 feature-list">
+              <div class="d-flex align-items-center justify-content-end gap-3">
+                <span class="fw-medium" data-i18n="highQuality">الجودة العالية</span>
+                <div class="feature-icon">
+                  <i data-lucide="info"></i>
+                </div>
+              </div>
+              
+              <div class="d-flex align-items-center justify-content-end gap-3">
+                <span class="fw-medium" data-i18n="professionalTeam">فريق محترف</span>
+                <div class="feature-icon">
+                  <i data-lucide="users"></i>
+                </div>
+              </div>
+              
+              <div class="d-flex align-items-center justify-content-end gap-3">
+                <span class="fw-medium" data-i18n="wideExperience">خبرة واسعة</span>
+                <div class="feature-icon">
+                  <i data-lucide="briefcase"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6 order-lg-1">
+            <div class="row g-4">
+              <div class="col-6">
+                <div class="stat-card bg-cream p-4 text-center rounded">
+                  <h3 class="h3 text-teal fw-bold mb-2">+500</h3>
+                  <p class="text-muted mb-0" data-i18n="completedProjects">مشروع منجز</p>
+                </div>
+              </div>
+              
+              <div class="col-6">
+                <div class="stat-card bg-cream p-4 text-center rounded">
+                  <h3 class="h3 text-teal fw-bold mb-2">+10</h3>
+                  <p class="text-muted mb-0" data-i18n="yearsExperience">سنوات خبرة</p>
+                </div>
+              </div>
+              
+              <div class="col-6">
+                <div class="stat-card bg-cream p-4 text-center rounded">
+                  <h3 class="h3 text-teal fw-bold mb-2">+50</h3>
+                  <p class="text-muted mb-0" data-i18n="engineers">مهندس وفني</p>
+                </div>
+              </div>
+              
+              <div class="col-6">
+                <div class="stat-card bg-cream p-4 text-center rounded">
+                  <h3 class="h3 text-teal fw-bold mb-2">+300</h3>
+                  <p class="text-muted mb-0" data-i18n="happyClients">عميل سعيد</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-3" data-i18n="contactTitle">تواصل معنا</h2>
+          <div class="separator mx-auto"></div>
+          <p class="mt-4 text-muted mx-auto" style="max-width: 700px;" data-i18n="contactDesc">
+            نحن هنا للإجابة على استفساراتك وتقديم المساعدة. يمكنك التواصل معنا من خلال النموذج أدناه
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="bg-white p-4 rounded shadow-sm mb-4">
+              <div class="d-flex gap-3 mb-4">
+                <div class="contact-icon">
+                  <i data-lucide="phone"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1" data-i18n="callUs">اتصل بنا</h5>
+                  <p class="mb-0 text-muted">+123 456 7890</p>
+                </div>
+              </div>
+              
+              <div class="d-flex gap-3 mb-4">
+                <div class="contact-icon">
+                  <i data-lucide="mail"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1" data-i18n="email">البريد الإلكتروني</h5>
+                  <p class="mb-0 text-muted">info@finishco.com</p>
+                </div>
+              </div>
+              
+              <div class="d-flex gap-3">
+                <div class="contact-icon">
+                  <i data-lucide="building"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1" data-i18n="address">العنوان</h5>
+                  <p class="mb-0 text-muted" data-i18n="streetAddress">شارع الرياض، المدينة، البلد</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white p-4 rounded shadow-sm">
+              <h5 class="mb-3" data-i18n="workingHours">ساعات العمل</h5>
+              <ul class="list-unstyled">
+                <li class="d-flex justify-content-between mb-2">
+                  <span class="text-muted" data-i18n="sunToThu">الأحد - الخميس</span>
+                  <span>9:00 AM - 5:00 PM</span>
+                </li>
+                <li class="d-flex justify-content-between mb-2">
+                  <span class="text-muted" data-i18n="friday">الجمعة</span>
+                  <span data-i18n="closed">مغلق</span>
+                </li>
+                <li class="d-flex justify-content-between">
+                  <span class="text-muted" data-i18n="saturday">السبت</span>
+                  <span>10:00 AM - 2:00 PM</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-lg-8">
+            <form class="bg-white p-4 p-lg-5 rounded shadow-sm" id="contactForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label" data-i18n="name">الاسم</label>
+                  <input type="text" class="form-control" id="name" data-i18n-placeholder="enterName" placeholder="أدخل اسمك">
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label" data-i18n="email">البريد الإلكتروني</label>
+                  <input type="email" class="form-control" id="email" data-i18n-placeholder="enterEmail" placeholder="أدخل بريدك الإلكتروني">
+                </div>
+                <div class="col-12">
+                  <label for="subject" class="form-label" data-i18n="subject">الموضوع</label>
+                  <input type="text" class="form-control" id="subject" data-i18n-placeholder="enterSubject" placeholder="أدخل موضوع الرسالة">
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label" data-i18n="message">الرسالة</label>
+                  <textarea class="form-control" id="message" rows="5" data-i18n-placeholder="enterMessage" placeholder="أدخل رسالتك هنا"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-teal w-100 py-3" data-i18n="sendMessage">إرسال الرسالة</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h4 class="mb-4 text-end">FinishCo</h4>
+            <p class="text-white-50 mb-4 text-end" data-i18n="footerAbout">
+              شركة متخصصة في مجال التشطيبات والديكورات الداخلية بخبرة أكثر من 10 سنوات في تنفيذ المشاريع المختلفة
+            </p>
+            <div class="d-flex gap-2 justify-content-end">
+              <a href="#" class="social-icon">
+                <i data-lucide="facebook"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i data-lucide="twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i data-lucide="instagram"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-lg-2">
+            <h5 class="mb-4 text-end" data-i18n="quickLinks">روابط سريعة</h5>
+            <ul class="list-unstyled text-end">
+              <li class="mb-2">
+                <a href="#services" class="footer-link" data-i18n="services">الخدمات</a>
+              </li>
+              <li class="mb-2">
+                <a href="#products" class="footer-link" data-i18n="products">المنتجات</a>
+              </li>
+              <li class="mb-2">
+                <a href="#about" class="footer-link" data-i18n="about">من نحن</a>
+              </li>
+              <li>
+                <a href="#contact" class="footer-link" data-i18n="contact">تواصل معنا</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="col-md-4 col-lg-2">
+            <h5 class="mb-4 text-end" data-i18n="ourServices">خدماتنا</h5>
+            <ul class="list-unstyled text-end">
+              <li class="mb-2">
+                <a href="#" class="footer-link" data-i18n="homeFinishing">تشطيبات المنازل</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="footer-link" data-i18n="commercialFinishing">تشطيبات تجارية</a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="footer-link" data-i18n="maintenanceServices">خدمات الصيانة</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link" data-i18n="interiorDesign">تصميم داخلي</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="col-md-4 col-lg-4">
+            <h5 class="mb-4 text-end" data-i18n="newsletter">النشرة الإخبارية</h5>
+            <p class="text-white-50 mb-3 text-end" data-i18n="newsletterDesc">
+              اشترك في نشرتنا الإخبارية للحصول على آخر الأخبار والعروض
+            </p>
+            <form class="d-flex flex-column flex-sm-row gap-2">
+              <input type="email" class="form-control text-end" data-i18n-placeholder="enterEmail" placeholder="البريد الإلكتروني">
+              <button type="submit" class="btn btn-teal" data-i18n="subscribe">اشتراك</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-top border-secondary py-4">
+        <div class="container">
+          <p class="text-center text-white-50 mb-0">
+            © <span id="currentYear">2025</span> FinishCo - <span data-i18n="allRightsReserved">جميع الحقوق محفوظة</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <!-- Custom Scripts -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
