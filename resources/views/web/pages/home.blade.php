@@ -36,8 +36,8 @@
 
             <a href="index.html" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-                <!-- <img src="web/img/logo-2.png" alt=""> -->
-                <h1 class="sitename">United creative engineers</h1>
+                 <img src="web/img/logo.png" alt=""> 
+                {{-- <h1 class="sitename">United creative engineers</h1> --}}
             </a>
 
             <nav id="navmenu" class="navmenu">
@@ -64,7 +64,7 @@
                 data-aos="fade-in">
 
             <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-                {{-- <img src="{{ asset('web/img/logo.png') }}" class="img-fluid mb-3" alt=""> --}}
+                <img src="{{ asset('web/img/logo.png') }}" class="img-fluid mb-3" alt="">
                 <h2>Welcome to United creative engineers</h2>
                 <p>We create <span class="typed"
                         data-typed-items=" Houses designs, Offices designs, Units designs"></span></p>
@@ -109,7 +109,7 @@
                                     consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
                                     storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
                         </ul>
-                        <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                        {{-- <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a> --}}
                     </div>
 
                 </div>
@@ -844,10 +844,10 @@
                 <div class="col-lg-3 col-md-6">
                     <h4>Follow Us</h4>
                     <div class="social-links d-flex">
-                        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.instagram.com/united_creative_engineers?igsh=MXZkbGVhNmducXlrbQ==" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.instagram.com/united_creative_engineers?igsh=MXZkbGVhNmducXlrbQ==" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/united_creative_engineers?igsh=MXZkbGVhNmducXlrbQ==" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.instagram.com/united_creative_engineers?igsh=MXZkbGVhNmducXlrbQ==" class="linkedin"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
 
