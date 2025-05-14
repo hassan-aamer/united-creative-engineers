@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g transform="translate(8.000000, 8.000000)" fill="#46BBA7" fill-rule="nonzero">
-            <path d="M42,0 L6,0 C2.7,0 0,2.7 0,6 L0,34 C0,37.3 2.7,40 6,40 L18,40 L18,46 L14,46 C12.9,46 12,46.9 12,48 C12,49.1 12.9,50 14,50 L34,50 C35.1,50 36,49.1 36,48 C36,46.9 35.1,46 34,46 L30,46 L30,40 L42,40 C45.3,40 48,37.3 48,34 L48,6 C48,2.7 45.3,0 42,0 Z M22,46 L26,46 L26,40 L22,40 L22,46 Z M44,34 C44,35.1 43.1,36 42,36 L6,36 C4.9,36 4,35.1 4,34 L4,6 C4,4.9 4.9,4 6,4 L42,4 C43.1,4 44,4.9 44,6 L44,34 Z"/>
-            <path d="M10,12 L14,12 L14,16 L10,16 L10,12 Z M10,20 L14,20 L14,24 L10,24 L10,20 Z M10,28 L14,28 L14,32 L10,32 L10,28 Z M18,12 L38,12 L38,16 L18,16 L18,12 Z M18,20 L38,20 L38,24 L18,24 L18,20 Z M18,28 L38,28 L38,32 L18,32 L18,28 Z"/>
-        </g>
-    </g>
-</svg> 

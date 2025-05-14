@@ -1,170 +1,883 @@
-@extends('web.layouts.app')
-@section('title', __('attributes.home'))
-@section('header')
-    @include('web.layouts.headerHome')
-@endsection
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
 
-    @if ($result['services']->count())
-        <!-- Services Section -->
-        <section class="services py-5" id="services">
-            <div class="container text-center">
-                <h2 class="section-title">{{ __('attributes.services') }}</h2>
-                <h3 class="section-subtitle mb-5">{{ __('attributes.FutureSwordServices') }}</h3>
-                <div class="row justify-content-center">
-                    <!-- First row: 3 cards on desktop, 2 on tablet, 1 on mobile -->
-                    @foreach ($result['services']->sortBy('position') as $service)
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
-                            <div class="service-card-container">
-                                <div class="service-card">
-                                    <a href="{{ route('services.details', $service->id) }}">
-                                        <div class="service-card-front">
-                                            <div class="icon-container">
-                                                <img src="{{ App\Helpers\Image::getMediaUrl($service, 'services') }}"
-                                                    alt="{{ $service->title ?? '' }}" class="service-icon">
-                                            </div>
-                                            <h4>{{ $service->title ?? '' }}</h4>
-                                        </div>
-                                        <div class="service-card-back">
-                                            <div class="back-content">
-                                                <h3 class="service-card-title">{{ $service->title ?? '' }}</h3>
-                                                <p>{{ $service->description ?? '' }}</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Index - Imperial Bootstrap Template</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="{{ asset('web/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('web/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ asset('web/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('web/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('web/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('web/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('web/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="{{ asset('web/css/main.css') }}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="web/img/logo-2.png" alt=""> -->
+                <h1 class="sitename">United creative engineers</h1>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero section dark-background">
+
+            <img src="{{ asset('web/img/2001.jpg') }}" class="hero-bg" alt="" data-aos="fade-in">
+
+            <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+                {{-- <img src="{{ asset('web/img/logo.png') }}" class="img-fluid mb-3" alt=""> --}}
+                <h2>Welcome to Imperial studios</h2>
+                <p>We create <span class="typed"
+                        data-typed-items="Functional Websites, Creative Ads, Mobile Apps"></span></p>
+                <div>
+                    <a href="#about" class="cta-btn">Get Started</a>
+                    <a href="#services" class="cta-btn2">Our Services</a>
                 </div>
             </div>
-        </section>
-    @endif
 
+        </section><!-- /Hero Section -->
 
-    @if ($result['sliders']->count())
-        <!-- Partners Section -->
-        <section class="partners py-4">
-            <div class="container-fluid">
-                <div class="partners-slider">
-                    <div class="slider-track">
-                        <!-- First set of logos -->
-                        @foreach ($result['sliders']->sortBy('position') as $sliders)
-                            <div class="slide">
-                                <img src="{{ App\Helpers\Image::getMediaUrl($sliders, 'sliders') }}"
-                                    alt="{{ $sliders->title ?? '' }}" class="partner-logo">
-                            </div>
-                        @endforeach
+        <!-- About Section -->
+        <section id="about" class="about section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>About</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+                        <img src="{{ asset('web/img/about.jpg') }}" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Voluptatem dignissimos provident quasi corporis</h3>
+                        <p class="fst-italic">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore
+                            magna aliqua.
+                        </p>
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat.</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in
+                                    voluptate velit.</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
+                                    storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+                        </ul>
+                        <a href="#" class="read-more"><span>Read More</span><i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- /About Section -->
+
+        <!-- Services Section -->
+        <section id="services" class="services section light-background">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Services</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+                        <div>
+                            <h4 class="title"><a href="service-details.html" class="stretched-link">Lorem Ipsum</a>
+                            </h4>
+                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                excepturi sint occaecati cupiditate non provident</p>
+                        </div>
+                    </div>
+                    <!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
+                        <div>
+                            <h4 class="title"><a href="service-details.html" class="stretched-link">Dolor Sitema</a>
+                            </h4>
+                            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                aliquip ex ea commodo consequat tarad limino ata</p>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                        <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+                        <div>
+                            <h4 class="title"><a href="service-details.html" class="stretched-link">Sed ut
+                                    perspiciatis</a></h4>
+                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur</p>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
+                        <div>
+                            <h4 class="title"><a href="service-details.html" class="stretched-link">Magni
+                                    Dolores</a></h4>
+                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum</p>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                        <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
+                        <div>
+                            <h4 class="title"><a href="service-details.html" class="stretched-link">Nemo Enim</a>
+                            </h4>
+                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                                blanditiis praesentium voluptatum deleniti atque</p>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+                        <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
+                        <div>
+                            <h4 class="title"><a href="service-details.html" class="stretched-link">Eiusmod
+                                    Tempor</a></h4>
+                            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+                                tempore, cum soluta nobis est eligendi</p>
+                        </div>
+                    </div><!-- End Service Item -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Services Section -->
+
+        <!-- Features Section -->
+        <section id="features" class="features section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Features</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="feature-box orange">
+                            <i class="bi bi-award"></i>
+                            <h4>Corporis voluptates</h4>
+                            <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                        </div>
+                    </div><!-- End Feature Borx-->
+
+                    <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="feature-box blue">
+                            <i class="bi bi-patch-check"></i>
+                            <h4>Explicabo consectetur</h4>
+                            <p>Est autem dicta beatae suscipit. Sint veritatis et sit quasi ab aut inventore</p>
+                        </div>
+                    </div><!-- End Feature Borx-->
+
+                    <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="feature-box green">
+                            <i class="bi bi-sunrise"></i>
+                            <h4>Ullamco laboris</h4>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                        </div>
+                    </div><!-- End Feature Borx-->
+
+                    <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="feature-box red">
+                            <i class="bi bi-shield-check"></i>
+                            <h4>Labore consequatur</h4>
+                            <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                        </div>
+                    </div><!-- End Feature Borx-->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Features Section -->
+
+        <!-- Call To Action Section -->
+        <section id="call-to-action" class="call-to-action section dark-background">
+
+            <img src="web/img/cta-bg.jpg" alt="">
+
+            <div class="container">
+
+                <div class="row" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-xl-9 text-center text-xl-start">
+                        <h3>Call To Action</h3>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.</p>
+                    </div>
+                    <div class="col-xl-3 cta-btn-container text-center">
+                        <a class="cta-btn align-middle" href="#">Call To Action</a>
                     </div>
                 </div>
+
             </div>
-        </section>
-    @endif
 
-    @if ($result['products']->count())
-        <!-- Projects Section -->
-        <section class="projects py-5">
-            <div class="container text-center">
-                <h2 class="section-title mb-5">{{ __('attributes.DiscoverCollection') }}</h2>
-                <h2 class="section-title2 mb-5">{{ __('attributes.BetweenCreativityAndMastery') }}</h2>
+        </section><!-- /Call To Action Section -->
 
-                <div class="row justify-content-center">
-                    @foreach ($result['products']->sortBy('position') as $product)
-                        @php
-                            $pattern = [6, 4, 4, 6];
-                            $index = ($loop->iteration - 1) % 4;
-                            $columnSize = $pattern[$index];
-                        @endphp
-                        <div class="col-lg-{{ $columnSize }} col-md-12 mb-4 mx-3">
-                            <div class="project-card blue-light-bg">
-                                <div class="code-icon">
-                                    <img src="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}"
-                                        alt="{{ $product->title ?? '' }}" class="project-icon-img">
-                                </div>
-                                <h3 class="project-title">{{ $product->title ?? '' }}</h3>
-                                <p class="project-description">{{ $product->description ?? '' }}</p>
-                                <div class="text-start mt-3">
-                                    <a href="{{ route('product.details', $product->id) }}"
-                                        class="btn btn-outline-primary rounded-pill project-btn">
-                                        <span class="project-btn-text rounded-pill">رؤية التفاصيل</span>
-                                        <i class="fas fa-arrow-left project-btn-icon"></i>
-                                    </a>
-                                </div>
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Portfolio</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="isotope-layout" data-default-filter="*" data-layout="masonry"
+                    data-sort="original-order">
+
+                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".filter-app">App</li>
+                        <li data-filter=".filter-product">Product</li>
+                        <li data-filter=".filter-branding">Branding</li>
+                        <li data-filter=".filter-books">Books</li>
+                    </ul><!-- End Portfolio Filters -->
+
+                    <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                            <img src="{{ asset('web/img/portfolio/app-1.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>App 1</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="{{ asset('web/img/portfolio/app-1.jpg') }}" title="App 1"
+                                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-    @endif
+                        </div><!-- End Portfolio Item -->
 
-    @if ($result['WhyUs']->count())
-        <!-- Why Choose Us Section -->
-        <section class="why-us py-5 bg-light blue-light-bg">
-            <div class="container text-center ">
-                <h2 class="section-title">{{ __('attributes.WhyUs') }}</h2>
-                <h3 class="section-subtitle mb-5">{{ __('attributes.WhyChooseFuture') }}</h3>
-                @foreach ($result['WhyUs']->chunk(2)->sortBy('position') as $chunk)
-                    <div class="row">
-                        @foreach ($chunk as $index => $WhyUs)
-                            <div class="col-lg-6 mb-4">
-                                <div class="why-us-card {{ $index % 2 == 0 ? 'right-to-left' : 'left-to-right' }}">
-                                    <div class="card-inner">
-                                        <div class="icon-container">
-                                            <svg class="icon-background" width="79" height="79" viewBox="0 0 79 79"
-                                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            </svg>
-                                            <img src="{{ App\Helpers\Image::getMediaUrl($WhyUs, 'WhyUs') }}"
-                                                alt="{{ $WhyUs->title ?? '' }}" class="why-us-icon">
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                            <img src="{{ asset('web/img/portfolio/product-1.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Product 1</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="{{ asset('web/img/portfolio/product-1.jpg') }}" title="Product 1"
+                                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                            <img src="{{ asset('web/img/portfolio/branding-1.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Branding 1</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="{{ asset('web/img/portfolio/branding-1.jpg') }}" title="Branding 1"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                            <img src="{{ asset('web/img/portfolio/books-1.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Books 1</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="{{ asset('web/img/portfolio/books-1.jpg') }}" title="Branding 1"
+                                    data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                            <img src="{{ asset('web/img/portfolio/app-2.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>App 2</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="{{ asset('web/img/portfolio/app-2.jpg') }}" title="App 2"
+                                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                            <img src="{{ asset('web/img/portfolio/product-2.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Product 2</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="{{ asset('web/img/portfolio/product-2.jpg') }}" title="Product 2"
+                                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                            <img src="{{ asset('web/img/portfolio/branding-2.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Branding 2</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="{{ asset('web/img/portfolio/branding-2.jpg') }}" title="Branding 2"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                            <img src="{{ asset('web/img/portfolio/books-2.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Books 2</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="{{ asset('web/img/portfolio/books-2.jpg') }}" title="Branding 2"
+                                    data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+                            <img src="{{ asset('web/img/portfolio/app-3.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>App 3</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="{{ asset('web/img/portfolio/app-3.jpg') }}" title="App 3"
+                                    data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+                            <img src="web/img/portfolio/product-3.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Product 3</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="web/img/portfolio/product-3.jpg" title="Product 3"
+                                    data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+                            <img src="web/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Branding 3</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="web/img/portfolio/branding-3.jpg" title="Branding 2"
+                                    data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+                            <img src="web/img/portfolio/books-3.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Books 3</h4>
+                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                                <a href="web/img/portfolio/books-3.jpg" title="Branding 3"
+                                    data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i
+                                        class="bi bi-zoom-in"></i></a>
+                                <a href="portfolio-details.html" title="More Details" class="details-link"><i
+                                        class="bi bi-link-45deg"></i></a>
+                            </div>
+                        </div><!-- End Portfolio Item -->
+
+                    </div><!-- End Portfolio Container -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Portfolio Section -->
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Testimonials</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="row gy-4 justify-content-center">
+                                    <div class="col-lg-6">
+                                        <div class="testimonial-content">
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora
+                                                    entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam
+                                                    eget nibh et. Maecen aliquam, risus at semper.</span>
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                            <h3>Saul Goodman</h3>
+                                            <h4>Ceo &amp; Founder</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
                                         </div>
-                                        <div class="content">
-                                            <h4 class="why-us-title">{{ $WhyUs->title ?? '' }}</h4>
-                                            <p class="why-us-text">{{ $WhyUs->description ?? '' }}</p>
-                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 text-center">
+                                        <img src="web/img/testimonials/testimonials-1.jpg"
+                                            class="img-fluid testimonial-img" alt="">
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="row gy-4 justify-content-center">
+                                    <div class="col-lg-6">
+                                        <div class="testimonial-content">
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                <span>Export tempor illum tamen malis malis eram quae irure esse labore
+                                                    quem cillum quid cillum eram malis quorum velit fore eram velit sunt
+                                                    aliqua noster fugiat irure amet legam anim culpa.</span>
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                            <h3>Sara Wilsson</h3>
+                                            <h4>Designer</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 text-center">
+                                        <img src="web/img/testimonials/testimonials-2.jpg"
+                                            class="img-fluid testimonial-img" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="row gy-4 justify-content-center">
+                                    <div class="col-lg-6">
+                                        <div class="testimonial-content">
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                <span>Enim nisi quem export duis labore cillum quae magna enim sint
+                                                    quorum nulla quem veniam duis minim tempor labore quem eram duis
+                                                    noster aute amet eram fore quis sint minim.</span>
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                            <h3>Jena Karlis</h3>
+                                            <h4>Store Owner</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 text-center">
+                                        <img src="web/img/testimonials/testimonials-3.jpg"
+                                            class="img-fluid testimonial-img" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="row gy-4 justify-content-center">
+                                    <div class="col-lg-6">
+                                        <div class="testimonial-content">
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos
+                                                    export minim fugiat minim velit minim dolor enim duis veniam ipsum
+                                                    anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                            <h3>John Larson</h3>
+                                            <h4>Entrepreneur</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 text-center">
+                                        <img src="web/img/testimonials/testimonials-4.jpg"
+                                            class="img-fluid testimonial-img" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End testimonial item -->
+
                     </div>
-                @endforeach
-            </div>
-        </section>
-    @endif
-
-    <!-- CTA Section -->
-    <section class="cta py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="section-subtitle mb-4">{{ __('attributes.StartYourDigital') }}</h2>
-            <p class="mb-4">{{ setting('description') ?? '' }}</p>
-
-            <a href="{{ route('contact') }}">
-                <button class="btn btn-primary rounded-pill px-5 py-3 background-primary contact-btn">
-                    <img src="{{ asset('web/images/contact.svg') }}" alt="{{ __('attributes.contuctNow') }}"
-                        class="me-2" width="24" height="24">
-                    {{ __('attributes.contuctNow') }}
-                </button>
-            </a>
-
-            <div class="social-links">
-                <div>
-                    {{ __('attributes.FollowOn') }}
+                    <div class="swiper-pagination"></div>
                 </div>
-                <br>
-                <a href="{{ setting('facebook') ?? '' }}" class="social-link">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="{{ setting('instagram') ?? '' }}" class="social-link">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="{{ setting('linkedIn') ?? '' }}" class="social-link">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="{{ setting('twitter') ?? '' }}" class="social-link">
-                    <i class="fab fa-twitter"></i>
-                </a>
+
+            </div>
+
+        </section><!-- /Testimonials Section -->
+
+        <!-- Team Section -->
+        <section id="team" class="team section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Team</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="team-member">
+                            <div class="member-img">
+                                <img src="web/img/team/team-1.jpg" class="img-fluid" alt="">
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="team-member">
+                            <div class="member-img">
+                                <img src="web/img/team/team-2.jpg" class="img-fluid" alt="">
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Sarah Jhonson</h4>
+                                <span>Product Manager</span>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <div class="team-member">
+                            <div class="member-img">
+                                <img src="web/img/team/team-3.jpg" class="img-fluid" alt="">
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>William Anderson</h4>
+                                <span>CTO</span>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+                        data-aos-delay="400">
+                        <div class="team-member">
+                            <div class="member-img">
+                                <img src="web/img/team/team-4.jpg" class="img-fluid" alt="">
+                                <div class="social">
+                                    <a href=""><i class="bi bi-twitter-x"></i></a>
+                                    <a href=""><i class="bi bi-facebook"></i></a>
+                                    <a href=""><i class="bi bi-instagram"></i></a>
+                                    <a href=""><i class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Amanda Jepson</h4>
+                                <span>Accountant</span>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Team Section -->
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-4">
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                            <i class="bi bi-geo-alt flex-shrink-0"></i>
+                            <div>
+                                <h3>Address</h3>
+                                <p>A108 Adam Street, New York, NY 535022</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                            <i class="bi bi-telephone flex-shrink-0"></i>
+                            <div>
+                                <h3>Call Us</h3>
+                                <p>+1 5589 55488 55</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                            <i class="bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h3>Email Us</h3>
+                                <p>info@example.com</p>
+                            </div>
+                        </div><!-- End Info Item -->
+
+                    </div>
+
+                    <div class="col-lg-8">
+                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+                            data-aos-delay="200">
+                            <div class="row gy-4">
+
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control"
+                                        placeholder="Your Name" required="">
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <input type="email" class="form-control" name="email"
+                                        placeholder="Your Email" required="">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" name="subject" placeholder="Subject"
+                                        required="">
+                                </div>
+
+                                <div class="col-md-12">
+                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                                </div>
+
+                                <div class="col-md-12 text-center">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                    <button type="submit">Send Message</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div><!-- End Contact Form -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Contact Section -->
+
+    </main>
+
+    <footer id="footer" class="footer dark-background">
+
+        <div class="container">
+            <div class="row gy-3">
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-geo-alt icon"></i>
+                    <div class="address">
+                        <h4>Address</h4>
+                        <p>A108 Adam Street</p>
+                        <p>New York, NY 535022</p>
+                        <p></p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-telephone icon"></i>
+                    <div>
+                        <h4>Contact</h4>
+                        <p>
+                            <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
+                            <strong>Email:</strong> <span>info@example.com</span><br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-clock icon"></i>
+                    <div>
+                        <h4>Opening Hours</h4>
+                        <p>
+                            <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
+                            <strong>Sunday</strong>: <span>Closed</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4>Follow Us</h4>
+                    <div class="social-links d-flex">
+                        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section>
 
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">Imperial</strong> <span>All Rights
+                    Reserved</span></p>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
 
-@endsection
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ asset('web/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('web/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('web/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('web/vendor/typed.js/typed.umd.js') }}"></script>
+    <script src="{{ asset('web/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('web/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('web/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('web/vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+    <!-- Main JS File -->
+    <script src="{{ asset('web/js/main.js') }}"></script>
+
+</body>
+
+</html>
