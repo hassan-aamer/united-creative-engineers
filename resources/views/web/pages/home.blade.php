@@ -13,7 +13,8 @@
     <link href="" rel="apple-touch-icon"> --}}
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
@@ -24,7 +25,7 @@
     <link href="{{ asset('web/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <link href="{{ asset('web/css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('web/css/app.css') }}" rel="stylesheet">
 
 </head>
 
@@ -879,7 +880,7 @@
     <script src="{{ asset('web/vendor/swiper/swiper-bundle.min.js') }}"></script>
 
     <!-- Main JS File -->
-    <script src="{{ asset('web/js/main.js') }}"></script>
+    <script src="{{ asset('web/js/app.js') }}"></script>
 
 </body>
 
