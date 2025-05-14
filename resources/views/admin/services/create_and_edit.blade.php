@@ -24,10 +24,6 @@
                                 <div class="row">
                                     @include('admin.components.title')
                                     @include('admin.components.description')
-                                    @include('admin.components.select_developments')
-                                    @include('admin.components.select_packages')
-                                    @include('admin.components.select_features')
-                                    @include('admin.components.select_info_sections_mul')
                                     @include('admin.components.position')
                                     @include('admin.components.active')
                                     @include('admin.components.ImageUpload', [

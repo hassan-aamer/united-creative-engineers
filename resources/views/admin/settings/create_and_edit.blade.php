@@ -32,28 +32,10 @@
                                     @include('admin.components.youtube')
                                     @include('admin.components.linkedIn')
                                     @include('admin.components.instagram')
-                                    @include('admin.components.snapchat')
-                                    @include('admin.components.map')
-                                    @include('admin.components.google_play')
-                                    @include('admin.components.app_store')
-                                    @include('admin.components.header')
-                                    @include('admin.components.footer')
                                     @include('admin.components.copyrights')
                                     @include('admin.components.about')
                                     @include('admin.components.address')
-                                    @include('admin.components.terms_condition')
                                     @include('admin.components.description')
-                                    @include('admin.components.return_description')
-                                    @include('admin.components.privacy_description')
-                                    @include('admin.components.sales_development')
-                                    @include('admin.components.website_designer')
-                                    @include('admin.components.marketing_service')
-                                    @include('admin.components.clients')
-                                    @include('admin.components.ImagesUpload', [
-                                        'result' => $result ?? null,
-                                        'collection' => 'clients',
-                                        'name' => 'images',
-                                    ])
                                     @include('admin.components.submit')
                                 </div>
                             </form>

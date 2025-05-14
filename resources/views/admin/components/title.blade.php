@@ -1,4 +1,4 @@
-<div class="row">
+
     @foreach (config('app.locales') as $locale)
         <div class="col-md-6">
             <div class="mb-3">
@@ -16,4 +16,4 @@
             </div>
         </div>
     @endforeach
-</div>
+

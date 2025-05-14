@@ -25,15 +25,12 @@
                                     @include('admin.components.title')
                                     @include('admin.components.description')
                                     @include('admin.components.content')
-                                    @include('admin.components.select_features')
-                                    @include('admin.components.select_services')
-                                    @include('admin.components.select_additional_services')
                                     @include('admin.components.position')
+                                    @include('admin.components.active')
                                     @include('admin.components.ImageUpload', [
                                         'result' => $result ?? null,
                                         'collection' => 'products',
                                     ])
-                                    @include('admin.components.active')
                                     @include('admin.components.submit')
                                 </div>
                             </form>

@@ -33,7 +33,7 @@
                         </a>
                     </li>
                 @endcan
-                @can('list subscription')
+                {{-- @can('list subscription')
                     <li>
                         <a class="{{ request()->routeIs('admin.subscription.*') ? 'active' : '' }}"
                             href="{{ route('admin.subscription.index') }}">
@@ -44,9 +44,27 @@
                             <span> {{ __('attributes.subscriptions') }} </span>
                         </a>
                     </li>
+                @endcan --}}
+                @can('list services')
+                    <li>
+                        <a class="{{ request()->routeIs('admin.services.*') ? 'active' : '' }}"
+                            href="{{ route('admin.services.index') }}">
+                            <i data-feather="tool"></i>
+                            <span> {{ __('attributes.services') }} </span>
+                        </a>
+                    </li>
+                @endcan
+                @can('list products')
+                    <li>
+                        <a class="{{ request()->routeIs('admin.products.*') ? 'active' : '' }}"
+                            href="{{ route('admin.products.index') }}">
+                            <i data-feather="box"></i>
+                            <span> {{ __('attributes.products') }} </span>
+                        </a>
+                    </li>
                 @endcan
 
-                @can('list services')
+                {{-- @can('list services')
                     <li>
                         <a href="#sidebarExpages" data-bs-toggle="collapse">
                             <i data-feather="file-text"></i>
@@ -126,8 +144,8 @@
                             </ul>
                         </div>
                     </li>
-                @endcan
-                @can('list products')
+                @endcan --}}
+                {{-- @can('list products')
                     <li>
                         <a href="#products" data-bs-toggle="collapse">
                             <i data-feather="box"></i>
@@ -154,9 +172,9 @@
                             </ul>
                         </div>
                     </li>
-                @endcan
+                @endcan --}}
 
-                @can('list sliders')
+                {{-- @can('list sliders')
                     <li>
                         <a class="{{ request()->routeIs('admin.sliders.*') ? 'active' : '' }}"
                             href="{{ route('admin.sliders.index') }}">
@@ -164,8 +182,8 @@
                             <span>{{ __('attributes.sliders') }}</span>
                         </a>
                     </li>
-                @endcan
-                @can('list whyUs')
+                @endcan --}}
+                {{-- @can('list whyUs')
                     <li>
                         <a class="{{ request()->routeIs('admin.WhyUs.*') ? 'active' : '' }}"
                             href="{{ route('admin.WhyUs.index') }}">
@@ -173,8 +191,8 @@
                             <span> {{ __('attributes.WhyUs') }} </span>
                         </a>
                     </li>
-                @endcan
-                @can('list about')
+                @endcan --}}
+                {{-- @can('list about')
                     <li>
                         <a class="{{ request()->routeIs('admin.about.*') ? 'active' : '' }}"
                             href="{{ route('admin.about.index') }}">
@@ -182,8 +200,8 @@
                             <span> {{ __('attributes.about') }} </span>
                         </a>
                     </li>
-                @endcan
-                @can('list faqs')
+                @endcan --}}
+                {{-- @can('list faqs')
                     <li>
                         <a class="{{ request()->routeIs('admin.faqs.*') ? 'active' : '' }}"
                             href="{{ route('admin.faqs.index') }}">
@@ -191,8 +209,8 @@
                             <span>{{ __('attributes.faqs') }}</span>
                         </a>
                     </li>
-                @endcan
-                @can('list users')
+                @endcan --}}
+                {{-- @can('list users')
                     <li>
                         <a class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}"
                             href="{{ route('admin.users.index') }}">
@@ -200,7 +218,7 @@
                             <span>{{ __('attributes.users') }}</span>
                         </a>
                     </li>
-                @endcan
+                @endcan --}}
                 @can('list settings')
                     <li>
                         <a class="{{ request()->routeIs('admin.settings.*') ? 'active' : '' }}"

@@ -13,28 +13,28 @@ class SettingsSeeder extends Seeder
     {
         $data = [
             'name' => [
-                'ar' => 'سيف المستقبل',
-                'en' => 'Sword of the Future'
+                'ar' => 'example',
+                'en' => 'example'
             ],
             'title' => [
-                'ar' => 'سيف المستقبل | مستقبل أعمالك في أيد أمينة',
-                'en' => 'Sword of the Future | The future of your business is in safe hands'
+                'ar' => 'example',
+                'en' => 'example'
             ],
-            'email' => 'info@future-sword.com',
+            'email' => 'example@example.com',
             'about' => [
-                'ar' => 'سيف المستقبل يقدم حلولاً ذكية مصممة لاحتياجاتك، لتسبيط عملياتك، وتعزيز حضورك الرقمي، وزيادة مبيعاتك بطرق مبتكرة.',
-                'en' => 'Saif Al Mustaqbal offers smart solutions tailored to your needs, to streamline your operations, enhance your digital presence, and increase your sales in innovative ways.'
+                'ar' => 'example',
+                'en' => 'example'
             ],
             'description' => [
-                'ar' => 'مع أكثر من 10 سنوات من الخبرة في مجال تطوير المواقع الإلكترونية والتسويق الرقمي، نحن نقدم لك حلولاً متكاملة تناسب احتياجاتك وميزانيتك . سواء كنت تبحث عن موقع إلكتروني جديد، أو تطوير موقعك الحالي، أو التسويق الرقمي الشامل، فريقنا المتخصص جاهز لمساعدتك',
-                'en' => 'With more than 10 years of experience in the field of website development and digital marketing, we offer you complete solutions that suit your needs and budget . Whether you are looking for a new website, developing your existing one, or comprehensive digital marketing, our dedicated team is ready to help you'
+                'ar' => 'example',
+                'en' => 'example'
             ],
             'address' => [
-                'ar' => 'الرياض، المملكة العربية السعودية',
-                'en' => 'Riyadh, Saudi Arabia'
+                'ar' => 'example',
+                'en' => 'example'
             ],
-            'phone' => '+966541172470',
-            'whatsapp' => '+966541172470',
+            'phone' => '+9665455470',
+            'whatsapp' => '+9685272470',
             'facebook' => 'https://facebook.com/example',
             'twitter' => 'https://twitter.com/example',
             'youtube' => 'https://youtube.com/example',
@@ -50,8 +50,8 @@ class SettingsSeeder extends Seeder
                 'en' => 'Whether you are looking to strengthen your brand, increase sales, or attract customers, our dedicated team is ready to turn your goals into reality!'
             ],
             'copyrights' => [
-                'ar' => ' © '. date('Y') . ' سيف المستقبل. جميع الحقوق محفوظة.',
-                'en' => 'All rights reserved to Sword of the Future Company © ' . date('Y')
+                'ar' => ' © '. date('Y') . ' example. جميع الحقوق محفوظة.',
+                'en' => 'All rights reserved to example Company © ' . date('Y')
             ],
             'google_play' => 'https://play.google.com/store/apps/details?id=com.example.app',
             'app_store' => 'https://apps.apple.com/app/example/id123456789',

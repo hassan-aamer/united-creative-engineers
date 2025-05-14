@@ -9,8 +9,8 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    {{-- <link href="" rel="icon">
-    <link href="" rel="apple-touch-icon"> --}}
+    <link href="{{ asset('web/img/Icon white.png') }}" rel="icon">
+    <link href="{{ asset('web/img/Icon white.png') }}" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
@@ -36,8 +36,8 @@
 
             <a href="index.html" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-                 <img src="web/img/logo.png" alt=""> 
-                {{-- <h1 class="sitename">United creative engineers</h1> --}}
+                <img src="web/img/Icon white.png" alt="" width="40" height="100"> 
+                {{-- <h1 class="sitename">{{ setting('name') ?? '' }}</h1> --}}
             </a>
 
             <nav id="navmenu" class="navmenu">
@@ -46,7 +46,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#team">Team</a></li>
+                    {{-- <li><a href="#team">Team</a></li> --}}
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -64,8 +64,8 @@
                 data-aos="fade-in">
 
             <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('web/img/logo.png') }}" class="img-fluid mb-3" alt="">
-                <h2>Welcome to United creative engineers</h2>
+                {{-- <img src="{{ asset('web/img/Loogo.png') }}" class="img-fluid mb-3" alt="" width="90" height="90"> --}}
+                <h2>{{ setting('title') ?? '' }}</h2>
                 <p>We create <span class="typed"
                         data-typed-items=" Houses designs, Offices designs, Units designs"></span></p>
                 <div>
@@ -134,7 +134,7 @@
                     <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
                         <div>
-                            <h4 class="title"><a href="service-details.html" class="stretched-link">Lorem Ipsum</a>
+                            <h4 class="title"><a class="stretched-link">Lorem Ipsum</a>
                             </h4>
                             <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
                                 excepturi sint occaecati cupiditate non provident</p>
@@ -145,7 +145,7 @@
                     <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
                         <div>
-                            <h4 class="title"><a href="service-details.html" class="stretched-link">Dolor Sitema</a>
+                            <h4 class="title"><a class="stretched-link">Dolor Sitema</a>
                             </h4>
                             <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                                 aliquip ex ea commodo consequat tarad limino ata</p>
@@ -155,7 +155,7 @@
                     <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
                         <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
                         <div>
-                            <h4 class="title"><a href="service-details.html" class="stretched-link">Sed ut
+                            <h4 class="title"><a class="stretched-link">Sed ut
                                     perspiciatis</a></h4>
                             <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse
                                 cillum dolore eu fugiat nulla pariatur</p>
@@ -165,7 +165,7 @@
                     <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
                         <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
                         <div>
-                            <h4 class="title"><a href="service-details.html" class="stretched-link">Magni
+                            <h4 class="title"><a class="stretched-link">Magni
                                     Dolores</a></h4>
                             <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
                                 officia deserunt mollit anim id est laborum</p>
@@ -175,7 +175,7 @@
                     <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
                         <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
                         <div>
-                            <h4 class="title"><a href="service-details.html" class="stretched-link">Nemo Enim</a>
+                            <h4 class="title"><a class="stretched-link">Nemo Enim</a>
                             </h4>
                             <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
                                 blanditiis praesentium voluptatum deleniti atque</p>
@@ -185,7 +185,7 @@
                     <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
                         <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
                         <div>
-                            <h4 class="title"><a href="service-details.html" class="stretched-link">Eiusmod
+                            <h4 class="title"><a class="stretched-link">Eiusmod
                                     Tempor</a></h4>
                             <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
                                 tempore, cum soluta nobis est eligendi</p>
@@ -286,13 +286,13 @@
                 <div class="isotope-layout" data-default-filter="*" data-layout="masonry"
                     data-sort="original-order">
 
-                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                    {{-- <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                         <li data-filter="*" class="filter-active">All</li>
                         <li data-filter=".filter-app">App</li>
                         <li data-filter=".filter-product">Product</li>
                         <li data-filter=".filter-branding">Branding</li>
                         <li data-filter=".filter-books">Books</li>
-                    </ul>
+                    </ul> --}}
                     <!-- End Portfolio Filters -->
 
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
@@ -625,7 +625,7 @@
         <!-- /Testimonials Section -->
 
         <!-- Team Section -->
-        <section id="team" class="team section">
+        {{-- <section id="team" class="team section">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -717,7 +717,7 @@
 
             </div>
 
-        </section>
+        </section> --}}
         <!-- /Team Section -->
 
         <!-- Contact Section -->
@@ -738,7 +738,7 @@
                             <i class="bi bi-geo-alt flex-shrink-0"></i>
                             <div>
                                 <h3>Address</h3>
-                                <p>A108 Adam Street, New York, NY 535022</p>
+                                <p>{{ setting('address') ?? '' }}</p>
                             </div>
                         </div><!-- End Info Item -->
 
@@ -746,7 +746,7 @@
                             <i class="bi bi-telephone flex-shrink-0"></i>
                             <div>
                                 <h3>Call Us</h3>
-                                <p>+1 5589 55488 55</p>
+                                <p>{{ setting('phone') ?? '' }}</p>
                             </div>
                         </div><!-- End Info Item -->
 
@@ -754,7 +754,7 @@
                             <i class="bi bi-envelope flex-shrink-0"></i>
                             <div>
                                 <h3>Email Us</h3>
-                                <p>info@example.com</p>
+                                <p>{{ setting('email') ?? '' }}</p>
                             </div>
                         </div><!-- End Info Item -->
 
@@ -812,8 +812,8 @@
                     <i class="bi bi-geo-alt icon"></i>
                     <div class="address">
                         <h4>Address</h4>
-                        <p>A108 Adam Street</p>
-                        <p>New York, NY 535022</p>
+                        <p>{{ setting('address') ?? '' }}</p>
+                        {{-- <p>New York, NY 535022</p> --}}
                         <p></p>
                     </div>
 
@@ -824,8 +824,8 @@
                     <div>
                         <h4>Contact</h4>
                         <p>
-                            <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-                            <strong>Email:</strong> <span>info@example.com</span><br>
+                            <strong>Phone:</strong> <span>{{ setting('phone') ?? '' }}</span><br>
+                            <strong>Email:</strong> <span>{{ setting('email') ?? '' }}</span><br>
                         </p>
                     </div>
                 </div>
@@ -844,10 +844,15 @@
                 <div class="col-lg-3 col-md-6">
                     <h4>Follow Us</h4>
                     <div class="social-links d-flex">
-                        <a href="https://www.instagram.com/united_creative_engineers?igsh=MXZkbGVhNmducXlrbQ==" class="twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="https://www.instagram.com/united_creative_engineers?igsh=MXZkbGVhNmducXlrbQ==" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/united_creative_engineers?igsh=MXZkbGVhNmducXlrbQ==" class="instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="https://www.instagram.com/united_creative_engineers?igsh=MXZkbGVhNmducXlrbQ==" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://wa.me/{{ setting('whatsapp') }}" class="whatsapp"><i
+                                class="bi bi-whatsapp"></i></a>
+                        <a href="{{ setting('twitter') ?? '' }}" class="twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="{{ setting('facebook') ?? '' }}" class="facebook"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="{{ setting('instagram') ?? '' }}" class="instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="{{ setting('linkedin') ?? '' }}" class="linkedin"><i
+                                class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
 
@@ -855,9 +860,7 @@
         </div>
 
         <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">United creative engineers</strong> <span>All
-                    Rights
-                    Reserved</span></p>
+            <p>{{ setting('copyrights') }}</p>
         </div>
 
     </footer>
