@@ -9,7 +9,7 @@ return [
 
   'useAcceptLanguageHeader' => false,
 
-  'hideDefaultLocaleInURL' => false,
+  'hideDefaultLocaleInURL' => true,
 
   'localesOrder' => [],
 
