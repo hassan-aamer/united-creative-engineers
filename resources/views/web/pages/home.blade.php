@@ -4,20 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Index - Imperial Bootstrap Template</title>
+    <title>United creative engineers</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="{{ asset('web/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('web/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    {{-- <link href="" rel="icon">
+    <link href="" rel="apple-touch-icon"> --}}
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('web/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -62,13 +59,14 @@
         <!-- Hero Section -->
         <section id="hero" class="hero section dark-background">
 
-            <img src="{{ asset('web/img/2001.jpg') }}" class="hero-bg" alt="" data-aos="fade-in">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" class="hero-bg" alt=""
+                data-aos="fade-in">
 
             <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
                 {{-- <img src="{{ asset('web/img/logo.png') }}" class="img-fluid mb-3" alt=""> --}}
-                <h2>Welcome to Imperial studios</h2>
+                <h2>Welcome to United creative engineers</h2>
                 <p>We create <span class="typed"
-                        data-typed-items="Functional Websites, Creative Ads, Mobile Apps"></span></p>
+                        data-typed-items=" Houses designs, Offices designs, Units designs"></span></p>
                 <div>
                     <a href="#about" class="cta-btn">Get Started</a>
                     <a href="#services" class="cta-btn2">Our Services</a>
@@ -110,8 +108,7 @@
                                     consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
                                     storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
                         </ul>
-                        <a href="#" class="read-more"><span>Read More</span><i
-                                class="bi bi-arrow-right"></i></a>
+                        <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
                     </div>
 
                 </div>
@@ -294,7 +291,8 @@
                         <li data-filter=".filter-product">Product</li>
                         <li data-filter=".filter-branding">Branding</li>
                         <li data-filter=".filter-books">Books</li>
-                    </ul><!-- End Portfolio Filters -->
+                    </ul>
+                    <!-- End Portfolio Filters -->
 
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
@@ -312,7 +310,8 @@
                         </div><!-- End Portfolio Item -->
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="{{ asset('web/img/portfolio/product-1.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('web/img/portfolio/product-1.jpg') }}" class="img-fluid"
+                                alt="">
                             <div class="portfolio-info">
                                 <h4>Product 1</h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
@@ -325,7 +324,8 @@
                         </div><!-- End Portfolio Item -->
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="{{ asset('web/img/portfolio/branding-1.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('web/img/portfolio/branding-1.jpg') }}" class="img-fluid"
+                                alt="">
                             <div class="portfolio-info">
                                 <h4>Branding 1</h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
@@ -338,7 +338,8 @@
                         </div><!-- End Portfolio Item -->
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                            <img src="{{ asset('web/img/portfolio/books-1.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('web/img/portfolio/books-1.jpg') }}" class="img-fluid"
+                                alt="">
                             <div class="portfolio-info">
                                 <h4>Books 1</h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
@@ -364,7 +365,8 @@
                         </div><!-- End Portfolio Item -->
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="{{ asset('web/img/portfolio/product-2.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('web/img/portfolio/product-2.jpg') }}" class="img-fluid"
+                                alt="">
                             <div class="portfolio-info">
                                 <h4>Product 2</h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
@@ -377,7 +379,8 @@
                         </div><!-- End Portfolio Item -->
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="{{ asset('web/img/portfolio/branding-2.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('web/img/portfolio/branding-2.jpg') }}" class="img-fluid"
+                                alt="">
                             <div class="portfolio-info">
                                 <h4>Branding 2</h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
@@ -390,7 +393,8 @@
                         </div><!-- End Portfolio Item -->
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                            <img src="{{ asset('web/img/portfolio/books-2.jpg') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('web/img/portfolio/books-2.jpg') }}" class="img-fluid"
+                                alt="">
                             <div class="portfolio-info">
                                 <h4>Books 2</h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
@@ -416,11 +420,12 @@
                         </div><!-- End Portfolio Item -->
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-                            <img src="web/img/portfolio/product-3.jpg" class="img-fluid" alt="">
+                            <img src="{{ asset('web/img/portfolio/product-3.jpg') }}" class="img-fluid"
+                                alt="">
                             <div class="portfolio-info">
                                 <h4>Product 3</h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="web/img/portfolio/product-3.jpg" title="Product 3"
+                                <a href="{{ asset('web/img/portfolio/product-3.jpg') }}" title="Product 3"
                                     data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
                                         class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -429,11 +434,12 @@
                         </div><!-- End Portfolio Item -->
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-                            <img src="web/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
+                            <img src="{{ asset('web/img/portfolio/branding-3.jpg') }}" class="img-fluid"
+                                alt="">
                             <div class="portfolio-info">
                                 <h4>Branding 3</h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="web/img/portfolio/branding-3.jpg" title="Branding 2"
+                                <a href="{{ asset('web/img/portfolio/branding-3.jpg') }}" title="Branding 2"
                                     data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
                                         class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -442,11 +448,12 @@
                         </div><!-- End Portfolio Item -->
 
                         <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-                            <img src="web/img/portfolio/books-3.jpg" class="img-fluid" alt="">
+                            <img src="{{ asset('web/img/portfolio/books-3.jpg') }}" class="img-fluid"
+                                alt="">
                             <div class="portfolio-info">
                                 <h4>Books 3</h4>
                                 <p>Lorem ipsum, dolor sit amet consectetur</p>
-                                <a href="web/img/portfolio/books-3.jpg" title="Branding 3"
+                                <a href="{{ asset('web/img/portfolio/books-3.jpg') }}" title="Branding 3"
                                     data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i
                                         class="bi bi-zoom-in"></i></a>
                                 <a href="portfolio-details.html" title="More Details" class="details-link"><i
@@ -463,7 +470,7 @@
         </section><!-- /Portfolio Section -->
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="testimonials section">
+        {{-- <section id="testimonials" class="testimonials section">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -613,7 +620,8 @@
 
             </div>
 
-        </section><!-- /Testimonials Section -->
+        </section> --}}
+        <!-- /Testimonials Section -->
 
         <!-- Team Section -->
         <section id="team" class="team section">
@@ -708,7 +716,8 @@
 
             </div>
 
-        </section><!-- /Team Section -->
+        </section>
+        <!-- /Team Section -->
 
         <!-- Contact Section -->
         <section id="contact" class="contact section">
@@ -845,15 +854,9 @@
         </div>
 
         <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">Imperial</strong> <span>All Rights
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">United creative engineers</strong> <span>All
+                    Rights
                     Reserved</span></p>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you've purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
         </div>
 
     </footer>
