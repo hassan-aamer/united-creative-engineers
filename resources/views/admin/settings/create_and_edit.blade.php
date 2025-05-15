@@ -33,9 +33,14 @@
                                     @include('admin.components.linkedIn')
                                     @include('admin.components.instagram')
                                     @include('admin.components.copyrights')
-                                    @include('admin.components.about')
                                     @include('admin.components.address')
+                                    @include('admin.components.about')
                                     @include('admin.components.description')
+                                    @include('admin.components.description')
+                                    @include('admin.components.ImageUpload', [
+                                        'result' => $result ?? null,
+                                        'collection' => 'about',
+                                    ])
                                     @include('admin.components.submit')
                                 </div>
                             </form>

@@ -17,9 +17,9 @@ class ContactController extends Controller
     {
         try {
             $this->service->store($request->validated());
-            return redirect()->route('home')->with('success', __('attributes.OperationCompletedSuccessfully'));
+            return redirect()->back()->with('success', __('attributes.OperationCompletedSuccessfully'));
         } catch (\Throwable $e) {
-            return redirect()->route('home')->with('error', 'Failed to create Contact: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to create Contact: ' . $e->getMessage());
         }
     }
 }

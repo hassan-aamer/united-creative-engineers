@@ -23,11 +23,11 @@ class ProfileRequest extends FormRequest
     {
         return [
             'name'            => 'required|array',
-            'name.*'          => 'required|string|max:255',
+            'name.*'          => 'required|string',
             'address'         => 'required|array',
-            'address.*'       => 'required|string|max:255',
+            'address.*'       => 'required|string',
             'phone'           => 'required',
-            'passwprd'        => 'required',
+            'passwprd'        => 'required|confirmed',
             'image'           => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ];
     }

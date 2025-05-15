@@ -28,11 +28,9 @@ class SettingsService
             $settings = $this->itemRepository->getItemById($this->model, $id);
             $this->itemRepository->updateItem($this->model, $id, $request);
 
-            if (isset($request['images']) && $request['images']) {
-                $settings->clearMediaCollection('clients');
-                foreach ((array) $request['images'] as $file) {
-                    $settings->addMedia($file)->toMediaCollection('clients');
-                }
+            if (isset($request['image']) && $request['image']) {
+                $settings->clearMediaCollection('about');
+                $settings->addMediaFromRequest('image')->toMediaCollection('about');
             }
 
             DB::commit();
