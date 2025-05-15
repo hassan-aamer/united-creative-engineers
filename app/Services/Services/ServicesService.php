@@ -35,13 +35,6 @@ class ServicesService
                 $services->addMediaFromRequest('image')->toMediaCollection('services');
             }
 
-            $this->syncRelations($services, $request, [
-                'packages'     => 'packages',
-                'features'     => 'features',
-                'infoSection'  => 'infoSection',
-                'developments' => 'developments',
-            ]);
-
             DB::commit();
         } catch (\Throwable $e) {
             DB::rollBack();
@@ -65,13 +58,6 @@ class ServicesService
                 $services->clearMediaCollection('services');
                 $services->addMediaFromRequest('image')->toMediaCollection('services');
             }
-
-            $this->syncRelations($services, $request, [
-                'features'     => 'features',
-                'packages'     => 'packages',
-                'infoSection'  => 'infoSection',
-                'developments' => 'developments',
-            ]);
 
             DB::commit();
         } catch (\Throwable $e) {

@@ -31,11 +31,7 @@ class ServicesController extends Controller
     }
     public function create()
     {
-        $infoSection = InfoSection::Publish()->orderBy('position', 'asc')->get();
-        $features = Feature::Publish()->orderBy('position', 'asc')->get();
-        $packages = Package::Publish()->orderBy('position', 'asc')->get();
-        $developments = Development::Publish()->orderBy('position', 'asc')->get();
-        return view($this->folderPath . 'create_and_edit', ['result' => null], compact('developments','infoSection','packages','features'));
+        return view($this->folderPath . 'create_and_edit', ['result' => null]);
     }
     public function store(ServicesRequest $request)
     {
@@ -48,12 +44,8 @@ class ServicesController extends Controller
     }
     public function edit($id)
     {
-        $infoSection = InfoSection::Publish()->orderBy('position', 'asc')->get();
-        $features = Feature::Publish()->orderBy('position', 'asc')->get();
-        $packages = Package::Publish()->orderBy('position', 'asc')->get();
-        $developments = Development::Publish()->orderBy('position', 'asc')->get();
         $result = $this->service->edit($id);
-        return view($this->folderPath . 'create_and_edit', compact('result','infoSection','developments','packages','features'));
+        return view($this->folderPath . 'create_and_edit', compact('result'));
     }
     public function update(ServicesRequest $request, $id)
     {

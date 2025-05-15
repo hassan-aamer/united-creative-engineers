@@ -29,10 +29,7 @@ class ProductsController extends Controller
     }
     public function create()
     {
-        $services = ProductService::Publish()->orderBy('position', 'asc')->get();
-        $additionalServices = ProductService::Publish()->orderBy('position', 'asc')->get();
-        $features = ProductFeature::Publish()->orderBy('position', 'asc')->get();
-        return view($this->folderPath . 'create_and_edit', ['result' => null], compact('features','services','additionalServices'));
+        return view($this->folderPath . 'create_and_edit', ['result' => null]);
     }
     public function store(ProductsRequest $request)
     {
@@ -46,10 +43,7 @@ class ProductsController extends Controller
     public function edit($id)
     {
         $result = $this->service->edit($id);
-        $services = ProductService::Publish()->orderBy('position', 'asc')->get();
-        $additionalServices = ProductService::Publish()->orderBy('position', 'asc')->get();
-        $features = ProductFeature::Publish()->orderBy('position', 'asc')->get();
-        return view($this->folderPath . 'create_and_edit', compact('result', 'features','services','additionalServices'));
+        return view($this->folderPath . 'create_and_edit', compact('result'));
     }
     public function update(ProductsRequest $request, $id)
     {

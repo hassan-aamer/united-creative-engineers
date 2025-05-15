@@ -38,6 +38,7 @@ class ProductsRequest extends FormRequest
             'content.*' => 'required|string|max:1000',
             'position'      => 'required',
             'image'         => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'images'         => 'nullable',
             'active'        => 'required|in:0,1',
         ];
     }

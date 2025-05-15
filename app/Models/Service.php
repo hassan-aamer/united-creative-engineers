@@ -17,24 +17,4 @@ class Service extends Model implements HasMedia
     {
         return $this->hasMany(Contact::class);
     }
-    public function developments()
-    {
-        return $this->belongsToMany(Development::class, 'development_service');
-    }
-    public function packages()
-    {
-        return $this->belongsToMany(Package::class, 'package_service');
-    }
-    public function features()
-    {
-        return $this->belongsToMany(Feature::class, 'feature_service');
-    }
-    public function infoSection()
-    {
-        return $this->belongsToMany(InfoSection::class, 'info_section_service');
-    }
-    public function infoSectionDetails()
-    {
-        return $this->hasOne(InfoSectionDetail::class);
-    }
 }

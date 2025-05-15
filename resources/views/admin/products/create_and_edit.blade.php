@@ -31,6 +31,11 @@
                                         'result' => $result ?? null,
                                         'collection' => 'products',
                                     ])
+                                    @include('admin.components.ImagesUpload', [
+                                        'result' => $result ?? null,
+                                        'collection' => 'product_collection',
+                                        'name' => 'images',
+                                    ])
                                     @include('admin.components.submit')
                                 </div>
                             </form>

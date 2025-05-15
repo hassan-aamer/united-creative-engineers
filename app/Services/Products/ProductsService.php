@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Services\Products;
+
 use Illuminate\Support\Facades\DB;
 
 use App\Interfaces\CRUDRepositoryInterface;
@@ -34,12 +35,12 @@ class ProductsService
             if (isset($request['image']) && $request['image']) {
                 $products->addMediaFromRequest('image')->toMediaCollection('products');
             }
-
-            syncRelations($products, $request, [
-                'features'     => 'features',
-                'services'     => 'services',
-                'additionalServices'     => 'additionalServices',
-            ]);
+            if (isset($request['images']) && $request['images']) {
+                $products->clearMediaCollection('product_collection');
+                foreach ((array) $request['images'] as $file) {
+                    $products->addMedia($file)->toMediaCollection('product_collection');
+                }
+            }
 
             DB::commit();
         } catch (\Throwable $e) {
@@ -64,12 +65,12 @@ class ProductsService
                 $products->clearMediaCollection('products');
                 $products->addMediaFromRequest('image')->toMediaCollection('products');
             }
-
-            syncRelations($products, $request, [
-                'features'     => 'features',
-                'services'     => 'services',
-                'additionalServices'     => 'additionalServices',
-            ]);
+            if (isset($request['images']) && $request['images']) {
+                $products->clearMediaCollection('product_collection');
+                foreach ((array) $request['images'] as $file) {
+                    $products->addMedia($file)->toMediaCollection('product_collection');
+                }
+            }
 
             DB::commit();
         } catch (\Throwable $e) {
