@@ -36,7 +36,7 @@
 
             <a href="index.html" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="web/img/Icon white.png" alt="" width="40" height="100"> 
+                <img src="web/img/Icon white.png" alt="" width="40" height="100">
                 {{-- <h1 class="sitename">{{ setting('name') ?? '' }}</h1> --}}
             </a>
 
@@ -761,27 +761,44 @@
                     </div>
 
                     <div class="col-lg-8">
-                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-                            data-aos-delay="200">
+                        <form action="{{ route('contact.store') }}" method="POST" class="php-email-form"
+                            data-aos="fade-up" data-aos-delay="200">
+                            @csrf
                             <div class="row gy-4">
 
                                 <div class="col-md-6">
-                                    <input type="text" name="name" class="form-control"
-                                        placeholder="Your Name" required="">
+                                    <input type="text" name="name"
+                                        class="form-control @error('name') is-invalid @enderror"
+                                        placeholder="Your Name" required="" value="{{ old('name') }}">
+                                    @error('name')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="col-md-6 ">
-                                    <input type="email" class="form-control" name="email"
-                                        placeholder="Your Email" required="">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                        name="email" placeholder="Your Email" required=""
+                                        value="{{ old('email') }}">
+                                    @error('email')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="subject" placeholder="Subject"
+                                    <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                                        value="{{ old('phone') }}" name="phone" placeholder="Phone"
                                         required="">
+                                    @error('phone')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="col-md-12">
-                                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                                    <textarea class="form-control @error('message') is-invalid @enderror" name="message" rows="6"
+                                        placeholder="Message" required="">{{ old('message') }}</textarea>
+                                    @error('message')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="col-md-12 text-center">
@@ -884,6 +901,42 @@
 
     <!-- Main JS File -->
     <script src="{{ asset('web/js/app.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if (session('error'))
+                Swal.fire({
+                    icon: 'error',
+                    text: "{{ session('error') }}",
+                    timer: 5000,
+                    showConfirmButton: false
+                });
+            @endif
+
+            @if (session('success'))
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    text: "{{ session('success') }}",
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+            @endif
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+            }
+        });
+    </script>
 
 </body>
 
