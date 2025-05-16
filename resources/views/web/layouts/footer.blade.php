@@ -5,12 +5,12 @@
                 <div class="col-lg-3 col-md-6 d-flex">
                     <i class="bi bi-geo-alt icon"></i>
                     <div class="address">
-                        <h4>Address</h4>
-                        <p>{{ setting('address') ?? '' }}</p>
-                        {{-- <p>New York, NY 535022</p> --}}
-                        <p></p>
+                        <a style="color: black;"
+                            href="https://maps.app.goo.gl/9S55GCdZ7g1m5EAo9?g_st=com.google.maps.preview.copy">
+                            <h4>Address</h4>
+                            <p>{{ setting('address') ?? '' }}</p>
+                        </a>
                     </div>
-
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex">
