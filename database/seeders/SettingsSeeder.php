@@ -13,36 +13,36 @@ class SettingsSeeder extends Seeder
     {
         $data = [
             'name' => [
-                'ar' => 'example',
-                'en' => 'example'
+                'ar' => 'UCE',
+                'en' => 'UCE'
             ],
             'title' => [
-                'ar' => 'example',
-                'en' => 'example'
+                'ar' => 'United creative engineers',
+                'en' => 'United creative engineers'
             ],
-            'email' => 'example@example.com',
+            'email' => 'unitedcreativeengineers@gmail.com',
             'about' => [
-                'ar' => 'example',
-                'en' => 'example'
+                'ar' => 'United creative engineers',
+                'en' => 'United creative engineers'
             ],
             'description' => [
-                'ar' => 'example',
-                'en' => 'example'
+                'ar' => 'United creative engineers',
+                'en' => 'United creative engineers'
             ],
             'address' => [
-                'ar' => 'example',
-                'en' => 'example'
+                'ar' => 'Makanak Office Space - Sheikh Zayed',
+                'en' => 'Makanak Office Space - Sheikh Zayed'
             ],
 
-            'phone' => '+9665455470',
-            'whatsapp' => '+9685272470',
+            'phone' => '+20 100 115 1306',
+            'whatsapp' => '+20 100 115 1306',
             'facebook' => 'https://facebook.com/example',
-            'linkedIn' => 'https://linkedin.com/company/example',
-            'instagram' => 'https://instagram.com/example',
+            'linkedIn' => 'https://www.linkedin.com/company/united-creative-engineers/',
+            'instagram' => 'https://www.instagram.com/united_creative_engineers?igsh=MXZkbGVhNmducXlrbQ==',
 
             'copyrights' => [
-                'ar' => ' © '. date('Y') . ' example. جميع الحقوق محفوظة.',
-                'en' => 'All rights reserved to example Company © ' . date('Y')
+                'ar' => 'All rights reserved to United creative engineers company © 2025',
+                'en' => 'All rights reserved to United creative engineers company © 2025'
             ],
             'updated_at' => now(),
         ];
@@ -56,6 +56,5 @@ class SettingsSeeder extends Seeder
                 'created_at' => now(),
             ]));
         }
-
     }
 }
