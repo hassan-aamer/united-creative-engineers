@@ -7,10 +7,10 @@
             <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" class="hero-bg" alt=""
                 data-aos="fade-in">
             <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-                {{-- <img src="{{ asset('web/img/Loogo.png') }}" class="img-fluid mb-3" alt="" width="90" height="90"> --}}
-                <h2>{{ setting('title') ?? '' }}</h2>
-                <p>We create <span class="typed" data-typed-items=" Houses designs, Offices designs, Units designs"></span>
-                </p>
+                <img src="{{ asset('Icon white.png') }}" class="img-fluid mb-3" alt="" width="90" height="90">
+                {{-- <h2>{{ setting('title') ?? '' }}</h2> --}}
+                <h2><span class="typed" data-typed-items="United Creative Engineers, UCE"></span>
+                </h2>
                 <div>
                     <a href="#about" class="cta-btn">Get Started</a>
                     <a href="#services" class="cta-btn2">Our Services</a>
