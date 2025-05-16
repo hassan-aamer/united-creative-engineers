@@ -152,7 +152,7 @@
                                         class="img-fluid" alt="">
                                     <div class="portfolio-info">
                                         <h4>{{ shortenText($product->title ?? '', 20) }}</h4>
-                                        <p>{{ shortenText($product->title ?? '', 40) }}</p>
+                                        <p>{{ shortenText($product->description ?? '', 40) }}</p>
                                         <a href="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}"
                                             title="{{ shortenText($product->title ?? '', 20) }}"
                                             data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
