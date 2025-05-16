@@ -124,7 +124,7 @@
                                         width="30" height="30"></div>
                                 <div>
                                     <h4 class="title"><a
-                                            class="stretched-link">{{ shortenText($service->title ?? '', 10) }}</a>
+                                            class="stretched-link">{{ shortenText($service->title ?? '', 20) }}</a>
                                     </h4>
                                     <p class="description">{{ shortenText($service->description ?? '', 90) }}</p>
                                 </div>
