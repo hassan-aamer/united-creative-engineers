@@ -7,10 +7,12 @@
             <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" class="hero-bg" alt=""
                 data-aos="fade-in">
             <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('Icon white.png') }}" class="img-fluid mb-3" alt="" width="90" height="90">
-                {{-- <h2>{{ setting('title') ?? '' }}</h2> --}}
-                <h2><span class="typed" data-typed-items="United Creative Engineers, UCE"></span>
+                <img src="{{ asset('Icon white.png') }}" class="img-fluid mb-3" alt="" width="90"
+                    height="90">
+                <h2 class="h5 h2-md h2-lg">
+                    <span class="typed" data-typed-items="{{ setting('title') ?? '' }}"></span>
                 </h2>
+
                 <div>
                     <a href="#about" class="cta-btn">Get Started</a>
                     <a href="#services" class="cta-btn2">Our Services</a>
@@ -91,8 +93,8 @@
                                             title="{{ shortenText($product->title ?? '', 20) }}"
                                             data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                                 class="bi bi-zoom-in"></i></a>
-                                        <a href="{{ route('product.details', $product->id) }}" title="More Details" class="details-link"><i
-                                                class="bi bi-link-45deg"></i></a>
+                                        <a href="{{ route('product.details', $product->id) }}" title="More Details"
+                                            class="details-link"><i class="bi bi-link-45deg"></i></a>
                                     </div>
                                 </div><!-- End Portfolio Item -->
                             @endforeach

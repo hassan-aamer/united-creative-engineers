@@ -3,7 +3,7 @@
 
             <a href="{{ route('home') }}" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="{{ asset('Icon white.png') }}" alt="" width="40" height="100">
+                <img src="{{ asset('Icon white.png') }}" alt="" width="30" height="100">
             </a>
 
             <nav id="navmenu" class="navmenu">
