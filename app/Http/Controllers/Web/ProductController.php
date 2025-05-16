@@ -14,14 +14,9 @@ class ProductController extends Controller
     {
         $this->service = $service;
     }
-    public function index(Request $request)
-    {
-        $products = $this->service->index($request)->where('active',1);
-        return view('web.pages.products', compact('products'));
-    }
     public function show($id)
     {
         $product = $this->service->show($id);
-        return view('web.pages.product_details', compact('product'));
+        return view('web.pages.portfolio_details', compact('product'));
     }
 }

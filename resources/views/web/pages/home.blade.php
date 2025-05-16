@@ -57,7 +57,7 @@
                                         src="{{ App\Helpers\Image::getMediaUrl($service, 'services') }}" alt=""
                                         width="30" height="30"></div>
                                 <div>
-                                    <h4 class="title"><a
+                                    <h4 class="title"><a href="{{ route('services.details', $service->id) }}"
                                             class="stretched-link">{{ shortenText($service->title ?? '', 20) }}</a>
                                     </h4>
                                     <p class="description">{{ shortenText($service->description ?? '', 90) }}</p>
@@ -91,7 +91,7 @@
                                             title="{{ shortenText($product->title ?? '', 20) }}"
                                             data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
                                                 class="bi bi-zoom-in"></i></a>
-                                        <a href="" title="More Details" class="details-link"><i
+                                        <a href="{{ route('product.details', $product->id) }}" title="More Details" class="details-link"><i
                                                 class="bi bi-link-45deg"></i></a>
                                     </div>
                                 </div><!-- End Portfolio Item -->

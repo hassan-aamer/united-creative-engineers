@@ -13,14 +13,10 @@ class ServiceController extends Controller
     {
         $this->service = $service;
     }
-    public function index(Request $request)
-    {
-        $services = $this->service->index($request)->where('active',1);
-        return view('web.pages.services', compact('services'));
-    }
     public function show($id)
     {
-        $services = $this->service->show($id);
-        return view('web.pages.services_details', compact('services'));
+        $servicesDetails = $this->service->show($id);
+        $services = $this->service->index()->where('active',1);
+        return view('web.pages.service_details', compact('services','servicesDetails'));
     }
 }

@@ -15,10 +15,9 @@ class ServicesService
         $this->itemRepository = $itemRepository;
         $this->model = new Service();
     }
-    public function index($request)
+    public function index()
     {
-        $data = $request->all();
-        return $this->itemRepository->getPaginateItems($this->model, $data);
+        return $this->itemRepository->getPaginateItems($this->model,null);
     }
     public function show(int $id)
     {
