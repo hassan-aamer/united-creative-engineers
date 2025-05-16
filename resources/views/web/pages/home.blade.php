@@ -122,7 +122,7 @@
                         <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                             <i class="bi bi-geo-alt flex-shrink-0"></i>
                             <div>
-                                <a style="color: black;" href="https://maps.app.goo.gl/9S55GCdZ7g1m5EAo9?g_st=com.google.maps.preview.copy">
+                                <a href="https://maps.app.goo.gl/9S55GCdZ7g1m5EAo9?g_st=com.google.maps.preview.copy">
                                     <h3>Address</h3>
                                     <p>{{ setting('address') ?? '' }}</p>
                                 </a>
