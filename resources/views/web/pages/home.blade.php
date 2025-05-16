@@ -10,7 +10,7 @@
                 <img src="{{ asset('Icon white.png') }}" class="img-fluid mb-3" alt="" width="90"
                     height="90">
                 <h2 class="h5 h2-md h2-lg">
-                    <span class="typed" data-typed-items="{{ setting('name') ?? 'UCE' }}"></span>
+                    <span class="typed" data-typed-items=" Welcome to,{{ setting('name') ?? 'UCE' }}"></span>
                 </h2>
 
                 <div>
