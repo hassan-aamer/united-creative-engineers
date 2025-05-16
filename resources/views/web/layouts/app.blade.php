@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 
 <head>
-    @include('web.layouts.head')
+@include('web.layouts.head')
 </head>
 
-<body class="bg-gray">
-    @hasSection('header')
-        @yield('header')
-    @else
-        @include('web.layouts.header')
-    @endif
+<body class="index-page">
+    @include('web.layouts.header')
     @yield('content')
     @include('web.layouts.footer')
     @include('web.layouts.js')

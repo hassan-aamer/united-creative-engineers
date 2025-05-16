@@ -1,46 +1,22 @@
-<header class="header-green">
-    <nav class="navbar navbar-expand-lg navbar-light navbar-green">
-        <div class="container">
-            <div class="col-md-3 text-start">
-                <a class="navbar-brand" href="{{ route('home') }}">
-                    <img src="{{ asset('web/images/logo.png') }}" alt="سيف المستقبل" class="logo">
-                </a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center col-md-6" id="navbarNav">
-                <ul class="navbar-nav nav-links-green">
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}"
-                            href="{{ route('home') }}">{{ __('attributes.home') }}</a>
-                    </li>
-                    @if (App\Models\Service::count())
-                        <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('services') ? 'active' : '' }}"
-                                href="{{ route('services') }}">{{ __('attributes.services') }}</a>
-                        </li>
-                    @endif
-                    @if (App\Models\Product::count())
-                        <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('products') ? 'active' : '' }}"
-                                href="{{ route('products') }}">{{ __('attributes.products') }}</a>
-                        </li>
-                    @endif
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}"
-                            href="{{ route('about') }}">{{ __('attributes.about') }}</a>
-                    </li>
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <img src="web/img/Icon white.png" alt="" width="40" height="100">
+                {{-- <h1 class="sitename">{{ setting('name') ?? '' }}</h1> --}}
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-            </div>
-            <div class="col-md-3 text-end d-none d-lg-block d-xl-block">
-                <a href="{{ route('contact') }}">
-                    <button class="btn btn-green px-4 btn-header">{{ __('attributes.contuct') }}</button>
-                </a>
-            </div>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
         </div>
-    </nav>
-
-    @include('web.layouts.chat_bot')
-
-</header>
+    </header>

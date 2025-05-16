@@ -33,14 +33,13 @@ class SettingsSeeder extends Seeder
                 'ar' => 'example',
                 'en' => 'example'
             ],
+
             'phone' => '+9665455470',
             'whatsapp' => '+9685272470',
             'facebook' => 'https://facebook.com/example',
-            'twitter' => 'https://twitter.com/example',
-            'youtube' => 'https://youtube.com/example',
             'linkedIn' => 'https://linkedin.com/company/example',
             'instagram' => 'https://instagram.com/example',
-            'snapchat' => 'https://snapchat.com/add/example',
+
             'copyrights' => [
                 'ar' => ' © '. date('Y') . ' example. جميع الحقوق محفوظة.',
                 'en' => 'All rights reserved to example Company © ' . date('Y')

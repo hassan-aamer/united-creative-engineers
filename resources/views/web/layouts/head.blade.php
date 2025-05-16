@@ -1,6 +1,8 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@yield('title') - {{ setting('name') }}</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>@yield('title') | United creative engineers</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
 
-@include('web.layouts.css')
-@yield('css')
+    @include('web.layouts.css')
+    @yield('css')

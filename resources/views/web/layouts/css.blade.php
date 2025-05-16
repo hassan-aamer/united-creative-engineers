@@ -1,29 +1,18 @@
-<link rel="shortcut icon" href="{{ asset('web/images/logo.png') }}" type="{{ setting('name') }}" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/19.2.16/css/intlTelInput.css" />
-<link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
-<style>
-    #chatSuggestions {
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
-    }
+    <!-- Favicons -->
+    <link href="{{ asset('web/img/Icon white.png') }}" rel="icon">
+    <link href="{{ asset('web/img/Icon white.png') }}" rel="apple-touch-icon">
 
-    .suggestion-btn {
-        background-color: #007bff;
-        color: white;
-        padding: 10px;
-        border: none;
-        margin: 5px 0;
-        cursor: pointer;
-        text-align: center;
-        border-radius: 5px;
-    }
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
 
-    .suggestion-btn:hover {
-        background-color: #0056b3;
-    }
-</style>
+    <!-- Vendor CSS Files -->
+    <link href="{{ asset('web/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('web/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('web/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('web/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('web/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="{{ asset('web/css/app.css') }}" rel="stylesheet">

@@ -1,111 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>United creative engineers</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-
-    <!-- Favicons -->
-    <link href="{{ asset('web/img/Icon white.png') }}" rel="icon">
-    <link href="{{ asset('web/img/Icon white.png') }}" rel="apple-touch-icon">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="{{ asset('web/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('web/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('web/vendor/aos/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('web/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('web/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-
-    <!-- Main CSS File -->
-    <link href="{{ asset('web/css/app.css') }}" rel="stylesheet">
-
-</head>
-
-<body class="index-page">
-
-    <header id="header" class="header d-flex align-items-center fixed-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-            <a href="index.html" class="logo d-flex align-items-center">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="web/img/Icon white.png" alt="" width="40" height="100">
-                {{-- <h1 class="sitename">{{ setting('name') ?? '' }}</h1> --}}
-            </a>
-
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="#hero" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-            </nav>
-
-        </div>
-    </header>
-
+@extends('web.layouts.app')
+@section('title', __('attributes.home'))
+@section('content')
     <main class="main">
-
         <!-- Hero Section -->
         <section id="hero" class="hero section dark-background">
-
             <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" class="hero-bg" alt=""
                 data-aos="fade-in">
-
             <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
                 {{-- <img src="{{ asset('web/img/Loogo.png') }}" class="img-fluid mb-3" alt="" width="90" height="90"> --}}
                 <h2>{{ setting('title') ?? '' }}</h2>
-                <p>We create <span class="typed"
-                        data-typed-items=" Houses designs, Offices designs, Units designs"></span></p>
+                <p>We create <span class="typed" data-typed-items=" Houses designs, Offices designs, Units designs"></span>
+                </p>
                 <div>
                     <a href="#about" class="cta-btn">Get Started</a>
                     <a href="#services" class="cta-btn2">Our Services</a>
                 </div>
             </div>
-
         </section><!-- /Hero Section -->
 
         <!-- About Section -->
         <section id="about" class="about section">
-
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>About</h2>
-                {{-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> --}}
             </div><!-- End Section Title -->
-
             <div class="container">
-
                 <div class="row gy-4">
-
                     <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
                         <img src="{{ App\Helpers\Image::getMediaUrl(App\Models\Setting::first(), 'about') }}"
                             class="img-fluid" alt="">
                     </div>
-
                     <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
                         <h3>{{ setting('about') ?? '' }}</h3>
                         <p class="fst-italic">
                             {{ setting('description') ?? '' }}
                         </p>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
         <!-- /About Section -->
+
         @if ($result['services']->count())
             <!-- Services Section -->
             <section id="services" class="services section light-background">
@@ -143,13 +78,12 @@
                     <h2>Portfolio</h2>
                 </div><!-- End Section Title -->
                 <div class="container">
-                    <div class="isotope-layout" data-default-filter="*" data-layout="masonry"
-                        data-sort="original-order">
+                    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
                         <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
                             @foreach ($result['products']->sortBy('position') as $product)
                                 <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                                    <img src="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}"
-                                        class="img-fluid" alt="">
+                                    <img src="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}" class="img-fluid"
+                                        alt="">
                                     <div class="portfolio-info">
                                         <h4>{{ shortenText($product->title ?? '', 20) }}</h4>
                                         <p>{{ shortenText($product->description ?? '', 40) }}</p>
@@ -217,8 +151,8 @@
 
                                 <div class="col-md-6">
                                     <input type="text" name="name"
-                                        class="form-control @error('name') is-invalid @enderror"
-                                        placeholder="Your Name" required="" value="{{ old('name') }}">
+                                        class="form-control @error('name') is-invalid @enderror" placeholder="Your Name"
+                                        required="" value="{{ old('name') }}">
                                     @error('name')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -235,8 +169,7 @@
 
                                 <div class="col-md-12">
                                     <input type="text" class="form-control @error('phone') is-invalid @enderror"
-                                        value="{{ old('phone') }}" name="phone" placeholder="Phone"
-                                        required="">
+                                        value="{{ old('phone') }}" name="phone" placeholder="Phone" required="">
                                     @error('phone')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -270,124 +203,4 @@
         <!-- /Contact Section -->
 
     </main>
-
-    <footer id="footer" class="footer dark-background">
-
-        <div class="container">
-            <div class="row gy-3">
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <i class="bi bi-geo-alt icon"></i>
-                    <div class="address">
-                        <h4>Address</h4>
-                        <p>{{ setting('address') ?? '' }}</p>
-                        {{-- <p>New York, NY 535022</p> --}}
-                        <p></p>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <i class="bi bi-telephone icon"></i>
-                    <div>
-                        <h4>Contact</h4>
-                        <p>
-                            <strong>Phone:</strong> <span>{{ setting('phone') ?? '' }}</span><br>
-                            <strong>Email:</strong> <span>{{ setting('email') ?? '' }}</span><br>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <i class="bi bi-clock icon"></i>
-                    <div>
-                        <h4>Opening Hours</h4>
-                        <p>
-                            <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-                            <strong>Sunday</strong>: <span>Closed</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h4>Follow Us</h4>
-                    <div class="social-links d-flex">
-                        <a href="https://wa.me/{{ setting('whatsapp') }}" class="whatsapp"><i
-                                class="bi bi-whatsapp"></i></a>
-                        <a href="{{ setting('twitter') ?? '' }}" class="twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="{{ setting('facebook') ?? '' }}" class="facebook"><i
-                                class="bi bi-facebook"></i></a>
-                        <a href="{{ setting('instagram') ?? '' }}" class="instagram"><i
-                                class="bi bi-instagram"></i></a>
-                        <a href="{{ setting('linkedin') ?? '' }}" class="linkedin"><i
-                                class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container copyright text-center mt-4">
-            <p>{{ setting('copyrights') }}</p>
-        </div>
-
-    </footer>
-
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Preloader -->
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="{{ asset('web/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('web/vendor/php-email-form/validate.js') }}"></script>
-    <script src="{{ asset('web/vendor/aos/aos.js') }}"></script>
-    <script src="{{ asset('web/vendor/typed.js/typed.umd.js') }}"></script>
-    <script src="{{ asset('web/vendor/glightbox/js/glightbox.min.js') }}"></script>
-    <script src="{{ asset('web/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('web/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('web/vendor/swiper/swiper-bundle.min.js') }}"></script>
-
-    <!-- Main JS File -->
-    <script src="{{ asset('web/js/app.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            @if (session('error'))
-                Swal.fire({
-                    icon: 'error',
-                    text: "{{ session('error') }}",
-                    timer: 5000,
-                    showConfirmButton: false
-                });
-            @endif
-
-            @if (session('success'))
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    text: "{{ session('success') }}",
-                    timer: 1500,
-                    showConfirmButton: false
-                });
-            @endif
-        });
-    </script>
-    <script>
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-                e.preventDefault();
-            }
-        });
-    </script>
-
-</body>
-
-</html>
+@endsection

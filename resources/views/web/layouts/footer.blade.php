@@ -1,60 +1,64 @@
-    <!-- Footer -->
-    <footer class="bg-primary-dark text-white py-5">
+    <footer id="footer" class="footer dark-background">
+
         <div class="container">
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <h5>الرئيسية</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="{{ route('home') }}">{{ __('attributes.home') }}</a></li>
-                        @if (App\Models\Service::count())
-                            <li><a href="{{ route('services') }}">{{ __('attributes.services') }}</a></li>
-                        @endif
-                        @if (App\Models\Product::count())
-                            <li><a href="{{ route('products') }}">{{ __('attributes.products') }}</a></li>
-                        @endif
-                        {{-- <li><a href="{{ route('about') }}">{{ __('attributes.about') }}</a></li> --}}
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>{{ __('attributes.knowUs') }}</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="{{ route('about') }}"> {{ __('attributes.about') }}</a></li>
-                        <li><a href="{{ route('about') }}">{{ __('attributes.WhyUs') }}</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <h5>{{ __('attributes.contuct') }}</h5>
-                    <ul class="list-unstyled">
-                        <li> <i class="fas fa-phone"></i> {{ setting('phone') }} </li>
-                        <li> <i class="fas fa-envelope"></i> {{ setting('email') }} </li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <form action="{{ route('subscription') }}" method="POST">
-                        @csrf
-                        <h5>{{ __('attributes.subscriptions') }}</h5>
-                        <div class="input-group mb-3">
-                            <input type="email" value="{{ old('email') }}" name="email"
-                                class="form-control @error('email') is-invalid @enderror"
-                                placeholder="{{ __('attributes.email') }}" aria-label="Email"
-                                aria-describedby="button-addon2">
-                            <button class="btn btn-success" type="submit"><i class="fas fa-paper-plane"></i></button>
-                            @error('email')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </form>
-                    <div class="social-icons">
-                        <a href="{{ setting('facebook') ?? '' }}"><i class="fab fa-facebook-f"></i></a>
-                        <a href="{{ setting('twitter') ?? '' }}"><i class="fab fa-twitter"></i></a>
-                        <a href="{{ setting('instagram') ?? '' }}"><i class="fab fa-instagram"></i></a>
-                        <a href="{{ setting('linkedIn') ?? '' }}"><i class="fab fa-linkedin-in"></i></a>
+            <div class="row gy-3">
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-geo-alt icon"></i>
+                    <div class="address">
+                        <h4>Address</h4>
+                        <p>{{ setting('address') ?? '' }}</p>
+                        {{-- <p>New York, NY 535022</p> --}}
+                        <p></p>
                     </div>
 
-                    <div class="mt-4">
-                        <p class="mb-0">{{ setting('copyrights') }}</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-telephone icon"></i>
+                    <div>
+                        <h4>Contact</h4>
+                        <p>
+                            <strong>Phone :</strong> <span>{{ setting('phone') ?? '' }}</span><br>
+                            <strong>Email :</strong> <span>{{ setting('email') ?? '' }}</span><br>
+                        </p>
                     </div>
                 </div>
+
+                <div class="col-lg-3 col-md-6 d-flex">
+                    <i class="bi bi-clock icon"></i>
+                    <div>
+                        <h4>Opening Hours</h4>
+                        <p>
+                            <strong>Mon-Sat :</strong> <span>09:00 AM - 05:00 PM</span><br>
+                            <strong>Friday , Saturday</strong> : <span>Closed</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4>Follow Us</h4>
+                    <div class="social-links d-flex">
+                        <a href="https://wa.me/{{ setting('whatsapp') }}" class="whatsapp"><i
+                                class="bi bi-whatsapp"></i></a>
+                        {{-- <a href="{{ setting('twitter') ?? '' }}" class="twitter"><i class="bi bi-twitter-x"></i></a> --}}
+                        <a href="{{ setting('facebook') ?? '' }}" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="{{ setting('instagram') ?? '' }}" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="{{ setting('linkedin') ?? '' }}" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
             </div>
         </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>{{ setting('copyrights') }}</p>
+        </div>
+
     </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
