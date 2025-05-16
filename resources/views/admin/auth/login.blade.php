@@ -82,9 +82,43 @@
 
     <!-- Vendor js -->
     <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- App js -->
     <script src="{{ asset('assets/js/app.min.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if (session('error'))
+                Swal.fire({
+                    icon: 'error',
+                    text: "{{ session('error') }}",
+                    timer: 5000,
+                    showConfirmButton: false
+                });
+            @endif
+
+            @if (session('success'))
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    text: "{{ session('success') }}",
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+            @endif
+        });
+    </script>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+            }
+        });
+    </script>
 
 </body>
 

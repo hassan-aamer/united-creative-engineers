@@ -24,7 +24,7 @@ class AuthController extends Controller
             return redirect()->route('admin.dashboard')->with('success', __('attributes.OperationCompletedSuccessfully'));
         }
 
-        return redirect()->route('admin.login')->with('error', 'An error in the email or password.');
+        return redirect()->back()->with('error', 'An error in the email or password.');
     }
 
     public function logout()
