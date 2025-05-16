@@ -3,7 +3,7 @@
 
             <a href="index.html" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="web/img/Icon white.png" alt="" width="40" height="100">
+                <img src="{{ asset('Icon white.png') }}" alt="" width="40" height="100">
                 {{-- <h1 class="sitename">{{ setting('name') ?? '' }}</h1> --}}
             </a>
 
