@@ -7,8 +7,7 @@
             <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" class="hero-bg" alt=""
                 data-aos="fade-in">
             <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('Icon white.png') }}" class="img-fluid mb-3" alt="" width="90"
-                    height="90">
+                <img src="{{ asset('Icon white.png') }}" class="img-fluid mb-3" alt="" width="90" height="90">
                 <h2 class="h5 h2-md h2-lg">
                     <span class="typed" data-typed-items=" Welcome to,{{ setting('name') ?? 'UCE' }}"></span>
                 </h2>
@@ -56,8 +55,8 @@
                         @foreach ($result['services']->sortBy('position') as $service)
                             <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
                                 <div class="icon flex-shrink-0"><img
-                                        src="{{ App\Helpers\Image::getMediaUrl($service, 'services') }}" alt=""
-                                        width="30" height="30"></div>
+                                        src="{{ App\Helpers\Image::getMediaUrl($service, 'services') }}" alt="" width="30"
+                                        height="30"></div>
                                 <div>
                                     <h4 class="title"><a href="{{ route('services.details', $service->id) }}"
                                             class="stretched-link">{{ shortenText($service->title ?? '', 20) }}</a>
@@ -84,8 +83,7 @@
                         <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
                             @foreach ($result['products']->sortBy('position') as $product)
                                 <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-                                    <img src="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}" class="img-fluid"
-                                        alt="">
+                                    <img src="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}" class="img-fluid" alt="">
                                     <div class="portfolio-info">
                                         <h4>{{ shortenText($product->title ?? '', 20) }}</h4>
                                         <p>{{ shortenText($product->description ?? '', 40) }}</p>
@@ -148,15 +146,13 @@
                     </div>
 
                     <div class="col-lg-8">
-                        <form action="{{ route('contact.store') }}" method="POST" class="php-email-form"
-                            data-aos="fade-up" data-aos-delay="200">
+                        <form action="{{ route('contact.store') }}" method="POST" data-aos="fade-up" data-aos-delay="200">
                             @csrf
                             <div class="row gy-4">
 
                                 <div class="col-md-6">
-                                    <input type="text" name="name"
-                                        class="form-control @error('name') is-invalid @enderror" placeholder="Your Name"
-                                        required="" value="{{ old('name') }}">
+                                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                                        placeholder="Your Name" required="" value="{{ old('name') }}">
                                     @error('name')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -164,8 +160,7 @@
 
                                 <div class="col-md-6 ">
                                     <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" placeholder="Your Email" required=""
-                                        value="{{ old('email') }}">
+                                        name="email" placeholder="Your Email" required="" value="{{ old('email') }}">
                                     @error('email')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -180,19 +175,22 @@
                                 </div>
 
                                 <div class="col-md-12">
-                                    <textarea class="form-control @error('message') is-invalid @enderror" name="message" rows="6"
-                                        placeholder="Message" required="">{{ old('message') }}</textarea>
+                                    <textarea class="form-control @error('message') is-invalid @enderror" name="message"
+                                        rows="6" placeholder="Message" required="">{{ old('message') }}</textarea>
                                     @error('message')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
 
                                 <div class="col-md-12 text-center">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
 
-                                    <button type="submit">Send Message</button>
+                                    <button style="color: var(--contrast-color);
+                                            background: var(--accent-color);
+                                            border: 0;
+                                            padding: 10px 30px;
+                                            transition: 0.4s;
+                                            border-radius: 50px;" 
+                                            type="submit">Send Message</button>
                                 </div>
 
                             </div>
