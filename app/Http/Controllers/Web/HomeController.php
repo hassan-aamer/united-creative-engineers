@@ -22,8 +22,8 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $result = [
-            'services' => $this->servicesService->index($request),
-            'products' => $this->productsService->index($request),
+            'services' => $this->servicesService->index($request)->where('active',1),
+            'products' => $this->productsService->index($request)->where('active',1),
         ];
         return view('web.pages.home', compact('result'));
     }
