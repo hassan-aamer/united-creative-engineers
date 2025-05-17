@@ -48,7 +48,7 @@ return [
     'Questions' => 'الأسئلة ؟ الدردشة معنا!',
     'close' => 'اغلاق',
     'no_data_found' => 'لا يوجد بيانات',
-    'products' => 'منتجاتنا',
+    'products' => 'معرض الاعمال',
     'position' => 'الترتيب',
     'settings' => 'الاعدادات',
     'sliders' => 'لافيتات',

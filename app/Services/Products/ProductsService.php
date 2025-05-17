@@ -66,7 +66,7 @@ class ProductsService
                 $products->addMediaFromRequest('image')->toMediaCollection('products');
             }
             if (isset($request['images']) && $request['images']) {
-                $products->clearMediaCollection('product_collection');
+                // $products->clearMediaCollection('product_collection');
                 foreach ((array) $request['images'] as $file) {
                     $products->addMedia($file)->toMediaCollection('product_collection');
                 }

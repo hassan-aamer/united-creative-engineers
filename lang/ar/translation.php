@@ -28,7 +28,7 @@ return [
     'order' => "الطلب",
     'orderProduct' => "منتج الطلب",
     'coupon' => "كوبون",
-    'product' => "منتج",
+    'product' => "معرض عمل",
     'category' => "الفئة",
     'orders' => "الطلابات",
     'communities' => "المجتمعات",

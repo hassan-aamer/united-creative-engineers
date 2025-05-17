@@ -47,7 +47,7 @@ return [
     'no' => 'No',
     'close' => 'Close',
     'no_data_found' => 'No Data Found',
-    'products' => 'Products',
+    'products' => 'Portfolio',
     'marketingService' => 'Marketing Service',
     'websiteDesigner' => 'Website Designer',
     'position' => 'position',

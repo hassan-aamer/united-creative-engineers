@@ -28,7 +28,7 @@ return [
     'order' => "Order",
     'orderProduct' => "Order Product",
     'coupon' => "Coupon",
-    'product' => "Product",
+    'product' => "Portfolio",
     'category' => "Category",
     'orders' => "Orders",
     'comments' => "Comments",
