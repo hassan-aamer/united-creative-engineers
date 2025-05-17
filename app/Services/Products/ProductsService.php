@@ -3,7 +3,7 @@
 namespace App\Services\Products;
 
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Cache;
 use App\Interfaces\CRUDRepositoryInterface;
 use App\Models\Product;
 
@@ -71,6 +71,8 @@ class ProductsService
                     $products->addMedia($file)->toMediaCollection('product_collection');
                 }
             }
+
+            Cache::forget("product_{$id}");
 
             DB::commit();
         } catch (\Throwable $e) {
