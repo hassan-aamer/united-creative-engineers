@@ -60,4 +60,4 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Preloader -->
-    {{-- <div id="preloader"></div> --}}
+    <div id="preloader"></div>

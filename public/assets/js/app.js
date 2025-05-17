@@ -893,10 +893,10 @@ function ($) {
         }, 400);
         
         // Preloader
-        // $(window).on('load', function () {
-        //     $('#status').fadeOut();
-        //     $('#preloader').delay(350).fadeOut('slow');
-        // });
+        $(window).on('load', function () {
+            $('#status').fadeOut();
+            $('#preloader').delay(350).fadeOut('slow');
+        });
 
         $('[data-toggle="fullscreen"]').on("click", function (e) {
             e.preventDefault();
