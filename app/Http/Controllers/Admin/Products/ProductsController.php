@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Admin\Products;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Products\ProductsRequest;
-use App\Models\ProductFeature;
-use App\Models\ProductService;
+use Illuminate\Support\Facades\Cache;
 use App\Services\Products\ProductsService;
 use Illuminate\Http\Request;
 
@@ -42,7 +41,9 @@ class ProductsController extends Controller
     }
     public function edit($id)
     {
-        $result = $this->service->edit($id);
+        $result = Cache::rememberForever("product_{$id}", function () use ($id) {
+            return $this->service->edit($id);
+        });
         return view($this->folderPath . 'create_and_edit', compact('result'));
     }
     public function update(ProductsRequest $request, $id)
