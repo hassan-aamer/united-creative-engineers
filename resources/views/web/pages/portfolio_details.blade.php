@@ -44,8 +44,7 @@
                     <div class="swiper-wrapper align-items-center">
                         @foreach ($product->getMedia('product_collection') as $media)
                             <div class="swiper-slide">
-                                <img data-src="{{ $media->getUrl('thumb') }}" class="swiper-lazy" alt="Product Image">
-                                <div class="swiper-lazy-preloader"></div>
+                                <img src="{{ $media->getUrl() }}" alt="Product Image">
                             </div>
                         @endforeach
 
@@ -70,25 +69,4 @@
         </section><!-- /Portfolio Details Section -->
 
     </main>
-@endsection
-@section('js')
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            lazy: {
-                loadPrevNext: true,
-                loadPrevNextAmount: 5,
-            },
-            slidesPerView: 1,
-            spaceBetween: 10,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
 @endsection
