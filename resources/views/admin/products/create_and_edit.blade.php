@@ -46,3 +46,29 @@
         </div>
     </div>
 @endsection
+@section('js')
+    <script>
+        function deleteImage(mediaId, button) {
+            if (!confirm('Are you sure you want to delete this photo ?')) return;
+
+            fetch(`/admin/media/${mediaId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        'Accept': 'application/json',
+                    },
+                })
+                .then(response => {
+                    if (response.ok) {
+                        button.parentElement.remove();
+                    } else {
+                        alert('An error occurred during deletion');
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert('Server connection failed');
+                });
+        }
+    </script>
+@endsection

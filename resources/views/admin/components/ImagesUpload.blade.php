@@ -4,9 +4,15 @@
     @if (isset($result) && $result->hasMedia($collection))
         <div class="mb-2 d-flex flex-wrap gap-2">
             @foreach ($result->getMedia($collection) as $media)
-                <div>
+                <div class="position-relative" style="display: inline-block;">
                     <img src="{{ $media->getUrl() }}" alt="Old Image" class="img-thumbnail"
                         style="height: 100px; width: auto;">
+
+                    <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0"
+                        style="z-index: 10;"
+                        onclick="deleteImage({{ $media->id }}, this)">
+                        &times;
+                    </button>
                 </div>
             @endforeach
         </div>

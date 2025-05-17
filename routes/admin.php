@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+Route::delete('/media/{id}', [\App\Http\Controllers\Admin\Media\MediaController::class, 'destroy'])->name('media.destroy');
 Route::get('login', [\App\Http\Controllers\Admin\Auth\AuthController::class, 'showLoginForm'])->name('login.page');
 Route::post('store/login', [\App\Http\Controllers\Admin\Auth\AuthController::class, 'login'])->name('login');
 Route::middleware('checkAuth')->group(function () {
@@ -42,15 +43,6 @@ Route::middleware('checkAuth')->group(function () {
         Route::put('/update/{id}', 'update')->name('contacts.update');
         Route::delete('/delete/{id}', 'destroy')->name('contacts.delete');
         Route::post('/change-status', 'changeStatus')->name('contacts.status');
-    });
-    Route::prefix('features')->controller(\App\Http\Controllers\Admin\Features\FeatureController::class)->group(function () {
-        Route::get('/', 'index')->name('features.index');
-        Route::get('/create', 'create')->name('features.create');
-        Route::post('/store', 'store')->name('features.store');
-        Route::get('/{id}/edit', 'edit')->name('features.edit');
-        Route::put('/update/{id}', 'update')->name('features.update');
-        Route::delete('/delete/{id}', 'destroy')->name('features.delete');
-        Route::post('/change-status', 'changeStatus')->name('features.status');
     });
     Route::prefix('users')->controller(\App\Http\Controllers\Admin\Users\UserController::class)->group(function () {
         Route::get('/', 'index')->name('users.index');
