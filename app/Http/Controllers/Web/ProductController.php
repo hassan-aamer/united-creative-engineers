@@ -14,12 +14,11 @@ class ProductController extends Controller
     {
         $this->service = $service;
     }
-public function show($id)
-{
-    $product = Cache::remember("product_{$id}", now()->addMinutes(180), function () use ($id) {
-        return $this->service->show($id);
-    });
-    return view('web.pages.portfolio_details', compact('product'));
-}
-
+    public function show($id)
+    {
+        $product = Cache::rememberForever("product_{$id}", function () use ($id) {
+            return $this->service->show($id);
+        });
+        return view('web.pages.portfolio_details', compact('product'));
+    }
 }
