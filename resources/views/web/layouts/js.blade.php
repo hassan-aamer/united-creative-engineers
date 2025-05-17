@@ -7,6 +7,7 @@
     <script src="{{ asset('web/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
     <script src="{{ asset('web/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('web/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    @yield('js')
 
     <!-- Main JS File -->
     <script src="{{ asset('web/js/app.js') }}"></script>
@@ -35,7 +36,7 @@
             @endif
         });
     </script>
-    {{-- <script>
+    <script>
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
         });
@@ -45,4 +46,4 @@
                 e.preventDefault();
             }
         });
-    </script> --}}
+    </script>
