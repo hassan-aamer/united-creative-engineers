@@ -1,5 +1,15 @@
 @extends('web.layouts.app')
 @section('title', __('attributes.home'))
+@section('css')
+<style>
+    @media (max-width: 768px) {
+    .h2-md {
+        font-size: 1.5rem; /* حجم الخط المرغوب على الأجهزة المحمولة */
+    }
+}
+
+</style>
+@endsection
 @section('content')
     <main class="main">
         <!-- Hero Section -->
