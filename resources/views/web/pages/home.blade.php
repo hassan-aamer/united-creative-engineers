@@ -44,11 +44,11 @@
 
         @if ($result['services']->count())
             <!-- Services Section -->
-            <section id="services" class="services section light-background">
+            <section id="services" class="services section light-background" style="background-color: black;">
 
                 <!-- Section Title -->
                 <div class="container section-title" data-aos="fade-up">
-                    <h2>Services</h2>
+                    <h2 style="color: whitesmoke;">Services</h2>
                 </div><!-- End Section Title -->
                 <div class="container">
                     <div class="row gy-4">
@@ -58,10 +58,10 @@
                                         src="{{ App\Helpers\Image::getMediaUrl($service, 'services') }}" alt="" width="30"
                                         height="30"></div>
                                 <div>
-                                    <h4 class="title"><a href="{{ route('services.details', $service->id) }}"
+                                    <h4 class="title text-uppercase"><a style="color: whitesmoke;" href="{{ route('services.details', $service->id) }}"
                                             class="stretched-link">{{ shortenText($service->title ?? '', 20) }}</a>
                                     </h4>
-                                    <p class="description">{{ shortenText($service->description ?? '', 90) }}</p>
+                                    <p style="color: whitesmoke;" class="description">{{ shortenText($service->description ?? '', 90) }}</p>
                                 </div>
                             </div><!-- End Service Item -->
                         @endforeach
