@@ -1,15 +1,5 @@
 @extends('web.layouts.app')
 @section('title', __('attributes.home'))
-@section('css')
-<style>
-    @media (max-width: 768px) {
-    .h2-md {
-        font-size: 1.5rem; /* حجم الخط المرغوب على الأجهزة المحمولة */
-    }
-}
-
-</style>
-@endsection
 @section('content')
     <main class="main">
         <!-- Hero Section -->
@@ -18,9 +8,9 @@
                 data-aos="fade-in">
             <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
                 <img src="{{ asset('Icon white.png') }}" class="img-fluid mb-3" alt="" width="90" height="90">
-                <h2 class="h5 h2-md h2-lg">
+                <h5 style="font-weight: bold;" class="h5 h2-md h2-lg">
                     <span class="typed" data-typed-items=" Welcome to,{{ setting('name') ?? 'UCE' }}"></span>
-                </h2>
+                </h5>
 
                 <div>
                     <a href="#about" class="cta-btn">Get Started</a>
