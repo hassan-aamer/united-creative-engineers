@@ -9,8 +9,7 @@
                         style="height: 100px; width: auto;">
 
                     <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0"
-                        style="z-index: 10;"
-                        onclick="deleteImage({{ $media->id }}, this)">
+                        style="z-index: 10;" onclick="deleteImage({{ $media->id }}, this)">
                         &times;
                     </button>
                 </div>
@@ -18,10 +17,20 @@
         </div>
     @endif
 
-    <input type="file" name="images[]" class="form-control @error('images.*') is-invalid @enderror"
+    <input type="file" name="images[]" class="form-control @error('images') is-invalid @enderror"
         id="example-fileinput" multiple>
 
-    @error('images')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
+    @if ($errors->has('images'))
+        @foreach ($errors->get('images') as $error)
+            <div class="invalid-feedback d-block">{{ $error }}</div>
+        @endforeach
+    @endif
+
+    @if ($errors->has('images.*'))
+        @foreach ($errors->get('images.*') as $imageErrors)
+            @foreach ($imageErrors as $error)
+                <div class="invalid-feedback d-block">{{ $error }}</div>
+            @endforeach
+        @endforeach
+    @endif
 </div>
