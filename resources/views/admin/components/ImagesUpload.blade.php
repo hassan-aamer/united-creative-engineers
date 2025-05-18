@@ -21,7 +21,7 @@
     <input type="file" name="images[]" class="form-control @error('images.*') is-invalid @enderror"
         id="example-fileinput" multiple>
 
-    @error('images.*')
+    @error('images')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
