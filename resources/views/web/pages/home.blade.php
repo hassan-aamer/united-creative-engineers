@@ -73,7 +73,7 @@
 
         @if ($result['products']->count())
             <!-- Portfolio Section -->
-            <section id="portfolio" class="portfolio section">
+            <section id="portfolio" class="portfolio section" style="background-color: #f3efdf;">
                 <!-- Section Title -->
                 <div class="container section-title" data-aos="fade-up">
                     <h2>Portfolio</h2>
