@@ -20,7 +20,7 @@
         </section><!-- /Hero Section -->
 
         <!-- About Section -->
-        <section id="about" class="about section">
+        <section id="about" class="about section" style="background-color: #f3efdf;">
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>About</h2>
