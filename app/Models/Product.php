@@ -14,12 +14,8 @@ class Product extends Model implements HasMedia
     use HasFactory, InteractsWithMedia, HasTranslations;
     public $translatable = ['title', 'description', 'content'];
     protected $guarded = [''];
-    public function registerMediaConversions(Media $media = null): void
+    public function registerMediaConversions(?Media $media = null): void
     {
-        $this->addMediaConversion('thumb')
-            ->width(400)
-            ->height(300)
-            ->sharpen(10)
-            ->nonQueued();
+        $this->addMediaConversion('thumb');
     }
 }
