@@ -64,14 +64,4 @@ class ProductsController extends Controller
     {
         $this->service->changeStatus($request);
     }
-    public function getImages(Product $product)
-    {
-        $images = $product->getMedia('product_collection')->map(function ($media) {
-            return [
-                'url' => $media->getUrl('thumb')
-            ];
-        });
-
-        return response()->json($images);
-    }
 }
