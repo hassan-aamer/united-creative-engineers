@@ -4,7 +4,7 @@
 
 
 
-            <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
+            {{-- <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
                 <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
                     aria-haspopup="false" aria-expanded="false">
                     <i data-feather="globe"></i>
@@ -26,7 +26,7 @@
                     @endforeach
 
                 </div>
-            </li>
+            </li> --}}
 
 
             <li class="dropdown notification-list topbar-dropdown">
