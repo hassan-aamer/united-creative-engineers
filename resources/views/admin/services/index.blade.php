@@ -46,7 +46,11 @@
                                                 <tr id="row-{{ $service->id ?? '' }}">
                                                     <td>{{ $loop->iteration ?? '' }}</td>
                                                     <td><img src="{{ App\Helpers\Image::getMediaUrl($service, 'services') }}"
-                                                            alt="service" width="100"></td>
+                                                            alt="service" width="100"
+                                                            onclick="openImage('{{ App\Helpers\Image::getMediaUrl($service, 'services') }}')"
+                                                            style="width: 100px; height: auto; cursor: pointer; transition: transform 0.3s;"
+                                                            onmouseover="this.style.transform='scale(1.1)'"
+                                                            onmouseout="this.style.transform='scale(1)'"></td>
                                                     <td>{{ $service->position ?? '' }}</td>
                                                     <td>{{ shortenText($service->title ?? '', 10) }}</td>
                                                     <td>{{ shortenText($service->description ?? '', 10) }}</td>

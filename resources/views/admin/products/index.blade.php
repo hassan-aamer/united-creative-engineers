@@ -46,7 +46,11 @@
                                                 <tr id="row-{{ $products->id ?? '' }}">
                                                     <td>{{ $loop->iteration ?? '' }}</td>
                                                     <td><img src="{{ App\Helpers\Image::getMediaUrl($products, 'products') }}"
-                                                            alt="products" width="100"></td>
+                                                            alt="products" width="100"
+                                                            onclick="openImage('{{ App\Helpers\Image::getMediaUrl($products, 'products') }}')"
+                                                            style="width: 100px; height: auto; cursor: pointer; transition: transform 0.3s;"
+                                                            onmouseover="this.style.transform='scale(1.1)'"
+                                                            onmouseout="this.style.transform='scale(1)'"></td>
                                                     <td>{{ $products->position ?? '' }}</td>
                                                     <td>{{ shortenText($products->title ?? '', 10) }}</td>
                                                     <td>{{ shortenText($products->description ?? '', 10) }}</td>
