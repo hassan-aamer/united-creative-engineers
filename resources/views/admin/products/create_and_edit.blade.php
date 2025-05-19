@@ -47,7 +47,7 @@
     </div>
 @endsection
 @section('js')
-    <script>
+    {{-- <script>
         function deleteImage(mediaId, button) {
             if (!confirm('Are you sure you want to delete this photo ?')) return;
 
@@ -70,12 +70,11 @@
                     alert('Server connection failed');
                 });
         }
-    </script>
+    </script> --}}
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
     <script>
         document.querySelector('form.parsley-examples').addEventListener('submit', function(e) {
-            e.preventDefault(); // منع الإرسال العادي للنموذج
+            e.preventDefault();
 
             const form = e.target;
             const formData = new FormData(form);
@@ -100,12 +99,12 @@
                     }
                 })
                 .then(function(response) {
-                    alert('✅ تم رفع الصور وحفظ البيانات بنجاح!');
-                    window.location.reload(); // إعادة تحميل الصفحة أو إعادة توجيه حسب رغبتك
+                    alert('✅Photos have been uploaded and data saved successfully!');
+                    window.location.reload();
                 })
                 .catch(function(error) {
                     console.error(error);
-                    alert('❌ حدث خطأ أثناء رفع الصور.');
+                    alert('❌ An error occurred while uploading photos.');
                 })
                 .finally(function() {
                     submitBtn.disabled = false;
@@ -117,7 +116,7 @@
 
         // حذف الصورة
         function deleteImage(mediaId, button) {
-            if (!confirm('هل أنت متأكد من حذف هذه الصورة؟')) return;
+            if (!confirm('Are you sure you want to delete this photo ?')) return;
 
             fetch(`/admin/media/${mediaId}`, {
                     method: 'DELETE',
@@ -130,12 +129,12 @@
                     if (response.ok) {
                         button.parentElement.remove();
                     } else {
-                        alert('حدث خطأ أثناء الحذف');
+                        alert('An error occurred during deletion');
                     }
                 })
                 .catch(error => {
                     console.error(error);
-                    alert('فشل الاتصال بالخادم');
+                    alert('Server connection failed');
                 });
         }
     </script>
