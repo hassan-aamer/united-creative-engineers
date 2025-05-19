@@ -6,7 +6,9 @@
             @foreach ($result->getMedia($collection) as $media)
                 <div class="position-relative" style="display: inline-block;">
                     <img src="{{ $media->getUrl() }}" alt="Old Image" class="img-thumbnail"
-                        style="height: 100px; width: auto;">
+                        style="height: 100px; width: auto;" onclick="openImage('{{ $media->getUrl() }}')"
+                        style="width: 100px; height: auto; cursor: pointer; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
 
                     <button type="button" class="btn btn-sm btn-danger position-absolute top-0 end-0"
                         style="z-index: 10;" onclick="deleteImage({{ $media->id }}, this)">
