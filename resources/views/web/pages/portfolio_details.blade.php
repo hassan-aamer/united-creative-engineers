@@ -1,7 +1,7 @@
 @extends('web.layouts.app')
 @section('title', __('attributes.product_details'))
 @section('content')
-    <main class="main" style="padding-bottom: 110px;">
+    <main class="main">
 
         <!-- Page Title -->
         <div class="page-title dark-background">
@@ -17,7 +17,7 @@
         </div><!-- End Page Title -->
 
         <!-- Portfolio Details Section -->
-        <section id="portfolio-details" class="portfolio-details section">
+        <section id="portfolio-details" class="portfolio-details section" style="background-color: #f3efdf;padding-bottom: 130px;">
 
             <div class="container" data-aos="fade-up">
 

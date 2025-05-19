@@ -1,7 +1,7 @@
 @extends('web.layouts.app')
 @section('title', __('attributes.services_details'))
 @section('content')
-    <main class="main" style="padding-bottom: 110px;">
+    <main class="main" >
         <!-- Page Title -->
         <div class="page-title dark-background">
             <div class="container position-relative">
@@ -16,7 +16,7 @@
         </div><!-- End Page Title -->
 
         <!-- Service Details Section -->
-        <section id="service-details" class="service-details section">
+        <section id="service-details" class="service-details section" style="padding-bottom: 180px;">
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
