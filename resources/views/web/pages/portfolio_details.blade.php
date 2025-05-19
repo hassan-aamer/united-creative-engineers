@@ -17,7 +17,8 @@
         </div><!-- End Page Title -->
 
         <!-- Portfolio Details Section -->
-        <section id="portfolio-details" class="portfolio-details section" style="background-color: #f3efdf;padding-bottom: 130px;">
+        <section id="portfolio-details" class="portfolio-details section"
+            style="background-color: #f3efdf;padding-bottom: 130px;">
 
             <div class="container" data-aos="fade-up">
 
@@ -44,7 +45,7 @@
                     <div class="swiper-wrapper align-items-center">
                         @foreach ($product->getMedia('product_collection') as $media)
                             <div class="swiper-slide">
-                                <img src="{{ $media->getUrl() }}" alt="Product Image">
+                                <img src="{{ $media->getUrl('thumb') }}" alt="Product Image" loading="lazy">
                             </div>
                         @endforeach
 
@@ -69,4 +70,30 @@
         </section><!-- /Portfolio Details Section -->
 
     </main>
+@endsection
+@section('js')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch(`/admin/products/{{ $product->id }}/images`)
+                .then(response => response.json())
+                .then(images => {
+                    const wrapper = document.getElementById('product-swiper-images');
+                    wrapper.innerHTML = '';
+
+                    images.forEach(image => {
+                        const slide = document.createElement('div');
+                        slide.className = 'swiper-slide';
+                        slide.innerHTML =
+                            `<img src="${image.url}" loading="lazy" alt="Product Image" />`;
+                        wrapper.appendChild(slide);
+                    });
+
+                    new Swiper('.swiper', {
+                        loop: true,
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    });
+                });
+        });
+    </script>
 @endsection

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin\Products;
 
+use App\Models\Product;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Products\ProductsRequest;
 use Illuminate\Support\Facades\Cache;
 use App\Services\Products\ProductsService;
-use Illuminate\Http\Request;
+use App\Http\Requests\Products\ProductsRequest;
 
 class ProductsController extends Controller
 {
@@ -62,5 +63,15 @@ class ProductsController extends Controller
     public function changeStatus(Request $request)
     {
         $this->service->changeStatus($request);
+    }
+    public function getImages(Product $product)
+    {
+        $images = $product->getMedia('product_collection')->map(function ($media) {
+            return [
+                'url' => $media->getUrl('thumb')
+            ];
+        });
+
+        return response()->json($images);
     }
 }
