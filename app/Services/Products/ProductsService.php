@@ -5,6 +5,8 @@ namespace App\Services\Products;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
 use App\Interfaces\CRUDRepositoryInterface;
+use App\Jobs\UploadProductImages;
+use Illuminate\Support\Facades\Bus;
 use App\Models\Product;
 
 class ProductsService
@@ -35,11 +37,14 @@ class ProductsService
             if (isset($request['image']) && $request['image']) {
                 $products->addMediaFromRequest('image')->toMediaCollection('products');
             }
+            // if (isset($request['images']) && $request['images']) {
+            //     // $products->clearMediaCollection('product_collection');
+            //     foreach ((array) $request['images'] as $file) {
+            //         $products->addMedia($file)->toMediaCollection('product_collection');
+            //     }
+            // }
             if (isset($request['images']) && $request['images']) {
-                $products->clearMediaCollection('product_collection');
-                foreach ((array) $request['images'] as $file) {
-                    $products->addMedia($file)->toMediaCollection('product_collection');
-                }
+                Bus::dispatch(new UploadProductImages($products, $request['images']));
             }
 
             DB::commit();
@@ -65,11 +70,14 @@ class ProductsService
                 $products->clearMediaCollection('products');
                 $products->addMediaFromRequest('image')->toMediaCollection('products');
             }
+            // if (isset($request['images']) && $request['images']) {
+            //     // $products->clearMediaCollection('product_collection');
+            //     foreach ((array) $request['images'] as $file) {
+            //         $products->addMedia($file)->toMediaCollection('product_collection');
+            //     }
+            // }
             if (isset($request['images']) && $request['images']) {
-                // $products->clearMediaCollection('product_collection');
-                foreach ((array) $request['images'] as $file) {
-                    $products->addMedia($file)->toMediaCollection('product_collection');
-                }
+                Bus::dispatch(new UploadProductImages($products, $request['images']));
             }
 
             Cache::forget("product_{$id}");

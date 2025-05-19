@@ -19,6 +19,9 @@
 
     <input type="file" name="images[]" class="form-control @error('images') is-invalid @enderror"
         id="example-fileinput" multiple>
+    <progress id="progress-bar" value="0" max="100" style="width: 100%;"></progress>
+    <span id="progress-text">0%</span>
+
 
     @if ($errors->has('images'))
         @foreach ($errors->get('images') as $error)
