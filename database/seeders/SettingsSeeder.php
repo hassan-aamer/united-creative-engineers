@@ -35,6 +35,7 @@ class SettingsSeeder extends Seeder
             ],
 
             'phone' => '+20 100 115 1306',
+            'map' => 'https://maps.app.goo.gl/9S55GCdZ7g1m5EAo9?g_st=com.google.maps.preview.copy',
             'whatsapp' => '+20 100 115 1306',
             'facebook' => 'https://facebook.com/example',
             'linkedIn' => 'https://www.linkedin.com/company/united-creative-engineers/',

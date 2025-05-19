@@ -36,6 +36,7 @@
                                     @include('admin.components.address')
                                     @include('admin.components.about')
                                     @include('admin.components.description')
+                                    @include('admin.components.map')
                                     @include('admin.components.ImageUpload', [
                                         'result' => $result ?? null,
                                         'collection' => 'about',

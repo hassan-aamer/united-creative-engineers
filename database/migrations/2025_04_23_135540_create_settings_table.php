@@ -20,6 +20,7 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->longText('address')->nullable();
             $table->string('phone')->nullable();
+            $table->longText('map')->nullable();
 
             $table->string('whatsapp')->nullable();
             $table->string('facebook')->nullable();

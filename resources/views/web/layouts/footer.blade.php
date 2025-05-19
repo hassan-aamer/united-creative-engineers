@@ -5,10 +5,8 @@
                 <div class="col-lg-3 col-md-6 d-flex">
                     <i class="bi bi-geo-alt icon"></i>
                     <div class="address">
-                        <a href="https://maps.app.goo.gl/9S55GCdZ7g1m5EAo9?g_st=com.google.maps.preview.copy">
                         <h4>Address</h4>
                         <p>{{ setting('address') ?? '' }}</p>
-                        </a>
                     </div>
                 </div>
 
@@ -43,6 +41,7 @@
                         <a href="{{ setting('facebook') ?? '' }}" class="facebook"><i class="bi bi-facebook"></i></a>
                         <a href="{{ setting('instagram') ?? '' }}" class="instagram"><i class="bi bi-instagram"></i></a>
                         <a href="{{ setting('linkedin') ?? '' }}" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        <a href="{{ setting('map') ?? '' }}" class="map"><i class="bi bi-map"></i></a>
                     </div>
                 </div>
 
