@@ -40,7 +40,7 @@
                         {{-- <a href="{{ setting('twitter') ?? '' }}" class="twitter"><i class="bi bi-twitter-x"></i></a> --}}
                         <a href="{{ setting('facebook') ?? '' }}" class="facebook"><i class="bi bi-facebook"></i></a>
                         <a href="{{ setting('instagram') ?? '' }}" class="instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="{{ setting('linkedin') ?? '' }}" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        <a href="{{ setting('linkedIn') ?? '' }}" class="linkedin"><i class="bi bi-linkedin"></i></a>
                         <a href="{{ setting('map') ?? '' }}" class="map"><i class="bi bi-map"></i></a>
                     </div>
                 </div>
