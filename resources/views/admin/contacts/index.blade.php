@@ -46,7 +46,7 @@
                                                     <td>{{ $contacts->name ?? '' }}</td>
                                                     <td>{{ $contacts->email ?? '' }}</td>
                                                     <td>{{ $contacts->phone ?? '' }}</td>
-                                                    <td>{{ shortenText($contacts->message ?? '', 50) }}</td>
+                                                    <td>{{ shortenText($contacts->message ?? '', 70) }}</td>
                                                     <td>
                                                         @can('active contacts')
                                                             <div class="form-check form-switch">
