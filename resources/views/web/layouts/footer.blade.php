@@ -27,7 +27,7 @@
                         <h4>Opening Hours</h4>
                         <p>
                             <strong>Sunday To Thursday :</strong> <span style="color: #21a39f;">9 AM - 5 PM</span><br>
-                            <strong>Friday , Saturday</strong> : <span>Closed</span>
+                            <strong>Friday & Saturday</strong> : <span>Closed</span>
                         </p>
                     </div>
                 </div>
