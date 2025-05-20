@@ -133,7 +133,7 @@
                             <i class="bi bi-telephone flex-shrink-0"></i>
                             <div>
                                 <h3>Call Us</h3>
-                                <p>{{ setting('phone') ?? '' }}</p>
+                                <p style="color: #21a39f;">{{ setting('phone') ?? '' }}</p>
                             </div>
                         </div><!-- End Info Item -->
 

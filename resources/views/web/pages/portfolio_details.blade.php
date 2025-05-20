@@ -27,7 +27,7 @@
               "loop": true,
               "speed": 600,
               "autoplay": {
-                "delay": 5000
+                "delay": 1000
               },
               "slidesPerView": "auto",
               "navigation": {
