@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
                         <h3>{{ setting('about') ?? '' }}</h3>
-                        <p class="fst-italic">
+                        <p style="font-style: normal;">
                             {{ setting('description') ?? '' }}
                         </p>
                     </div>
@@ -117,7 +117,7 @@
                 <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                     @foreach ($result['categories']->sortBy('position')->values() as $index => $category)
                         <li class="">
-                            <a href="javascript:void(0);" class="scroll-to-category" data-id="cat-{{ $category->id }}">
+                            <a style="color: black;" href="javascript:void(0);" class="scroll-to-category" data-id="cat-{{ $category->id }}">
                                 {{ $category->title }}
                             </a>
                         </li>
