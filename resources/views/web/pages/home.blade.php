@@ -274,7 +274,7 @@
 
                 if (targetEl) {
                     const offset = targetEl.getBoundingClientRect().top + window.scrollY;
-                    const offsetWithMargin = offset - 100;
+                    const offsetWithMargin = offset - 150;
                     window.scrollTo({
                         top: offsetWithMargin,
                         behavior: 'smooth'
