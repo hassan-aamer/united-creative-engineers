@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Products;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -29,7 +30,8 @@ class ProductsController extends Controller
     }
     public function create()
     {
-        return view($this->folderPath . 'create_and_edit', ['result' => null]);
+        $categories = Category::publish()->get();
+        return view($this->folderPath . 'create_and_edit', ['result' => null], compact('categories'));
     }
     public function store(ProductsRequest $request)
     {
@@ -42,10 +44,11 @@ class ProductsController extends Controller
     }
     public function edit($id)
     {
+        $categories = Category::publish()->get();
         $result = Cache::rememberForever("product_{$id}", function () use ($id) {
             return $this->service->edit($id);
         });
-        return view($this->folderPath . 'create_and_edit', compact('result'));
+        return view($this->folderPath . 'create_and_edit', compact('result', 'categories'));
     }
     public function update(ProductsRequest $request, $id)
     {

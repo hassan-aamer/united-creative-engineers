@@ -22,9 +22,7 @@ class ProductsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'additionalServices'      => 'nullable|array',
-            'features'      => 'nullable|array',
-            'services'      => 'nullable|array',
+            'category_id'         => 'required|exists:categories,id',
             'title'         => 'required|array',
             'title.*'       => [
                 'required',

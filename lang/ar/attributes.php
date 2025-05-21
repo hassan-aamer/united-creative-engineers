@@ -117,6 +117,7 @@ return [
     'infoSectionDetails' => 'تفاصيل المعلومات',
     'github' => 'جيت هاب',
     'contacts' => 'التواصل',
+    'categories' => 'الفئات',
     'infoOption' => 'خيارات المعلومات',
     'google' => 'جوجل',
     'feature' => 'مميزات',

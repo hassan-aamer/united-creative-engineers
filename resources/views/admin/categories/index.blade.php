@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', __('attributes.products'))
+@section('title', __('attributes.categories'))
 
 @section('content')
 
@@ -13,10 +13,10 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            @can('create products')
-                                <a class="btn btn-success"
-                                    href="{{ route('admin.products.create') }}">{{ __('attributes.create') }}</a>
-                            @endcan
+
+                            <a class="btn btn-success"
+                                href="{{ route('admin.categories.create') }}">{{ __('attributes.create') }}</a>
+
                         </div>
                     </div>
                 </div>
@@ -27,13 +27,11 @@
 
                             <div class="card-body">
 
-                                <h4 class="header-title mt-0 mb-1">{{ __('attributes.products') }}</h4>
+                                <h4 class="header-title mt-0 mb-1">{{ __('attributes.categories') }}</h4>
                                 <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>@lang('attributes.categories')</th>
-                                            <th>@lang('attributes.image')</th>
                                             <th>@lang('attributes.position')</th>
                                             <th>@lang('attributes.title')</th>
                                             <th>@lang('attributes.description')</th>
@@ -43,64 +41,56 @@
                                     </thead>
                                     <tbody>
                                         @if ($result->count())
-                                            @foreach ($result as $products)
-                                                <tr id="row-{{ $products->id ?? '' }}">
+                                            @foreach ($result as $categories)
+                                                <tr id="row-{{ $categories->id ?? '' }}">
                                                     <td>{{ $loop->iteration ?? '' }}</td>
-                                                    <td>{{ $products->category->title ?? '' }}</td>
-                                                    <td><img src="{{ App\Helpers\Image::getMediaUrl($products, 'products') }}"
-                                                            alt="products" width="100"
-                                                            onclick="openImage('{{ App\Helpers\Image::getMediaUrl($products, 'products') }}')"
-                                                            style="width: 100px; height: auto; cursor: pointer; transition: transform 0.3s;"
-                                                            onmouseover="this.style.transform='scale(1.1)'"
-                                                            onmouseout="this.style.transform='scale(1)'"></td>
-                                                    <td>{{ $products->position ?? '' }}</td>
-                                                    <td>{{ shortenText($products->title ?? '', 10) }}</td>
-                                                    <td>{{ shortenText($products->description ?? '', 10) }}</td>
+                                                    <td>{{ $categories->position ?? '' }}</td>
+                                                    <td>{{ shortenText($categories->title ?? '', 10) }}</td>
+                                                    <td>{{ shortenText($categories->description ?? '', 10) }}</td>
                                                     <td>
-                                                        @can('active products')
-                                                        @endcan
+
                                                         <div class="form-check form-switch">
                                                             <input class="form-check-input" type="checkbox" name="status"
-                                                                id="active-{{ $products->id }}"
-                                                                @if ($products->active == 1) checked @endif
-                                                                data-id="{{ $products->id }}">
+                                                                id="active-{{ $categories->id }}"
+                                                                @if ($categories->active == 1) checked @endif
+                                                                data-id="{{ $categories->id }}">
                                                             <label class="form-check-label"
-                                                                for="active-{{ $products->id }}"></label>
+                                                                for="active-{{ $categories->id }}"></label>
                                                         </div>
+
                                                     </td>
                                                     <td>
-                                                        @can('edit products')
-                                                            <a href="{{ route('admin.products.edit', $products->id) }}">
-                                                                <button type="button" class="btn btn-warning btn-block "><i
-                                                                        class="fa uil-edit"></i> </button>
-                                                            </a>
-                                                        @endcan
-                                                        @can('delete products')
-                                                            <button type="button" class="btn btn-danger btn-block btn-delete"
-                                                                data-bs-toggle="modal"
-                                                                data-bs-target="#delete{{ $products->id }}">
-                                                                <i class="fa uil-trash"></i>
-                                                            </button>
-                                                        @endcan
+
+                                                        <a href="{{ route('admin.categories.edit', $categories->id) }}">
+                                                            <button type="button" class="btn btn-warning btn-block "><i
+                                                                    class="fa uil-edit"></i> </button>
+                                                        </a>
+
+
+                                                        <button type="button" class="btn btn-danger btn-block btn-delete"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#delete{{ $categories->id }}">
+                                                            <i class="fa uil-trash"></i>
+                                                        </button>
 
                                                     </td>
                                                 </tr>
 
                                                 <!-- Delete Modal -->
-                                                <div class="modal fade" id="delete{{ $products->id }}" tabindex="-1"
+                                                <div class="modal fade" id="delete{{ $categories->id }}" tabindex="-1"
                                                     role="dialog" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h4 class="modal-title" id="myCenterModalLabel">
                                                                     @lang('attributes.delete') : <span
-                                                                        class="text-danger">{{ $products->title }}</span>
+                                                                        class="text-danger">{{ $categories->title }}</span>
                                                                 </h4>
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
-                                                            <form id="deleteForm{{ $products->id }}"
-                                                                action="{{ route('admin.products.delete', $products->id) }}"
+                                                            <form id="deleteForm{{ $categories->id }}"
+                                                                action="{{ route('admin.categories.delete', $categories->id) }}"
                                                                 method="post">
                                                                 @csrf
                                                                 @method('delete')
@@ -115,7 +105,7 @@
                                                                         @lang('attributes.close')
                                                                     </button>
                                                                     <button type="button" class="btn btn-danger"
-                                                                        onclick="deleteData({{ $products->id }})">
+                                                                        onclick="deleteData({{ $categories->id }})">
                                                                         @lang('attributes.delete')
                                                                     </button>
                                                                 </div>
@@ -152,7 +142,7 @@
                 const Id = this.getAttribute('data-id');
                 const status = this.checked ? 1 : 0;
 
-                fetch("{{ route('admin.products.status', app()->getLocale()) }}", {
+                fetch("{{ route('admin.categories.status', app()->getLocale()) }}", {
                     method: 'POST',
                     headers: {
                         'X-CSRF-TOKEN': '{{ csrf_token() }}',
@@ -167,4 +157,5 @@
             });
         });
     </script>
+
 @endsection

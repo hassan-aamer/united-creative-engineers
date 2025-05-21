@@ -17,6 +17,15 @@ Route::middleware('checkAuth')->group(function () {
         Route::get('/', 'edit')->name('profile.edit');
         Route::put('/update/{id}', 'update')->name('profile.update');
     });
+    Route::prefix('categories')->controller(\App\Http\Controllers\Admin\Categories\CategoryController::class)->group(function () {
+        Route::get('/', 'index')->name('categories.index');
+        Route::get('/create', 'create')->name('categories.create');
+        Route::post('/store', 'store')->name('categories.store');
+        Route::get('/{id}/edit', 'edit')->name('categories.edit');
+        Route::put('/update/{id}', 'update')->name('categories.update');
+        Route::delete('/delete/{id}', 'destroy')->name('categories.delete');
+        Route::post('/change-status', 'changeStatus')->name('categories.status');
+    });
     Route::prefix('services')->controller(\App\Http\Controllers\Admin\Services\ServicesController::class)->group(function () {
         Route::get('/', 'index')->name('services.index');
         Route::get('/create', 'create')->name('services.create');

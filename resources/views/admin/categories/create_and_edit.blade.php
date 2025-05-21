@@ -1,12 +1,12 @@
 @extends('admin.layouts.master')
-@section('title', __('attributes.products'))
+@section('title', __('attributes.categories'))
 @section('content')
     <div class="content-page">
         <div class="content">
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">{{ __('attributes.products') }}</h4>
+                        <h4 class="page-title">{{ __('attributes.categories') }}</h4>
                     </div>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                     <div class="card">
                         <div class="card-body">
                             <form method="POST"
-                                action="{{ isset($result) && $result->id ? route('admin.products.update', $result->id) : route('admin.products.store') }}"
+                                action="{{ isset($result) && $result->id ? route('admin.categories.update', $result->id) : route('admin.categories.store') }}"
                                 class="parsley-examples" enctype="multipart/form-data">
                                 @csrf
                                 @if (isset($result) && $result->id)
@@ -24,20 +24,7 @@
                                 <div class="row">
                                     @include('admin.components.title')
                                     @include('admin.components.description')
-                                    @include('admin.components.content')
                                     @include('admin.components.position')
-                                    @include('admin.components.select_category')
-                                    @include('admin.components.ImageUpload', [
-                                        'result' => $result ?? null,
-                                        'collection' => 'products',
-                                    ])
-                                    @if (isset($result) && $result->id)
-                                        @include('admin.components.ImagesUpload', [
-                                            'result' => $result ?? null,
-                                            'collection' => 'product_collection',
-                                            'name' => 'images',
-                                        ])
-                                    @endif
                                     @include('admin.components.active')
                                     @include('admin.components.submit')
                                 </div>

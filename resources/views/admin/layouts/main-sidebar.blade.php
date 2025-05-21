@@ -34,6 +34,15 @@
                     </li>
                 @endcan
 
+
+                    <li>
+                        <a class="{{ request()->routeIs('admin.categories.*') ? 'active' : '' }}"
+                            href="{{ route('admin.categories.index') }}">
+                            <i data-feather="layers"></i>
+                            <span> {{ __('attributes.categories') }} </span>
+                        </a>
+                    </li>
+
                 @can('list services')
                     <li>
                         <a class="{{ request()->routeIs('admin.services.*') ? 'active' : '' }}"

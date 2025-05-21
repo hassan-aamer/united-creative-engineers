@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Services;
+namespace App\Http\Requests\Categories;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ServicesRequest extends FormRequest
+class CategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,13 +27,12 @@ class ServicesRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                \CodeZero\UniqueTranslation\UniqueTranslationRule::for('services')->ignore($this->id)
+                \CodeZero\UniqueTranslation\UniqueTranslationRule::for('categories')->ignore($this->id)
             ],
             'description'   => 'required|array',
             'description.*' => 'required|string|max:1000',
             'position'      => 'required',
             'active'        => 'required|in:0,1',
-            'image'         => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ];
     }
 }

@@ -7,15 +7,14 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\Translatable\HasTranslations;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Product extends Model implements HasMedia
+class Category extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia, HasTranslations;
-    public $translatable = ['title', 'description', 'content'];
+    public $translatable = ['title', 'description'];
     protected $guarded = [''];
-    public function category()
+    public function products()
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Product::class);
     }
 }
