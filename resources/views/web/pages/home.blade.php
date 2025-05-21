@@ -38,7 +38,7 @@
                 <img src="{{ asset('Icon white.png') }}" class="img-fluid mb-3" alt="" width="90"
                     height="90">
                 <h5 style="font-weight: bold;" class="h5 h2-md h2-lg">
-                    <span class="typed" data-typed-items=" Welcome to,{{ setting('name') ?? 'UCE' }}"></span>
+                    <span class="typedd" data-typed-items=" Welcome to,{{ setting('name') ?? 'UCE' }}"></span>
                 </h5>
 
                 <div>
@@ -282,16 +282,16 @@
                 }
             });
         });
-        const selectTyped = document.querySelector('.typed');
+        const selectTyped = document.querySelector('.typedd');
         if (selectTyped) {
             let typed_strings = selectTyped.getAttribute('data-typed-items');
             typed_strings = typed_strings.split(',');
-            new Typed('.typed', {
+            new Typed('.typedd', {
                 strings: typed_strings,
                 loop: true,
                 startDelay: 0,
                 typeSpeed: 50,
-                backSpeed: 20,
+                backSpeed: 15,
                 backDelay: 1000
             });
         }
