@@ -2,28 +2,31 @@
 @section('title', __('attributes.home'))
 @section('css')
     <style>
+        .category-title {
+            position: relative;
+            display: inline-block;
+        }
+
         .category-title::after {
             content: "";
             position: absolute;
             display: block;
-            width: 50px;
+            width: 100%;
             height: 3px;
             background: var(--accent-color);
-            /* أو لون ثابت مثل #21a39f */
             bottom: -5px;
-            /* المسافة بين الخط والعنوان */
-            left: 6%;
-            transform: translateX(-50%);
+            left: 0;
         }
 
         @media (max-width: 768px) {
-            /* .category-title {
-                    text-align: center;
-                } */
+            .category-title {
+                text-align: center;
+                display: inline-block;
+            }
 
             .category-title::after {
-                left: 20%;
-                transform: translateX(-50%);
+                left: 0;
+                transform: none;
             }
         }
     </style>
