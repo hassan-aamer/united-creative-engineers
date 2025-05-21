@@ -15,8 +15,8 @@
                     <div>
                         <h4>Contact</h4>
                         <p>
-                            <strong>Phone :</strong> <span style="color: #21a39f;">{{ setting('phone') ?? '' }}</span><br>
-                            <strong>Email :</strong> <span>{{ setting('email') ?? '' }}</span><br>
+                            <strong>Phone:</strong> <span style="color: #21a39f;">{{ setting('phone') ?? '' }}</span><br>
+                            <strong>Email:</strong> <span style="display: inline-block; width: 150px;">{{ setting('email') ?? '' }}</span><br>
                         </p>
                     </div>
                 </div>
