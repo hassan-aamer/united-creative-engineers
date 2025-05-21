@@ -83,41 +83,37 @@
                     {{-- <p>We carry out high-end finishing works that combine quality, good taste, and accuracy in every detail.</p> --}}
                 </div><!-- End Section Title -->
                 <div class="container">
-                    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+                    @foreach ($result['categories']->sortBy('position') as $category)
+                        <div class="category-section mb-5" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="mb-3 text-uppercase" style="font-weight: bold;">{{ $category->title }}</h3>
 
-                        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                            @foreach ($result['categories']->sortBy('position')->values() as $index => $category)
-                                <li data-filter=".cat-{{ $category->id }}"
-                                    class="{{ $index == 0 ? 'filter-active' : '' }}">
-                                    {{ $category->title }}
-                                </li>
-                            @endforeach
-                        </ul>
+                            <div class="row gy-4">
+                                @foreach ($result['products']->where('category_id', $category->id)->sortBy('position') as $product)
+                                    <div class="col-lg-4 col-md-6 portfolio-item">
+                                        <img src="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}"
+                                            class="img-fluid" alt="">
+                                        <div class="portfolio-info">
+                                            <h4>{{ shortenText($product->title ?? '', 20) }}</h4>
+                                            <p>{{ shortenText($product->description ?? '', 40) }}</p>
 
-                        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-                            @foreach ($result['products']->sortBy('position') as $product)
-                                <div
-                                    class="col-lg-4 col-md-6 portfolio-item isotope-item cat-{{ $product->category->id }}">
-                                    <img src="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}" class="img-fluid"
-                                        alt="">
-                                    <div class="portfolio-info">
-                                        <h4>{{ shortenText($product->title ?? '', 20) }}</h4>
-                                        <p>{{ shortenText($product->description ?? '', 40) }}</p>
-                                        <a href="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}"
-                                            title="{{ shortenText($product->title ?? '', 20) }}"
-                                            data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                                                class="bi bi-zoom-in"></i></a>
-                                        <a href="{{ route('product.details', $product->id) }}" title="More Details"
-                                            class="details-link">
-                                            <i class="bi bi-link-45deg"></i>
-                                        </a>
+                                            <a href="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}"
+                                                title="{{ shortenText($product->title ?? '', 20) }}"
+                                                data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                                                <i class="bi bi-zoom-in"></i>
+                                            </a>
+
+                                            <a href="{{ route('product.details', $product->id) }}" title="More Details"
+                                                class="details-link">
+                                                <i class="bi bi-link-45deg"></i>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
-
-                        </div><!-- End Portfolio Container -->
-                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
+
             </section>
             <!-- /Portfolio Section -->
         @endif
@@ -228,7 +224,7 @@
     </main>
 @endsection
 @section('js')
-    <script>
+    {{-- <script>
         document.addEventListener("DOMContentLoaded", function() {
             const grid = document.querySelector('.isotope-container');
 
@@ -260,5 +256,5 @@
                 });
             }
         });
-    </script>
+    </script> --}}
 @endsection
