@@ -18,8 +18,8 @@
 
         @media (max-width: 768px) {
             /* .category-title {
-                text-align: center;
-            } */
+                    text-align: center;
+                } */
 
             .category-title::after {
                 left: 20%;
@@ -282,5 +282,18 @@
                 }
             });
         });
+        const selectTyped = document.querySelector('.typed');
+        if (selectTyped) {
+            let typed_strings = selectTyped.getAttribute('data-typed-items');
+            typed_strings = typed_strings.split(',');
+            new Typed('.typed', {
+                strings: typed_strings,
+                loop: true,
+                startDelay: 0,
+                typeSpeed: 50,
+                backSpeed: 20,
+                backDelay: 1000
+            });
+        }
     </script>
 @endsection
