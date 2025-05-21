@@ -80,6 +80,7 @@
                 <!-- Section Title -->
                 <div class="container section-title" data-aos="fade-up">
                     <h2>Portfolio</h2>
+                    {{-- <p>We carry out high-end finishing works that combine quality, good taste, and accuracy in every detail.</p> --}}
                 </div><!-- End Section Title -->
                 <div class="container">
                     <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
