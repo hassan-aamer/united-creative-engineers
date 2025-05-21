@@ -22,7 +22,7 @@
             } */
 
             .category-title::after {
-                left: 15%;
+                left: 20%;
                 transform: translateX(-50%);
             }
         }
