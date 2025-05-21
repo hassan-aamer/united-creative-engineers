@@ -85,16 +85,18 @@
                     <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
                         <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                            <li data-filter="*" class="filter-active">All</li>
-                            @foreach ($result['categories']->sortBy('position') as $category)
-                                <li data-filter=".{{ $category->title }}">{{ $category->title ?? '' }}</li>
+                            @foreach ($result['categories']->sortBy('position')->values() as $index => $category)
+                                <li data-filter=".cat-{{ $category->id }}"
+                                    class="{{ $index == 0 ? 'filter-active' : '' }}">
+                                    {{ $category->title }}
+                                </li>
                             @endforeach
                         </ul>
 
                         <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
                             @foreach ($result['products']->sortBy('position') as $product)
                                 <div
-                                    class="col-lg-4 col-md-6 portfolio-item isotope-item {{ $product->category->title ?? '' }}">
+                                    class="col-lg-4 col-md-6 portfolio-item isotope-item cat-{{ $product->category->id }}">
                                     <img src="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}" class="img-fluid"
                                         alt="">
                                     <div class="portfolio-info">
@@ -109,7 +111,7 @@
                                             <i class="bi bi-link-45deg"></i>
                                         </a>
                                     </div>
-                                </div><!-- End Portfolio Item -->
+                                </div>
                             @endforeach
 
                         </div><!-- End Portfolio Container -->
@@ -223,4 +225,39 @@
         <!-- /Contact Section -->
 
     </main>
+@endsection
+@section('js')
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const grid = document.querySelector('.isotope-container');
+
+            if (grid) {
+                const iso = new Isotope(grid, {
+                    itemSelector: '.isotope-item',
+                    layoutMode: 'masonry'
+                });
+
+                // اختر أول فلتر تلقائيًا
+                const firstFilter = document.querySelector('.portfolio-filters li.filter-active');
+                const filterValue = firstFilter.getAttribute('data-filter');
+                iso.arrange({
+                    filter: filterValue
+                });
+
+                // الفلترة عند الضغط
+                document.querySelectorAll('.portfolio-filters li').forEach(function(filterBtn) {
+                    filterBtn.addEventListener('click', function() {
+                        const value = this.getAttribute('data-filter');
+                        iso.arrange({
+                            filter: value
+                        });
+
+                        document.querySelectorAll('.portfolio-filters li').forEach(el => el
+                            .classList.remove('filter-active'));
+                        this.classList.add('filter-active');
+                    });
+                });
+            }
+        });
+    </script>
 @endsection
