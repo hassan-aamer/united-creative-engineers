@@ -1,5 +1,23 @@
 @extends('web.layouts.app')
 @section('title', __('attributes.home'))
+@section('css')
+    <style>
+        .category-title::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            /* أو اختر لونًا ثابتًا مثل #21a39f */
+            left: 0;
+            right: 0;
+            bottom: -5px;
+            /* مسافة بسيطة تحت العنوان */
+            margin: auto;
+        }
+    </style>
+@endsection
 @section('content')
     <main class="main">
         <!-- Hero Section -->
@@ -85,7 +103,9 @@
                 <div class="container">
                     @foreach ($result['categories']->sortBy('position') as $category)
                         <div class="category-section mb-5" data-aos="fade-up" data-aos-delay="100">
-                            <h3 class="mb-3 text-uppercase" style="font-weight: bold;">{{ $category->title }}</h3>
+                            <h4 class="category-title mb-3 text-uppercase" style="position: relative; font-weight: bold;text-align: center;">
+                                {{ $category->title }}
+                            </h4>
 
                             <div class="row gy-4">
                                 @foreach ($result['products']->where('category_id', $category->id)->sortBy('position') as $product)
