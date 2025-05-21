@@ -111,15 +111,16 @@
                     {{-- <p>We carry out high-end finishing works that combine quality, good taste, and accuracy in every detail.</p> --}}
                 </div><!-- End Section Title -->
 
-                <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                    @foreach ($result['categories']->sortBy('position')->values() as $index => $category)
-                        <li class="">
-                            <a href="javascript:void(0);" class="scroll-to-category" data-id="cat-{{ $category->id }}">
-                                {{ $category->title }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
+<ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+    @foreach ($result['categories']->sortBy('position')->values() as $index => $category)
+        <li class="{{ $index == 0 ? 'filter-active' : '' }}">
+            <a href="#cat-{{ $category->id }}" style="text-decoration: none; color: inherit;">
+                {{ $category->title }}
+            </a>
+        </li>
+    @endforeach
+</ul>
+
 
                 <div class="container">
                     @foreach ($result['categories']->sortBy('position') as $category)
@@ -266,23 +267,24 @@
     </main>
 @endsection
 @section('js')
-    <script>
-        document.querySelectorAll('.scroll-to-category').forEach(function(el) {
-            el.addEventListener('click', function() {
-                let targetId = this.getAttribute('data-id');
-                let targetEl = document.getElementById(targetId);
+{{-- <script>
+    document.querySelectorAll('.scroll-to-category').forEach(function (el) {
+        el.addEventListener('click', function () {
+            let targetId = this.getAttribute('data-id');
+            let targetEl = document.getElementById(targetId);
 
-                if (targetEl) {
-                    const offset = targetEl.getBoundingClientRect().top + window.scrollY;
-                    const centerOffset = offset - (window.innerHeight / 2) + (targetEl.offsetHeight / 2);
+            if (targetEl) {
+                const offset = targetEl.getBoundingClientRect().top + window.scrollY;
+                const centerOffset = offset - (window.innerHeight / 2) + (targetEl.offsetHeight / 2);
 
-                    window.scrollTo({
-                        top: centerOffset,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+                window.scrollTo({
+                    top: centerOffset,
+                    behavior: 'smooth'
+                });
+            }
         });
-    </script>
+    });
+</script> --}}
+
 
 @endsection
