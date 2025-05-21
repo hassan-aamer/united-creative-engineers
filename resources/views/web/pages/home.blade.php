@@ -9,12 +9,22 @@
             width: 50px;
             height: 3px;
             background: var(--accent-color);
-            /* أو اختر لونًا ثابتًا مثل #21a39f */
-            left: 0;
-            right: 0;
+            /* أو لون ثابت مثل #21a39f */
             bottom: -5px;
-            /* مسافة بسيطة تحت العنوان */
-            margin: auto;
+            /* المسافة بين الخط والعنوان */
+            left: 6%;
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 768px) {
+            /* .category-title {
+            text-align: center;
+        } */
+
+            .category-title::after {
+                left: 15%;
+                transform: translateX(-50%);
+            }
         }
     </style>
 @endsection
@@ -100,10 +110,22 @@
                     <h2>Portfolio</h2>
                     {{-- <p>We carry out high-end finishing works that combine quality, good taste, and accuracy in every detail.</p> --}}
                 </div><!-- End Section Title -->
+
+                <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                    @foreach ($result['categories']->sortBy('position')->values() as $index => $category)
+                        <li class="">
+                            <a href="javascript:void(0);" class="scroll-to-category" data-id="cat-{{ $category->id }}">
+                                {{ $category->title }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+
                 <div class="container">
                     @foreach ($result['categories']->sortBy('position') as $category)
-                        <div class="category-section mb-5" data-aos="fade-up" data-aos-delay="100">
-                            <h4 class="category-title mb-3 text-uppercase" style="position: relative; font-weight: bold;text-align: center;">
+                        <div id="cat-{{ $category->id }}" class="category-section mb-5" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <h4 class="category-title mb-3 text-uppercase" style="position: relative; font-weight: bold;">
                                 {{ $category->title }}
                             </h4>
 
@@ -244,37 +266,23 @@
     </main>
 @endsection
 @section('js')
-    {{-- <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const grid = document.querySelector('.isotope-container');
+    <script>
+        document.querySelectorAll('.scroll-to-category').forEach(function(el) {
+            el.addEventListener('click', function() {
+                let targetId = this.getAttribute('data-id');
+                let targetEl = document.getElementById(targetId);
 
-            if (grid) {
-                const iso = new Isotope(grid, {
-                    itemSelector: '.isotope-item',
-                    layoutMode: 'masonry'
-                });
+                if (targetEl) {
+                    const offset = targetEl.getBoundingClientRect().top + window.scrollY;
+                    const centerOffset = offset - (window.innerHeight / 2) + (targetEl.offsetHeight / 2);
 
-                // اختر أول فلتر تلقائيًا
-                const firstFilter = document.querySelector('.portfolio-filters li.filter-active');
-                const filterValue = firstFilter.getAttribute('data-filter');
-                iso.arrange({
-                    filter: filterValue
-                });
-
-                // الفلترة عند الضغط
-                document.querySelectorAll('.portfolio-filters li').forEach(function(filterBtn) {
-                    filterBtn.addEventListener('click', function() {
-                        const value = this.getAttribute('data-filter');
-                        iso.arrange({
-                            filter: value
-                        });
-
-                        document.querySelectorAll('.portfolio-filters li').forEach(el => el
-                            .classList.remove('filter-active'));
-                        this.classList.add('filter-active');
+                    window.scrollTo({
+                        top: centerOffset,
+                        behavior: 'smooth'
                     });
-                });
-            }
+                }
+            });
         });
-    </script> --}}
+    </script>
+
 @endsection
