@@ -59,9 +59,9 @@
                         <div class="portfolio-description">
                             <h2>{{ $product->title ?? '' }}</h2>
                             <p>
-                                {{ $product->description ?? '' }}</ </p>
+                                {{-- {{ $product->description ?? '' }}</ </p> --}}
                             <p>
-                                {{ $product->content ?? '' }}</ </p>
+                                {{-- {{ $product->content ?? '' }}</ </p> --}}
                         </div>
                     </div>
                 </div>
