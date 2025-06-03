@@ -28,7 +28,7 @@ class ProductsRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                \CodeZero\UniqueTranslation\UniqueTranslationRule::for('products')->ignore($this->id)
+                // \CodeZero\UniqueTranslation\UniqueTranslationRule::for('products')->ignore($this->id)
             ],
             'description'   => 'required|array',
             'description.*' => 'required|string|max:1000',
