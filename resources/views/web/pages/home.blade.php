@@ -19,7 +19,7 @@
         }
 
         .portfolio .portfolio-item .portfolio-info {
-            background-color: color-mix(in srgb, var(--surface-color), transparent 30%);
+            background-color: color-mix(in srgb, var(--surface-color), transparent 25%);
             opacity: 1;
             position: absolute;
             left: 30px;
