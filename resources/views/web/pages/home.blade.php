@@ -18,6 +18,18 @@
             left: 0;
         }
 
+        .portfolio .portfolio-item .portfolio-info {
+            background-color: color-mix(in srgb, var(--surface-color), transparent 30%);
+            opacity: 1;
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            bottom: 20px;
+            z-index: 3;
+            transition: all ease-in-out 0.3s;
+            padding: 15px;
+        }
+
         @media (max-width: 768px) {
             .category-title {
                 text-align: center;
@@ -117,7 +129,8 @@
                 <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
                     @foreach ($result['categories']->sortBy('position')->values() as $index => $category)
                         <li class="">
-                            <a style="color: black;" href="javascript:void(0);" class="scroll-to-category" data-id="cat-{{ $category->id }}">
+                            <a style="color: black;" href="javascript:void(0);" class="scroll-to-category"
+                                data-id="cat-{{ $category->id }}">
                                 {{ $category->title }}
                             </a>
                         </li>
@@ -139,7 +152,9 @@
                                             class="img-fluid" alt="">
                                         <div class="portfolio-info">
                                             <h4>{{ shortenText($product->title ?? '', 20) }}</h4>
-                                            <p>{{ shortenText($product->description ?? '', 40) }}</p>
+                                            @if ($product->description)
+                                                <p>{{ shortenText($product->description ?? '', 40) }}</p>
+                                            @endif
 
                                             <a href="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}"
                                                 title="{{ shortenText($product->title ?? '', 20) }}"

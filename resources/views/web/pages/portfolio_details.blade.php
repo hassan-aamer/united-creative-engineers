@@ -17,7 +17,8 @@
         </div><!-- End Page Title -->
 
         <!-- Portfolio Details Section -->
-        <section id="portfolio-details" class="portfolio-details section" style="background-color: #f3efdf;padding-bottom: 130px;">
+        <section id="portfolio-details" class="portfolio-details section"
+            style="background-color: #f3efdf;padding-bottom: 130px;">
 
             <div class="container" data-aos="fade-up">
 
@@ -58,10 +59,12 @@
                     <div class="col-lg-8" data-aos="fade-up">
                         <div class="portfolio-description">
                             <h2>{{ $product->title ?? '' }}</h2>
-                            <p>
-                                {{-- {{ $product->description ?? '' }}</ </p> --}}
-                            <p>
-                                {{-- {{ $product->content ?? '' }}</ </p> --}}
+                            @if ($product->description)
+                                <p>{{ $product->description ?? '' }}</p>
+                            @endif
+                            @if ($product->content)
+                                <p>{{ $product->content ?? '' }}</p>
+                            @endif
                         </div>
                     </div>
                 </div>
