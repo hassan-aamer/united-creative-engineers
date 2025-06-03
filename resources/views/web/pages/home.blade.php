@@ -76,6 +76,9 @@
                         <p style="font-style: normal;">
                             {{ setting('description') ?? '' }}
                         </p>
+                        <ul>
+                            <li><i class="bi bi-check-circle"></i> <span>Philosophy of design</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
