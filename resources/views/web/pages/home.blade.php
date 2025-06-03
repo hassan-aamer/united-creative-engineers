@@ -78,6 +78,7 @@
                         </p>
                         <ul>
                             <li><i class="bi bi-check-circle"></i> <span>Philosophy of design</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span>Creative solutions</span></li>
                         </ul>
                     </div>
                 </div>
