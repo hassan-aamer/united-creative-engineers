@@ -5,6 +5,7 @@
         .category-title {
             position: relative;
             display: inline-block;
+            font-weight: bold;
         }
 
         .category-title::after {
@@ -15,11 +16,12 @@
             height: 3px;
             background: var(--accent-color);
             bottom: -5px;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .portfolio .portfolio-item .portfolio-info {
-            background-color: color-mix(in srgb, var(--surface-color), transparent 25%);
+            background-color: color-mix(in srgb, var(--surface-color), transparent 35%);
             opacity: 1;
             position: absolute;
             left: 30px;
@@ -32,13 +34,7 @@
 
         @media (max-width: 768px) {
             .category-title {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .category-title::after {
-                left: 0;
-                transform: none;
+                font-size: 18px;
             }
         }
     </style>
@@ -141,9 +137,12 @@
                     @foreach ($result['categories']->sortBy('position') as $category)
                         <div id="cat-{{ $category->id }}" class="category-section mb-5" data-aos="fade-up"
                             data-aos-delay="100" style="padding-top: 50px;">
-                            <h4 class="category-title mb-3 text-uppercase" style="position: relative; font-weight: bold;">
-                                {{ $category->title }}
-                            </h4>
+                            <div class="text-center">
+                                <h4 class="category-title mb-5 text-uppercase"
+                                    style="position: relative; font-weight: bold;">
+                                    {{ $category->title }}
+                                </h4>
+                            </div>
 
                             <div class="row gy-4">
                                 @foreach ($result['products']->where('category_id', $category->id)->sortBy('position') as $product)
