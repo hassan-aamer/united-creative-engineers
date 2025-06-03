@@ -59,12 +59,12 @@
                     <div class="col-lg-8" data-aos="fade-up">
                         <div class="portfolio-description">
                             <h2>{{ $product->title ?? '' }}</h2>
-                            @if ($product->description)
+                            {{-- @if ($product->description)
                                 <p>{{ $product->description ?? '' }}</p>
                             @endif
                             @if ($product->content)
                                 <p>{{ $product->content ?? '' }}</p>
-                            @endif
+                            @endif --}}
                         </div>
                     </div>
                 </div>
