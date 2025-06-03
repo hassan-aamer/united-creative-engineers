@@ -77,8 +77,12 @@
                             {{ setting('description') ?? '' }}
                         </p>
                         <ul>
-                            <li><i class="bi bi-check-circle"></i> <span>Philosophy of design</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span>Creative solutions</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">Philosophy of design</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">Creative solutions</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">ON-time delivery</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">PREMIeum quality</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">competitive cost</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">customer satisfaction</span></li>
                         </ul>
                     </div>
                 </div>
