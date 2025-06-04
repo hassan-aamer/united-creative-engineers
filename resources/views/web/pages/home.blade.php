@@ -158,7 +158,7 @@
                                         <img src="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}"
                                             class="img-fluid" alt="">
                                         <div class="portfolio-info">
-                                            <h4>{{ shortenText($product->title ?? '', 20) }}</h4>
+                                            <h4 style="text-transform: uppercase;">{{ shortenText($product->title ?? '', 20) }}</h4>
                                             {{-- @if ($product->description)
                                                 <p>{{ shortenText($product->description ?? '', 40) }}</p>
                                             @endif --}}
