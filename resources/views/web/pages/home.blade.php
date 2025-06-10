@@ -217,7 +217,13 @@
 
             <div class="container">
                 <div class="row gy-4">
-
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('public/web/clients/1.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
