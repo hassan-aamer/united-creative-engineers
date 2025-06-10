@@ -46,7 +46,27 @@
             transform: scale(1.1);
         }
 
+        .bg-projects {
+            background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 60px 0;
+            position: relative;
+            z-index: 1;
+        }
 
+        .bg-projects::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
 
         @media (max-width: 768px) {
             .category-title {
@@ -208,11 +228,11 @@
             <!-- /Portfolio Section -->
         @endif
 
-        <section id="team" class="team section">
+        <section id="team" class="team section bg-projects">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Our Projects</h2>
+                <h2 style="color: whitesmoke;">Our Projects</h2>
             </div><!-- End Section Title -->
 
             <div class="container">
