@@ -32,6 +32,22 @@
             padding: 15px;
         }
 
+        .zoom-img {
+            overflow: hidden;
+            display: inline-block;
+            transform: scale(2.1);
+        }
+
+        .zoom-img img {
+            transition: transform 0.5s ease;
+        }
+
+        .zoom-img:hover img {
+            transform: scale(1.1);
+        }
+
+
+
         @media (max-width: 768px) {
             .category-title {
                 font-size: 18px;
@@ -77,12 +93,18 @@
                             {{ setting('description') ?? '' }}
                         </p>
                         <ul>
-                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">Philosophy of design</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">Creative solutions</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">ON-time delivery</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">PREMIeum quality</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">competitive cost</span></li>
-                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">customer satisfaction</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">Philosophy of
+                                    design</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">Creative
+                                    solutions</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">ON-time
+                                    delivery</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">PREMIeum
+                                    quality</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">competitive
+                                    cost</span></li>
+                            <li><i class="bi bi-check-circle"></i> <span style="text-transform: uppercase;">customer
+                                    satisfaction</span></li>
                         </ul>
                     </div>
                 </div>
@@ -158,7 +180,8 @@
                                         <img src="{{ App\Helpers\Image::getMediaUrl($product, 'products') }}"
                                             class="img-fluid" alt="">
                                         <div class="portfolio-info">
-                                            <h4 style="text-transform: uppercase;">{{ shortenText($product->title ?? '', 20) }}</h4>
+                                            <h4 style="text-transform: uppercase;">
+                                                {{ shortenText($product->title ?? '', 20) }}</h4>
                                             {{-- @if ($product->description)
                                                 <p>{{ shortenText($product->description ?? '', 40) }}</p>
                                             @endif --}}
@@ -184,6 +207,103 @@
             </section>
             <!-- /Portfolio Section -->
         @endif
+
+        <section id="team" class="team section">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Our Projects</h2>
+            </div><!-- End Section Title -->
+
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/1.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/2.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/3.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/4.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/5.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/6.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/7.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/8.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/9.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/10.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/11.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        {{-- <div class="team-member"> --}}
+                        <div class="member-img zoom-img">
+                            <img src="{{ asset('web/clients/12.png') }}" class="img-fluid" alt="">
+                        </div>
+                        {{-- </div> --}}
+                    </div><!-- End Team Member -->
+                </div>
+            </div>
+        </section>
 
         <!-- Contact Section -->
         <section id="contact" class="contact section">
