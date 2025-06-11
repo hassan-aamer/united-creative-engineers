@@ -12,6 +12,7 @@
                     <li><a href="{{ route('home') }}#about">About</a></li>
                     <li><a href="{{ route('home') }}#services">Services</a></li>
                     <li><a href="{{ route('home') }}#portfolio">Portfolio</a></li>
+                    <li><a href="{{ route('home') }}#clients">Clients</a></li>
                     <li><a href="{{ route('home') }}#contact">Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

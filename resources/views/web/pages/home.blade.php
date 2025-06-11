@@ -228,7 +228,7 @@
             <!-- /Portfolio Section -->
         @endif
 
-        <section id="team" class="team section bg-projects">
+        <section id="clients" class="team section bg-projects">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
