@@ -237,84 +237,84 @@
 
             <div class="container">
                 <div class="row gy-0">
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/r.png') }}" class="img-fluid" alt="" loading="lazy">
                         </div>
                         {{-- </div> --}}
                     </div><!-- End Team Member -->
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/2.png') }}" class="img-fluid" alt="" loading="lazy">
                         </div>
                         {{-- </div> --}}
                     </div><!-- End Team Member -->
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/3.png') }}" class="img-fluid" alt="" loading="lazy">
                         </div>
                         {{-- </div> --}}
                     </div><!-- End Team Member -->
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/4.png') }}" class="img-fluid" alt="" loading="lazy">
                         </div>
                         {{-- </div> --}}
                     </div><!-- End Team Member -->
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/5.png') }}" class="img-fluid" alt="" loading="lazy">
                         </div>
                         {{-- </div> --}}
                     </div><!-- End Team Member -->
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/6.png') }}" class="img-fluid" alt="" loading="lazy">
                         </div>
                         {{-- </div> --}}
                     </div><!-- End Team Member -->
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/7.png') }}" class="img-fluid" alt="" loading="lazy">
                         </div>
                         {{-- </div> --}}
                     </div><!-- End Team Member -->
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/8.png') }}" class="img-fluid" alt="" loading="lazy">
                         </div>
                         {{-- </div> --}}
                     </div><!-- End Team Member -->
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/9.png') }}" class="img-fluid" alt="" loading="lazy">
                         </div>
                         {{-- </div> --}}
                     </div><!-- End Team Member -->
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/10.png') }}" class="img-fluid" alt="" loading="lazy">
                         </div>
                         {{-- </div> --}}
                     </div><!-- End Team Member -->
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/11.png') }}" class="img-fluid" alt="" loading="lazy">
                         </div>
                         {{-- </div> --}}
                     </div><!-- End Team Member -->
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         {{-- <div class="team-member"> --}}
                         <div class="member-img zoom-img">
                             <img src="{{ asset('public/web/clients/12.png') }}" class="img-fluid" alt="" loading="lazy">
