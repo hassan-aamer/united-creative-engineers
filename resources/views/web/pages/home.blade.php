@@ -232,7 +232,7 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2 style="color: whitesmoke;">Our Projects</h2>
+                <h2 style="color: whitesmoke;">SOME OF THE CLIENTS</h2>
             </div><!-- End Section Title -->
 
             <div class="container">
