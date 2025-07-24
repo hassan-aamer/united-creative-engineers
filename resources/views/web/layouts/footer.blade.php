@@ -16,7 +16,8 @@
                         <h4>Contact</h4>
                         <p>
                             <strong>Phone:</strong> <span style="color: #21a39f;">{{ setting('phone') ?? '' }}</span><br>
-                            <strong>Email:</strong> <span style="display: inline-block; width: 150px;">{{ setting('email') ?? '' }}</span><br>
+                            <strong>Email:</strong> <span
+                                style="display: inline-block; width: 150px;">{{ setting('email') ?? '' }}</span><br>
                         </p>
                     </div>
                 </div>
@@ -49,7 +50,10 @@
         </div>
 
         <div class="container copyright text-center mt-4">
-            <p>{{ setting('copyrights') }}<a style="color: #21a39f;padding-left: 10px;">  © 2025</a></p>
+            <p>{{ setting('copyrights') }}<a style="color: #21a39f;padding-left: 10px;"> © 2025</a></p>
+            <div class="credits">
+                Powered by <a href="https://viral-monkeys.com/">Viral Monkeys</a>
+            </div>
         </div>
 
     </footer>
